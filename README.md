@@ -1,99 +1,60 @@
-# Cahier des Charges - Système de Gestion de Réservation de Tickets
+# Projet de Gestion de Réservation de Tickets
 
-## 1. Introduction
+## Description du Projet
 
-### 1.1 Objectif du Projet
-Le site web vise à fournir une plateforme conviviale permettant aux utilisateurs de rechercher, réserver et gérer des tickets pour différents types d'événements.
+Le projet de gestion de réservation de tickets est une application web permettant aux utilisateurs de rechercher, réserver et gérer des tickets pour divers événements. L'application offre une plateforme conviviale pour les organisateurs d'événements et les utilisateurs finaux.
 
-### 1.2 Portée du Projet
-Le site inclura des fonctionnalités telles que la gestion d'événements, la réservation en ligne, la gestion des utilisateurs, la cartographie interactive, les notifications, etc.
+## Fonctionnalités Principales
 
-## 2. Fonctionnalités
+- Gestion d'événements avec détails complets, images et catégories.
+- Réservation en ligne avec filtres de recherche avancés.
+- Carte interactive pour la sélection de sièges.
+- Gestion des utilisateurs avec historique des réservations.
+- Notifications automatiques et rappels avant les événements.
+- Système d'évaluation et de commentaires.
+- Intégration des réseaux sociaux pour le partage d'événements.
+- Tableau de bord pour les organisateurs avec statistiques.
+- Personnalisation de l'apparence du site et codes promotionnels.
+- Support client avec chat en direct et section FAQ.
 
-### 2.1 Gestion des Événements
-- Création d'événements avec des détails complets.
-- Ajout d'images, de descriptions et de catégories d'événements.
+## Installation
 
-### 2.2 Réservation en Ligne
-- Interface utilisateur intuitive pour la sélection et la réservation de tickets.
-- Options de filtrage par catégorie, date, lieu, etc.
-- Intégration de systèmes de paiement sécurisés.
+1. Cloner le dépôt :
 
-### 2.3 Carte Interactive
-- Intégration de cartes interactives pour visualiser l'emplacement des événements.
-- Possibilité de sélectionner des sièges pour les événements assis.
+    ```bash
+    git clone https://github.com/Youcode-Classe-E-2023-2024/Maryam_Jammar_Fil_Rouge.git
+    cd projet-gestion-reservation-tickets
+    ```
 
-### 2.4 Gestion des Utilisateurs
-- Système d'inscription et de connexion pour les utilisateurs.
-- Historique des réservations pour les utilisateurs enregistrés.
+2. Installer les dépendances :
 
-### 2.5 Notification et Confirmation
-- Envoi automatique de confirmations de réservation par e-mail ou SMS.
-- Rappels automatiques avant l'événement.
+    ```bash
+    npm install
+    ```
 
-### 2.6 Évaluation et Commentaires
-- Système permettant aux utilisateurs de laisser des commentaires et des évaluations sur les événements.
-- Fonctionnalité de notation pour les événements.
+3. Configurer la base de données et les variables d'environnement.
 
-### 2.7 Intégration des Réseaux Sociaux
-- Partage facile d'événements sur les réseaux sociaux.
-- Connexion avec des comptes sociaux pour simplifier l'inscription.
+4. Lancer l'application :
 
-### 2.8 Statistiques et Rapports
-- Tableau de bord pour les organisateurs avec des statistiques sur les ventes de billets.
-- Rapports sur les ventes, les réservations, les tendances, etc.
+    ```bash
+    npm start
+    ```
 
-### 2.9 Personnalisation
-- Personnalisation de l'apparence du site pour correspondre à l'image de l'événement.
-- Possibilité d'ajouter des codes promotionnels.
+## Configuration
 
-### 2.10 Support Client
-- Chat en direct pour répondre aux questions des utilisateurs.
-- Section FAQ pour les informations fréquemment demandées.
+- Pour configurer la base de données, veuillez modifier le fichier `.env` avec les paramètres appropriés.
 
-### 2.11 Intégration API
-- Possibilité d'intégrer des services tiers tels que Google Maps, PayPal, Stripe, etc.
+## Technologies Utilisées
 
-### 2.12 Gestion des Annulations et Remboursements
-- Politiques claires sur les annulations et les remboursements.
-- Interface utilisateur conviviale pour gérer les annulations.
-
-## 3. Contraintes Techniques
-
-### 3.1 Langages et Technologies
 - Front-end : HTML5, CSS3, JavaScript
 - Back-end : Laravel, PHP, PDO.
 - Base de Données : PhpMyAdmin, XAMPP
 - Autres : PowerAMC
 
-### 3.2 Sécurité
-- Mise en œuvre de protocoles de sécurité pour la protection des données utilisateur.
-- Gestion sécurisée des paiements en ligne.
+## Contributeurs
 
-## 4. Design et Expérience Utilisateur
+- Maryam JAMMAR
 
-### 4.1 Interface Utilisateur
-- Design moderne et attractif avec une navigation intuitive.
-- Version mobile responsive.
+## Licence
 
-### 4.2 Performances
-- Optimisation des temps de chargement des pages.
-- Prise en charge des navigateurs courants.
-
-## 5. Livrables
-
-- Code source complet du site web.
-- Documentation détaillée sur l'installation, la configuration et la maintenance.
-
-## 6. Calendrier
-
-### 6.1 Phases du Projet
-1. Définition des besoins et planification.
-2. Conception et prototypage.
-3. Développement.
-4. Tests.
-5. Mise en production.
-6. Formation du personnel et support initial.
-
-### 6.2 Durée Estimée
-Le projet est estimé être achevé en 3 mois, avec des jalons spécifiques pour chaque phase.
+Ce projet est sous licence MIT. Consultez le fichier LICENCE pour plus de détails.
