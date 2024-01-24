@@ -57,4 +57,4 @@ Le projet de gestion de réservation de tickets est une application web permetta
 
 ## Licence
 
-Ce projet est sous licence [Insérer le Nom de la Licence]. Consultez le fichier LICENCE pour plus de détails.
+Ce projet est sous licence MIT. Consultez le fichier LICENCE pour plus de détails.
