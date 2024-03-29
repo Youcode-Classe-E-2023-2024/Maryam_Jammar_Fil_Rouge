@@ -91,22 +91,39 @@
             <!-- component -->
             <div class="flex h-full w-full items-center justify-center container mx-auto px-8">
                 <div class="max-w-2xl text-center">
-                    <h1 class="text-3xl sm:text-5xl capitalize tracking-widest text-white lg:text-7xl">Comming Soon</h1>
+                    <h1 class="text-3xl sm:text-5xl capitalize tracking-widest text-white lg:text-7xl flex justify-between">
+                        <p class="text-blue-600">Comming</p> Soon</h1>
+{{--                    <span class="text-cyan-400 text-5xl font-bold font-roboto leading-52px">Live.</span>--}}
 
                     <p class="mt-6 lg:text-lg text-white">You can subscribe to our newsletter, and let you know when we
                         are
                         back</p>
 
                     <div class="mt-8 flex flex-col space-y-3 sm:-mx-2 sm:flex-row sm:justify-center sm:space-y-0">
-                        <input id="email" type="text"
-                               class="rounded-md border border-transparent bg-white/20 px-4 py-2 text-white placeholder-white backdrop-blur-sm focus:border-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-40 sm:mx-2"
-                               placeholder="Email Address"/>
+{{--                        <input id="email" type="text"--}}
+{{--                               class="rounded-md border border-transparent bg-white/20 px-4 py-2 text-white placeholder-white backdrop-blur-sm focus:border-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-40 sm:mx-2"--}}
+{{--                               placeholder="Email Address"/>--}}
 
-                        <button
-                            class="transform rounded-md bg-blue-700 px-8 py-2 text-sm font-medium capitalize tracking-wide text-white transition-colors duration-200 hover:bg-blue-600 focus:bg-blue-600 focus:outline-none sm:mx-2">
-                            Notify Me
-                        </button>
+{{--                        <button--}}
+{{--                            class="transform rounded-md bg-blue-700 px-8 py-2 text-sm font-medium capitalize tracking-wide text-white transition-colors duration-200 hover:bg-blue-600 focus:bg-blue-600 focus:outline-none sm:mx-2">--}}
+{{--                            Notify Me--}}
+{{--                        </button>--}}
+                        <form class="flex items-center w-full">
+                            <label for="voice-search" class="sr-only">Search</label>
+                            <div class="relative w-full">
+                                <div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
+                                    <svg class="w-5 h-5 text-gray-500 dark:text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd"></path></svg>
+                                </div>
+                                <input type="text" id="voice-search" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Search Mockups, Logos, Design Templates..." required>
+                                <button type="button" class="flex absolute inset-y-0 right-0 items-center pr-3">
+                                    <svg class="w-4 h-4 text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M7 4a3 3 0 016 0v4a3 3 0 11-6 0V4zm4 10.93A7.001 7.001 0 0017 8a1 1 0 10-2 0A5 5 0 015 8a1 1 0 00-2 0 7.001 7.001 0 006 6.93V17H6a1 1 0 100 2h8a1 1 0 100-2h-3v-2.07z" clip-rule="evenodd"></path></svg>
+                                </button>
+                            </div>
+                            <button type="submit" class="inline-flex items-center py-2.5 px-3 ml-2 text-sm font-medium text-white bg-blue-700 rounded-lg border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"><svg class="mr-2 -ml-1 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>Search</button>
+                        </form>
+
                     </div>
+
                 </div>
             </div>
 
@@ -371,16 +388,10 @@
 
             <div class="mt-8 grid grid-cols-1 gap-8 md:mt-16 md:grid-cols-2 xl:grid-cols-3">
                 <div
-                    class="w-96 bg-white rounded-md shadow">
+                    class="w-[354.53px] bg-white rounded-md shadow">
                     <div
                         class="w-full h-[177px] relative bg-neutral-100 border-b border-neutral-200 flex-col justify-start items-start flex">
                         <img class="w-full h-44 relative" src="https://via.placeholder.com/355x176"/>
-                        <div class="w-[354.53px] h-44 bg-black"></div>
-                        <div
-                            class="w-[30.08px] h-[30px] px-[9px] pt-[9px] pb-2 bg-white rounded-[20px] border border-zinc-300 justify-center items-center inline-flex">
-                            <div
-                                class="grow shrink basis-0 self-stretch px-[0.12px] pt-[1.48px] pb-[0.23px] flex-col justify-center items-center inline-flex"></div>
-                        </div>
                     </div>
                     <div class="self-stretch h-[150px] p-5 flex-col justify-center items-start gap-10 inline-flex">
                         <div
@@ -421,12 +432,6 @@
                     <div
                         class="w-full h-[177px] relative bg-neutral-100 border-b border-neutral-200 flex-col justify-start items-start flex">
                         <img class="w-full h-44 relative" src="https://via.placeholder.com/355x176"/>
-                        <div class="w-[354.53px] h-44 bg-black"></div>
-                        <div
-                            class="w-[30.08px] h-[30px] px-[9px] pt-[9px] pb-2 bg-white rounded-[20px] border border-zinc-300 justify-center items-center inline-flex">
-                            <div
-                                class="grow shrink basis-0 self-stretch px-[0.12px] pt-[1.48px] pb-[0.23px] flex-col justify-center items-center inline-flex"></div>
-                        </div>
                     </div>
                     <div class="self-stretch h-[150px] p-5 flex-col justify-center items-start gap-10 inline-flex">
                         <div
@@ -467,12 +472,6 @@
                     <div
                         class="w-full h-[177px] relative bg-neutral-100 border-b border-neutral-200 flex-col justify-start items-start flex">
                         <img class="w-full h-44 relative" src="https://via.placeholder.com/355x176"/>
-                        <div class="w-[354.53px] h-44 bg-black"></div>
-                        <div
-                            class="w-[30.08px] h-[30px] px-[9px] pt-[9px] pb-2 bg-white rounded-[20px] border border-zinc-300 justify-center items-center inline-flex">
-                            <div
-                                class="grow shrink basis-0 self-stretch px-[0.12px] pt-[1.48px] pb-[0.23px] flex-col justify-center items-center inline-flex"></div>
-                        </div>
                     </div>
                     <div class="self-stretch h-[150px] p-5 flex-col justify-center items-start gap-10 inline-flex">
                         <div
@@ -513,12 +512,6 @@
                     <div
                         class="w-full h-[177px] relative bg-neutral-100 border-b border-neutral-200 flex-col justify-start items-start flex">
                         <img class="w-full h-44 relative" src="https://via.placeholder.com/355x176"/>
-                        <div class="w-[354.53px] h-44 bg-black"></div>
-                        <div
-                            class="w-[30.08px] h-[30px] px-[9px] pt-[9px] pb-2 bg-white rounded-[20px] border border-zinc-300 justify-center items-center inline-flex">
-                            <div
-                                class="grow shrink basis-0 self-stretch px-[0.12px] pt-[1.48px] pb-[0.23px] flex-col justify-center items-center inline-flex"></div>
-                        </div>
                     </div>
                     <div class="self-stretch h-[150px] p-5 flex-col justify-center items-start gap-10 inline-flex">
                         <div
@@ -559,12 +552,6 @@
                     <div
                         class="w-full h-[177px] relative bg-neutral-100 border-b border-neutral-200 flex-col justify-start items-start flex">
                         <img class="w-full h-44 relative" src="https://via.placeholder.com/355x176"/>
-                        <div class="w-[354.53px] h-44 bg-black"></div>
-                        <div
-                            class="w-[30.08px] h-[30px] px-[9px] pt-[9px] pb-2 bg-white rounded-[20px] border border-zinc-300 justify-center items-center inline-flex">
-                            <div
-                                class="grow shrink basis-0 self-stretch px-[0.12px] pt-[1.48px] pb-[0.23px] flex-col justify-center items-center inline-flex"></div>
-                        </div>
                     </div>
                     <div class="self-stretch h-[150px] p-5 flex-col justify-center items-start gap-10 inline-flex">
                         <div
@@ -605,12 +592,6 @@
                     <div
                         class="w-full h-[177px] relative bg-neutral-100 border-b border-neutral-200 flex-col justify-start items-start flex">
                         <img class="w-full h-44 relative" src="https://via.placeholder.com/355x176"/>
-                        <div class="w-[354.53px] h-44 bg-black"></div>
-                        <div
-                            class="w-[30.08px] h-[30px] px-[9px] pt-[9px] pb-2 bg-white rounded-[20px] border border-zinc-300 justify-center items-center inline-flex">
-                            <div
-                                class="grow shrink basis-0 self-stretch px-[0.12px] pt-[1.48px] pb-[0.23px] flex-col justify-center items-center inline-flex"></div>
-                        </div>
                     </div>
                     <div class="self-stretch h-[150px] p-5 flex-col justify-center items-start gap-10 inline-flex">
                         <div
@@ -646,7 +627,6 @@
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
     </section>
@@ -675,6 +655,7 @@
                 </div>
 
                 <div class="w-full space-y-8 rounded-lg bg-blue-600 p-8 text-center">
+                    <img src="" alt="">
                     <p class="font-medium uppercase text-gray-200">Premium</p>
 
                     <h2 class="text-5xl font-bold uppercase text-white dark:text-gray-100">$40</h2>
