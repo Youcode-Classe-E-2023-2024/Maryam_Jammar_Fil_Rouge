@@ -1,190 +1,89 @@
-<!--
+<script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
+<script src="https://cdn.tailwindcss.com"></script>
 
-=========================================================
-* Argon Dashboard 2 Tailwind - v1.0.1
-=========================================================
+<!-- Modal toggle -->
+<button data-modal-target="default-modal" data-modal-toggle="default-modal"
+        class="block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+        type="button">
+    Toggle modal
+</button>
 
-* Product Page: https://www.creative-tim.com/product/argon-dashboard-tailwind
-* Copyright 2022 Creative Tim (https://www.creative-tim.com)
-
-* Coded by www.creative-tim.com
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
--->
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="apple-touch-icon" sizes="76x76" href="../../assets/img/apple-icon.png" />
-    <link rel="icon" type="image/png" href="../../assets/img/favicon.png" />
-    <title>Argon Dashboard 2 Tailwind by Creative Tim</title>
-    <!--     Fonts and icons     -->
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
-    <!-- Font Awesome Icons -->
-    <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
-    <!-- Nucleo Icons -->
-    <link href="../../assets/css/nucleo-icons.css" rel="stylesheet" />
-    <link href="../../assets/css/nucleo-svg.css" rel="stylesheet" />
-    <!-- Main Styling -->
-    <link href="../../assets/css/argon-dashboard-tailwind.css?v=1.0.1" rel="stylesheet" />
-  </head>
-
-  <body class="m-0 font-sans antialiased font-normal bg-white text-start text-base leading-default text-slate-500">
-    <div class="container sticky top-0 z-sticky">
-      <div class="flex flex-wrap -mx-3">
-        <div class="w-full max-w-full px-3 flex-0">
-          <!-- Navbar -->
-          <nav class="absolute top-0 left-0 right-0 z-30 flex flex-wrap items-center px-4 py-2 m-6 mb-0 shadow-sm rounded-xl bg-white/80 backdrop-blur-2xl backdrop-saturate-200 lg:flex-nowrap lg:justify-start">
-            <div class="flex items-center justify-between w-full p-0 px-6 mx-auto flex-wrap-inherit">
-              <a class="py-1.75 text-sm mr-4 ml-4 whitespace-nowrap font-bold text-slate-700 lg:ml-0" href="https://demos.creative-tim.com/argon-dashboard-tailwind/pages/dashboard.html" target="_blank"> Argon Dashboard 2 </a>
-              <button navbar-trigger class="px-3 py-1 ml-2 leading-none transition-all ease-in-out bg-transparent border border-transparent border-solid rounded-lg shadow-none cursor-pointer text-lg lg:hidden" type="button" aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="inline-block mt-2 align-middle bg-center bg-no-repeat bg-cover w-6 h-6 bg-none">
-                  <span bar1 class="w-5.5 rounded-xs relative my-0 mx-auto block h-px bg-gray-600 transition-all duration-300"></span>
-                  <span bar2 class="w-5.5 rounded-xs mt-1.75 relative my-0 mx-auto block h-px bg-gray-600 transition-all duration-300"></span>
-                  <span bar3 class="w-5.5 rounded-xs mt-1.75 relative my-0 mx-auto block h-px bg-gray-600 transition-all duration-300"></span>
-                </span>
-              </button>
-              <div navbar-menu class="items-center flex-grow transition-all duration-500 lg-max:overflow-hidden ease lg-max:max-h-0 basis-full lg:flex lg:basis-auto">
-                <ul class="flex flex-col pl-0 mx-auto mb-0 list-none lg:flex-row xl:ml-auto">
-                  <li>
-                    <a class="flex items-center px-4 py-2 mr-2 font-normal transition-all ease-in-out lg-max:opacity-0 duration-250 text-sm text-slate-700 lg:px-2" aria-current="page" href="dashboard.blade.php">
-                      <i class="mr-1 fa fa-chart-pie opacity-60"></i>
-                      Dashboard
-                    </a>
-                  </li>
-                  <li>
-                    <a class="block px-4 py-2 mr-2 font-normal transition-all ease-in-out lg-max:opacity-0 duration-250 text-sm text-slate-700 lg:px-2" href="profile.blade.php">
-                      <i class="mr-1 fa fa-user opacity-60"></i>
-                      Profile
-                    </a>
-                  </li>
-                  <li>
-                    <a class="block px-4 py-2 mr-2 font-normal transition-all ease-in-out lg-max:opacity-0 duration-250 text-sm text-slate-700 lg:px-2" href="sign-up.blade.php">
-                      <i class="mr-1 fas fa-user-circle opacity-60"></i>
-                      Sign Up
-                    </a>
-                  </li>
-                  <li>
-                    <a class="block px-4 py-2 mr-2 font-normal transition-all ease-in-out lg-max:opacity-0 duration-250 text-sm text-slate-700 lg:px-2" href="sign-in.html">
-                      <i class="mr-1 fas fa-key opacity-60"></i>
-                      Sign In
-                    </a>
-                  </li>
-                </ul>
-                <!-- online builder btn  -->
-                <!-- <li class="flex items-center">
-                  <a
-                    class="leading-pro ease-in text-blue-500 border-blue-500 text-xs tracking-tight-rem bg-150 bg-x-25 rounded-3.5xl hover:border-blue-500 hover:-translate-y-px hover:text-blue-500 active:hover:border-blue-500 active:hover:-translate-y-px active:hover:text-blue-500 active:opacity-85 active:shadow-xs active:bg-blue-500 active:border-blue-500 mr-2 mb-0 inline-block cursor-pointer border border-solid bg-transparent py-2 px-8 text-center align-middle font-bold uppercase shadow-none transition-all hover:bg-transparent hover:opacity-75 hover:shadow-none active:scale-100 active:text-white active:hover:bg-transparent active:hover:opacity-75 active:hover:shadow-none"
-                    target="_blank"
-                    href="https://www.creative-tim.com/builder/soft-ui?ref=navbar-dashboard&amp;_ga=2.76518741.1192788655.1647724933-1242940210.1644448053"
-                    >Online Builder</a
-                  >
-                </li> -->
-                <ul class="hidden pl-0 mb-0 list-none lg:block lg:flex-row">
-                  <li>
-                    <a href="https://www.creative-tim.com/product/argon-dashboard-tailwind" target="_blank" class="inline-block px-8 py-2 mb-0 mr-1 font-bold leading-normal text-center text-white align-middle transition-all ease-in bg-blue-500 border-0 rounded-lg shadow-md cursor-pointer hover:-translate-y-px hover:shadow-xs active:opacity-85 text-xs tracking-tight-rem">Free Download</a>
-                  </li>
-                </ul>
-              </div>
+<!-- Main modal -->
+<div id="default-modal" tabindex="-1" aria-hidden="true"
+     class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+    <div class="relative p-4 w-2/5 max-w-2xl max-h-full">
+        <!-- Modal content -->
+        <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+            <!-- Modal header -->
+            <div class="flex p-4 pt-4 md:p-5 rounded-t dark:border-gray-600">
+                <h3 class="text-xl mx-auto text-center font-semibold text-gray-900 dark:text-white">
+                    Quick Sign In
+                </h3>
+                <button type="button"
+                        class="text-end text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white"
+                        data-modal-hide="default-modal">
+                    <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                         viewBox="0 0 14 14">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                              d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+                    </svg>
+                    <span class="sr-only">Close modal</span>
+                </button>
             </div>
-          </nav>
+            <!-- Modal body -->
+            <div class="flex flex-col justify-center items-center p-4 md:p-5 space-y-4">
+                <p class="text-center p-4 text-sm text-gray-900">Join events, get recommendations based on your interest.
+                    Find where your friends are going.</p>
+                <div>
+                    <button type="button"
+                            class="w-56 text-gray-900 bg-white hover:bg-gray-100 border border-gray-200 focus:ring-4 focus:outline-none focus:ring-gray-100 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-gray-600 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:hover:bg-gray-700 me-2 mb-2">
+                        <span class="[&>svg]:h-6 [&>svg]:w-6 me-2 -ms-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 100 100"
+                                 viewBox="0 0 100 100" id="facebook"><g><path
+                                        fill="#1877f2"
+                                        d="M50,2.5c-58.892,1.725-64.898,84.363-7.46,95l0,0h0H50h7.46l0,0C114.911,86.853,108.879,4.219,50,2.5z"></path><path
+                                        fill="#f1f1f1" d="M57.46,64.104h11.125l2.117-13.814H57.46v-8.965c0-3.779,1.85-7.463,7.781-7.463h6.021
+                                        c0,0,0-11.761,0-11.761c-12.894-2.323-28.385-1.616-28.722,17.66V50.29H30.417v13.814H42.54c0,0,0,33.395,0,33.396H50h7.46l0,0h0
+                                        V64.104z"></path></g></svg>
+                        </span>
+                        Continue with Facebook
+                    </button>
+                </div>
+                <div>
+                    <button type="button"
+                            class="w-56 text-gray-900 bg-white hover:bg-gray-100 border border-gray-200 focus:ring-4 focus:outline-none focus:ring-gray-100 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-gray-600 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:hover:bg-gray-700 me-2 mb-2">
+                        <span class="[&>svg]:h-5 [&>svg]:w-5 me-2 -ms-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="2443" height="2500"
+                                 preserveAspectRatio="xMidYMid" viewBox="0 0 256 262"
+                                 id="google"><path fill="#4285F4"
+                                                   d="M255.878 133.451c0-10.734-.871-18.567-2.756-26.69H130.55v48.448h71.947c-1.45 12.04-9.283 30.172-26.69 42.356l-.244 1.622 38.755 30.023 2.685.268c24.659-22.774 38.875-56.282 38.875-96.027"></path><path
+                                    fill="#34A853"
+                                    d="M130.55 261.1c35.248 0 64.839-11.605 86.453-31.622l-41.196-31.913c-11.024 7.688-25.82 13.055-45.257 13.055-34.523 0-63.824-22.773-74.269-54.25l-1.531.13-40.298 31.187-.527 1.465C35.393 231.798 79.49 261.1 130.55 261.1"></path><path
+                                    fill="#FBBC05"
+                                    d="M56.281 156.37c-2.756-8.123-4.351-16.827-4.351-25.82 0-8.994 1.595-17.697 4.206-25.82l-.073-1.73L15.26 71.312l-1.335.635C5.077 89.644 0 109.517 0 130.55s5.077 40.905 13.925 58.602l42.356-32.782"></path><path
+                                    fill="#EB4335"
+                                    d="M130.55 50.479c24.514 0 41.05 10.589 50.479 19.438l36.844-35.974C195.245 12.91 165.798 0 130.55 0 79.49 0 35.393 29.301 13.925 71.947l42.211 32.783c10.59-31.477 39.891-54.251 74.414-54.251"></path></svg>                        </span>
+                        Continue with Google
+                    </button>
+                </div>
+                <div>
+                    <button type="button"
+                            class="w-56 text-gray-900 bg-white hover:bg-gray-100 border border-gray-200 focus:ring-4 focus:outline-none focus:ring-gray-100 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-gray-600 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:hover:bg-gray-700 me-2 mb-2">
+                        <span class="[&>svg]:h-5 [&>svg]:w-5 me-2 -ms-1">
+                          <svg class=" rounded-md" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 96" id="email"><g
+                                  data-name="Layer 2"><path
+                                      d="M0 11.283V8a8 8 0 0 1 8-8h112a8 8 0 0 1 8 8v3.283l-64 40zm66.12 48.11a4.004 4.004 0 0 1-4.24 0L0 20.717V88a8 8 0 0 0 8 8h112a8 8 0 0 0 8-8V20.717z"></path></g></svg>
+                        </span>
+                        Continue with Email
+                    </button>
+                </div>
+            </div>
+            <!-- Modal footer -->
+            <div class="flex items-center justify-center p-4 md:p-5 rounded-b">
+                <p class="text-center text-sm text-gray-900">By Signing In, I agree to AllEvents.in's <u class="text-blue-400">Privacy Policy</u> and
+                    <u class="text-blue-400">Terms of Service</u>.
+                </p>
+            </div>
         </div>
-      </div>
     </div>
-    <main class="mt-0 transition-all duration-200 ease-in-out">
-      <section>
-        <div class="relative flex items-center min-h-screen p-0 overflow-hidden bg-center bg-cover">
-          <div class="container z-1">
-            <div class="flex flex-wrap -mx-3">
-              <div class="flex flex-col w-full max-w-full px-3 mx-auto lg:mx-0 shrink-0 md:flex-0 md:w-7/12 lg:w-5/12 xl:w-4/12">
-                <div class="relative flex flex-col min-w-0 break-words bg-transparent border-0 shadow-none lg:py4 dark:bg-gray-950 rounded-2xl bg-clip-border">
-                  <div class="p-6 pb-0 mb-0">
-                    <h4 class="font-bold">Sign In</h4>
-                    <p class="mb-0">Enter your email and password to sign in</p>
-                  </div>
-                  <div class="flex-auto p-6">
-                    <form role="form">
-                      <div class="mb-4">
-                        <input type="email" placeholder="Email" class="focus:shadow-primary-outline dark:bg-gray-950 dark:placeholder:text-white/80 dark:text-white/80 text-sm leading-5.6 ease block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding p-3 font-normal text-gray-700 outline-none transition-all placeholder:text-gray-500 focus:border-fuchsia-300 focus:outline-none" />
-                      </div>
-                      <div class="mb-4">
-                        <input type="password" placeholder="Password" class="focus:shadow-primary-outline dark:bg-gray-950 dark:placeholder:text-white/80 dark:text-white/80 text-sm leading-5.6 ease block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding p-3 font-normal text-gray-700 outline-none transition-all placeholder:text-gray-500 focus:border-fuchsia-300 focus:outline-none" />
-                      </div>
-                      <div class="flex items-center pl-12 mb-0.5 text-left min-h-6">
-                        <input id="rememberMe" class="mt-0.5 rounded-10 duration-250 ease-in-out after:rounded-circle after:shadow-2xl after:duration-250 checked:after:translate-x-5.3 h-5 relative float-left -ml-12 w-10 cursor-pointer appearance-none border border-solid border-gray-200 bg-zinc-700/10 bg-none bg-contain bg-left bg-no-repeat align-top transition-all after:absolute after:top-px after:h-4 after:w-4 after:translate-x-px after:bg-white after:content-[''] checked:border-blue-500/95 checked:bg-blue-500/95 checked:bg-none checked:bg-right" type="checkbox" />
-                        <label class="ml-2 font-normal cursor-pointer select-none text-sm text-slate-700" for="rememberMe">Remember me</label>
-                      </div>
-                      <div class="text-center">
-                        <button type="button" class="inline-block w-full px-16 py-3.5 mt-6 mb-0 font-bold leading-normal text-center text-white align-middle transition-all bg-blue-500 border-0 rounded-lg cursor-pointer hover:-translate-y-px active:opacity-85 hover:shadow-xs text-sm ease-in tracking-tight-rem shadow-md bg-150 bg-x-25">Sign in</button>
-                      </div>
-                    </form>
-                  </div>
-                  <div class="border-black/12.5 rounded-b-2xl border-t-0 border-solid p-6 text-center pt-0 px-1 sm:px-6">
-                    <p class="mx-auto mb-6 leading-normal text-sm">Don't have an account? <a href="sign-up.blade.php" class="font-semibold text-transparent bg-clip-text bg-gradient-to-tl from-blue-500 to-violet-500">Sign up</a></p>
-                  </div>
-                </div>
-              </div>
-              <div class="absolute top-0 right-0 flex-col justify-center hidden w-6/12 h-full max-w-full px-3 pr-0 my-auto text-center flex-0 lg:flex">
-                <div class="relative flex flex-col justify-center h-full bg-cover px-24 m-4 overflow-hidden bg-[url('https://raw.githubusercontent.com/creativetimofficial/public-assets/master/argon-dashboard-pro/assets/img/signin-ill.jpg')] rounded-xl ">
-                  <span class="absolute top-0 left-0 w-full h-full bg-center bg-cover bg-gradient-to-tl from-blue-500 to-violet-500 opacity-60"></span>
-                  <h4 class="z-20 mt-12 font-bold text-white">"Attention is the new currency"</h4>
-                  <p class="z-20 text-white ">The more effortless the writing looks, the more effort the writer actually put into the process.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-    </main>
-    <footer class="py-12">
-      <div class="container">
-        <div class="flex flex-wrap -mx-3">
-          <div class="flex-shrink-0 w-full max-w-full mx-auto mb-6 text-center lg:flex-0 lg:w-8/12">
-            <a href="javascript:;" target="_blank" class="mb-2 mr-4 text-slate-400 sm:mb-0 xl:mr-12"> Company </a>
-            <a href="javascript:;" target="_blank" class="mb-2 mr-4 text-slate-400 sm:mb-0 xl:mr-12"> About Us </a>
-            <a href="javascript:;" target="_blank" class="mb-2 mr-4 text-slate-400 sm:mb-0 xl:mr-12"> Team </a>
-            <a href="javascript:;" target="_blank" class="mb-2 mr-4 text-slate-400 sm:mb-0 xl:mr-12"> Products </a>
-            <a href="javascript:;" target="_blank" class="mb-2 mr-4 text-slate-400 sm:mb-0 xl:mr-12"> Blog </a>
-            <a href="javascript:;" target="_blank" class="mb-2 mr-4 text-slate-400 sm:mb-0 xl:mr-12"> Pricing </a>
-          </div>
-          <div class="flex-shrink-0 w-full max-w-full mx-auto mt-2 mb-6 text-center lg:flex-0 lg:w-8/12">
-            <a href="javascript:;" target="_blank" class="mr-6 text-slate-400">
-              <span class="text-lg fab fa-dribbble"></span>
-            </a>
-            <a href="javascript:;" target="_blank" class="mr-6 text-slate-400">
-              <span class="text-lg fab fa-twitter"></span>
-            </a>
-            <a href="javascript:;" target="_blank" class="mr-6 text-slate-400">
-              <span class="text-lg fab fa-instagram"></span>
-            </a>
-            <a href="javascript:;" target="_blank" class="mr-6 text-slate-400">
-              <span class="text-lg fab fa-pinterest"></span>
-            </a>
-            <a href="javascript:;" target="_blank" class="mr-6 text-slate-400">
-              <span class="text-lg fab fa-github"></span>
-            </a>
-          </div>
-        </div>
-        <div class="flex flex-wrap -mx-3">
-          <div class="w-8/12 max-w-full px-3 mx-auto mt-1 text-center flex-0">
-            <p class="mb-0 text-slate-400">
-              Copyright ©
-              <script>
-                document.write(new Date().getFullYear());
-              </script>
-              Argon Dashboard 2 by Creative Tim.
-            </p>
-          </div>
-        </div>
-      </div>
-    </footer>
-  </body>
-  <!-- plugin for scrollbar  -->
-  <script src="../../assets/js/plugins/perfect-scrollbar.min.js" async></script>
-  <!-- main script file  -->
-  <script src="../../assets/js/argon-dashboard-tailwind.js?v=1.0.1" async></script>
-</html>
+</div>
