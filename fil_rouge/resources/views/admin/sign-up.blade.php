@@ -48,13 +48,13 @@
         <div navbar-menu class="items-center flex-grow transition-all ease duration-350 lg-max:bg-white lg-max:max-h-0 lg-max:overflow-hidden basis-full rounded-2xl lg:flex lg:basis-auto">
           <ul class="flex flex-col pl-0 mx-auto mb-0 list-none lg-max:py-2 lg:flex-row xl:ml-auto">
             <li>
-              <a class="flex items-center px-4 py-2 mr-2 font-normal text-white transition-all ease-in-out duration-250 lg-max:opacity-0 lg-max:text-slate-700 text-sm lg:px-2 lg:hover:text-white/75" aria-current="page" href="dashboard.html">
+              <a class="flex items-center px-4 py-2 mr-2 font-normal text-white transition-all ease-in-out duration-250 lg-max:opacity-0 lg-max:text-slate-700 text-sm lg:px-2 lg:hover:text-white/75" aria-current="page" href="dashboard.blade.php">
                 <i class="mr-1 text-white lg-max:text-slate-700 fa fa-chart-pie opacity-60"></i>
                 Dashboard
               </a>
             </li>
             <li>
-              <a class="block px-4 py-2 mr-2 font-normal text-white transition-all ease-in-out duration-250 lg-max:opacity-0 lg-max:text-slate-700 text-sm lg:px-2 lg:hover:text-white/75" href="profile.html">
+              <a class="block px-4 py-2 mr-2 font-normal text-white transition-all ease-in-out duration-250 lg-max:opacity-0 lg-max:text-slate-700 text-sm lg:px-2 lg:hover:text-white/75" href="profile.blade.php">
                 <i class="mr-1 text-white lg-max:text-slate-700 fa fa-user opacity-60"></i>
                 Profile
               </a>
@@ -66,7 +66,7 @@
               </a>
             </li>
             <li>
-              <a class="block px-4 py-2 mr-2 font-normal text-white transition-all ease-in-out duration-250 lg-max:opacity-0 lg-max:text-slate-700 text-sm lg:px-2 lg:hover:text-white/75" href="sign-in.html">
+              <a class="block px-4 py-2 mr-2 font-normal text-white transition-all ease-in-out duration-250 lg-max:opacity-0 lg-max:text-slate-700 text-sm lg:px-2 lg:hover:text-white/75" href="sign-in.blade.php">
                 <i class="mr-1 text-white lg-max:text-slate-700 fas fa-key opacity-60"></i>
                 Sign In
               </a>
@@ -172,7 +172,7 @@
                     <div class="text-center">
                       <button type="button" class="inline-block w-full px-5 py-2.5 mt-6 mb-2 font-bold text-center text-white align-middle transition-all bg-transparent border-0 rounded-lg cursor-pointer active:opacity-85 hover:-translate-y-px hover:shadow-xs leading-normal text-sm ease-in tracking-tight-rem shadow-md bg-150 bg-x-25 bg-gradient-to-tl from-zinc-800 to-zinc-700 hover:border-slate-700 hover:bg-slate-700 hover:text-white">Sign up</button>
                     </div>
-                    <p class="mt-4 mb-0 leading-normal text-sm">Already have an account? <a href="sign-in.html" class="font-bold text-slate-700">Sign in</a></p>
+                    <p class="mt-4 mb-0 leading-normal text-sm">Already have an account? <a href="sign-in.blade.php" class="font-bold text-slate-700">Sign in</a></p>
                   </form>
                 </div>
               </div>

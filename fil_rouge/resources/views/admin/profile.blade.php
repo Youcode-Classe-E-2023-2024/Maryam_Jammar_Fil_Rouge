@@ -112,7 +112,7 @@
                 </li>
 
                 <li class="mt-0.5 w-full">
-                    <a class=" dark:text-white dark:opacity-80 py-2.7 text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap px-4 transition-colors" href="sign-in.html">
+                    <a class=" dark:text-white dark:opacity-80 py-2.7 text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap px-4 transition-colors" href="sign-in.blade.php">
                         <div class="mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-center stroke-0 text-center xl:p-2.5">
                             <i class="relative top-0 text-sm leading-normal text-orange-500 ni ni-single-copy-04"></i>
                         </div>
@@ -121,7 +121,7 @@
                 </li>
 
                 <li class="mt-0.5 w-full">
-                    <a class=" dark:text-white dark:opacity-80 py-2.7 text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap px-4 transition-colors" href="sign-up.html">
+                    <a class=" dark:text-white dark:opacity-80 py-2.7 text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap px-4 transition-colors" href="sign-up.blade.php">
                         <div class="mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-center stroke-0 text-center xl:p-2.5">
                             <i class="relative top-0 text-sm leading-normal text-cyan-500 ni ni-collection"></i>
                         </div>
@@ -178,7 +178,7 @@
                 <a class="inline-block px-8 py-2 mb-0 mr-4 font-bold text-center text-white uppercase align-middle transition-all ease-in border border-solid rounded-lg shadow-none cursor-pointer leading-pro border-white/75 bg-white/10 text-xs hover:-translate-y-px active:shadow-xs tracking-tight-rem hover:border-white hover:bg-transparent hover:text-white hover:opacity-75 hover:shadow-none active:bg-white active:text-black active:hover:bg-transparent active:hover:text-white" target="_blank" href="https://www.creative-tim.com/builder/soft-ui?ref=navbar-dashboard&amp;_ga=2.76518741.1192788655.1647724933-1242940210.1644448053">Online Builder</a>
               </li> -->
               <li class="flex items-center">
-                <a href="sign-in.html" class="block px-0 py-2 font-semibold text-white transition-all ease-in-out text-sm">
+                <a href="sign-in.blade.php" class="block px-0 py-2 font-semibold text-white transition-all ease-in-out text-sm">
                   <i class="fa fa-user sm:mr-1" aria-hidden="true"></i>
                   <span class="hidden sm:inline">Sign In</span>
                 </a>
