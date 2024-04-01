@@ -41,8 +41,8 @@
                      class="absolute inset-x-0 z-20 w-full bg-white px-6 py-4 shadow-md transition-all duration-300 ease-in-out dark:bg-gray-900 lg:relative lg:top-0 lg:mt-0 lg:flex lg:w-auto lg:translate-x-0 lg:items-center lg:bg-transparent lg:p-0 lg:opacity-100 lg:shadow-none lg:dark:bg-transparent">
                     <div class="lg:-px-8 flex flex-col space-y-4 lg:mt-0 lg:flex-row lg:space-y-0">
                         <button data-modal-target="default-modal-register" data-modal-toggle="default-modal-register"
-                           class="transform text-gray-300 transition-colors duration-300 hover:text-blue-500 dark:text-gray-200 dark:hover:text-blue-400 lg:mx-8"
-                           type="button">
+                                class="transform text-gray-300 transition-colors duration-300 hover:text-blue-500 dark:text-gray-200 dark:hover:text-blue-400 lg:mx-8"
+                                type="button">
                             Create Event
                         </button>
                         <button data-modal-target="default-modal" data-modal-toggle="default-modal"
@@ -77,7 +77,7 @@
 
                             <input
                                 type="text"
-                                class="w-full bg-[#0d1829] flex bg-transparent pl-2 text-[#cccccc] outline-0"
+                                class="w-full bg-[#0d1829] flex bg-transparent pl-2 text-[#cccccc] outline-0 border-none"
                                 placeholder="Search name movie or select options"
                             />
                             <button type="submit" class="relative p-2 bg-[#0d1829] rounded-full">
@@ -1094,14 +1094,16 @@
                     </button>
                 </div>
                 <div>
-                    <button type="button"
+                    <button>
+                        <a href="/sign-in"
                             class="w-56 text-gray-900 bg-white hover:bg-gray-100 border border-gray-200 focus:ring-4 focus:outline-none focus:ring-gray-100 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-gray-600 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:hover:bg-gray-700 me-2 mb-2">
                         <span class="[&>svg]:h-5 [&>svg]:w-5 me-2 -ms-1">
                           <svg class=" rounded-md" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 96" id="email"><g
                                   data-name="Layer 2"><path
                                       d="M0 11.283V8a8 8 0 0 1 8-8h112a8 8 0 0 1 8 8v3.283l-64 40zm66.12 48.11a4.004 4.004 0 0 1-4.24 0L0 20.717V88a8 8 0 0 0 8 8h112a8 8 0 0 0 8-8V20.717z"></path></g></svg>
                         </span>
-                        Continue with Email
+                            Continue with Email
+                        </a>
                     </button>
                 </div>
             </div>
@@ -1220,9 +1222,9 @@
                                    placeholder="Password" aria-label="Password" aria-describedby="password-addon"/>
                         </div>
                         <div class="min-h-6  text-center mb-0.5 block">
-{{--                            <input--}}
-{{--                                class="text-center w-4.8 h-4.8 ease -ml-7 rounded-1.4 checked:bg-gradient-to-tl checked:from-blue-500 checked:to-violet-500 after:text-xxs after:font-awesome after:duration-250 after:ease-in-out duration-250 relative float-left mt-1 cursor-pointer appearance-none border border-solid border-slate-200 bg-white bg-contain bg-center bg-no-repeat align-top transition-all after:absolute after:flex after:h-full after:w-full after:items-center after:justify-center after:text-white after:opacity-0 after:transition-all after:content-['\f00c'] checked:border-0 checked:border-transparent checked:bg-transparent checked:after:opacity-100"--}}
-{{--                                type="checkbox" value="" checked/>--}}
+                            {{--                            <input--}}
+                            {{--                                class="text-center w-4.8 h-4.8 ease -ml-7 rounded-1.4 checked:bg-gradient-to-tl checked:from-blue-500 checked:to-violet-500 after:text-xxs after:font-awesome after:duration-250 after:ease-in-out duration-250 relative float-left mt-1 cursor-pointer appearance-none border border-solid border-slate-200 bg-white bg-contain bg-center bg-no-repeat align-top transition-all after:absolute after:flex after:h-full after:w-full after:items-center after:justify-center after:text-white after:opacity-0 after:transition-all after:content-['\f00c'] checked:border-0 checked:border-transparent checked:bg-transparent checked:after:opacity-100"--}}
+                            {{--                                type="checkbox" value="" checked/>--}}
                             <label class="mb-2 ml-1 font-normal cursor-pointer text-sm text-slate-700"
                                    for="flexCheckDefault"> I agree the <a href="javascript:;"
                                                                           class="font-bold text-slate-700">Terms and
