@@ -22,16 +22,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-//Route::get('/sign-up', function () {
-//    return view('admin.sign-up');
-//});
-
 Route::get('/dashboard', function () {
     return view('admin.dashboard');
-});
-
-Route::get('/sign-in', function () {
-    return view('admin.sign-in');
 });
 
 //Route::middleware(['guest'])->group(function () {
@@ -39,9 +31,9 @@ Route::get('/sign-in', function () {
     Route::get('/sign-up', [RegisterController::class, 'register']);
     Route::post('/sign-up', [RegisterController::class, 'store']);
 
-//    Route::get('/sign-in', [LoginController::class, 'login']);
-//    Route::post('/sign-in', [LoginController::class, 'store']);
-//
+    Route::get('/sign-in', [LoginController::class, 'login']);
+    Route::post('/sign-in', [LoginController::class, 'store']);
+
 //
 //    Route::get('/forgot-password', [ForgotPasswordLinkController::class, 'create'])->name('forgot-password');
 //
