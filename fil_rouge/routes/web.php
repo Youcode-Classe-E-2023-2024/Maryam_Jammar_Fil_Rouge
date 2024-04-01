@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\Auth\RegisterController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,9 +22,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/sign-up', function () {
-    return view('admin.sign-up');
-});
+//Route::get('/sign-up', function () {
+//    return view('admin.sign-up');
+//});
 
 Route::get('/dashboard', function () {
     return view('admin.dashboard');
@@ -32,3 +34,27 @@ Route::get('/sign-in', function () {
     return view('admin.sign-in');
 });
 
+//Route::middleware(['guest'])->group(function () {
+
+    Route::get('/sign-up', [RegisterController::class, 'register']);
+    Route::post('/sign-up', [RegisterController::class, 'store']);
+
+//    Route::get('/sign-in', [LoginController::class, 'login']);
+//    Route::post('/sign-in', [LoginController::class, 'store']);
+//
+//
+//    Route::get('/forgot-password', [ForgotPasswordLinkController::class, 'create'])->name('forgot-password');
+//
+//    Route::post('/forgot-request', [ForgotPasswordLinkController::class, 'store']);
+//
+//    Route::post('/forgot-password', [ForgotPasswordController::class, 'reset'])->name('new_password');
+//
+//// Password Reset
+//    Route::get('password/reset', 'App\Http\Controllers\Auth\ForgotPasswordController@showLinkRequestForm')->name('password.request');
+//    Route::post('password/email', 'App\Http\Controllers\Auth\ForgotPasswordController@sendResetLinkEmail')->name('password.email');
+//
+//    Route::get('password/reset/{token}', [ForgotPasswordController::class, 'showForm'])->name('password.reset');
+//
+//    Route::post('password/reset', 'App\Http\Controllers\Auth\ResetPasswordController@reset')->name('password.update');
+
+//});
