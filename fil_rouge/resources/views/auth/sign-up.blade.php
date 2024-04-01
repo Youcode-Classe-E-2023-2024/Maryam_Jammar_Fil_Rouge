@@ -6,7 +6,7 @@
 <div class="h-full flex min-h-screen bg-white">
 
     <div class="w-1/2 bg-cover bg-cover bg-center md:block hidden"
-         style="background-image:  url('https://img.freepik.com/premium-photo/red-illuminated-microphone-front-audience-concert-audio-speaker-stage-generative-ai_124507-74228.jpg')"></div>
+         style="background-image:  url('https://res.cloudinary.com/simpleview/image/upload/v1684446594/clients/evansville/events_980da43a-db5e-4c04-b163-a44bd4bcefa4.jpg')"></div>
     <!-- <div class="bg-no-repeat bg-right bg-cover max-w-max max-h-8 h-12 overflow-hidden">
         <img src="log_in.webp" alt="hey">
     </div> -->
