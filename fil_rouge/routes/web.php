@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\Auth\LogoutController;
 use App\Http\Controllers\Auth\RegisterController;
 use Illuminate\Support\Facades\Route;
 
@@ -28,11 +29,13 @@ Route::get('/dashboard', function () {
 
 //Route::middleware(['guest'])->group(function () {
 
-    Route::get('/sign-up', [RegisterController::class, 'register']);
-    Route::post('/sign-up', [RegisterController::class, 'store']);
+Route::get('/sign-up', [RegisterController::class, 'register']);
+Route::post('/sign-up', [RegisterController::class, 'store']);
 
-    Route::get('/sign-in', [LoginController::class, 'login']);
-    Route::post('/sign-in', [LoginController::class, 'store']);
+Route::get('/sign-in', [LoginController::class, 'login']);
+Route::post('/sign-in', [LoginController::class, 'store']);
+
+Route::post('/logout', [LogoutController::class, 'destroy']);
 
 //
 //    Route::get('/forgot-password', [ForgotPasswordLinkController::class, 'create'])->name('forgot-password');
