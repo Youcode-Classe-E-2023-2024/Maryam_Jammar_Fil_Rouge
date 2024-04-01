@@ -86,36 +86,43 @@
 
 
             <div class="flex-auto p-6 text-center">
-                <form role="form text-left">
-                    <div
-                        class="mb-4 w-60 mx-auto file_upload p-5 relative h-24 border-4 border-dotted border-gray-300 rounded-lg">
-                        <div class="input_field flex flex-col w-max mx-auto text-center">
-                            <label>
-                                <input class="text-sm cursor-pointer w-36 hidden" type="file" name="picture"
-                                       id="picture"/>
-                                <div
-                                    class="w-36 h-8 bg-black text-white border border-gray-300 rounded font-semibold cursor-pointer p-1 px-3 hover:bg-gray-800">
-                                    Select
-                                </div>
-                            </label>
-
-                            <div class="title text-sm text-black uppercase">or drop files here</div>
-                        </div>
+                <form role="form text-left" action="/sign-up" method="post" enctype="multipart/form-data">
+                    @csrf
+                    <div>
+                        <h1 class="font-semibold text-center dark:text-white">Select a Profile Image</h1>
+                        <input class="login-input" name="picture" value="{{ old('picture') }}" type="file"
+                               accept="image/*" id="imageInput"
+                               style="display: none">
+                        <!-- Circular image container -->
+                        <label for="imageInput"
+                               class="relative mt-2 mr-48 mb-5 top-2 left-20 cursor-pointer ml-10 flex justify-center">
+                            <div class="rounded-full overflow-hidden">
+                                <img id="previewImage" style="width: 90px; height: 90px"
+                                     src="../../assets/img/avatar/avatar2.png"
+                                     alt="User Picture">
+                            </div>
+                        </label>
                     </div>
                     <div class="mb-4 w-60 mx-auto">
-                        <input type="text" name="username"
+                        <input type="text" name="name"
                                class="placeholder:text-gray-500 text-sm focus:shadow-primary-outline leading-5.6 ease block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding py-2 px-3 font-normal text-gray-700 transition-all focus:border-blue-500 focus:bg-white focus:text-gray-700 focus:outline-none focus:transition-shadow"
-                               placeholder="Name" aria-label="Name" aria-describedby="email-addon"/>
+                               placeholder="Username" aria-label="Name" aria-describedby="email-addon"/>
                     </div>
                     <div class="mb-4 w-60 mx-auto">
-                        <input type="email"
+                        <input type="email" name="email"
                                class="placeholder:text-gray-500 text-sm focus:shadow-primary-outline leading-5.6 ease block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding py-2 px-3 font-normal text-gray-700 transition-all focus:border-blue-500 focus:bg-white focus:text-gray-700 focus:outline-none focus:transition-shadow"
                                placeholder="Email" aria-label="Email" aria-describedby="email-addon"/>
                     </div>
                     <div class="mb-4 w-60 mx-auto">
-                        <input type="password"
+                        <input type="password" name="password"
                                class="placeholder:text-gray-500 text-sm focus:shadow-primary-outline leading-5.6 ease block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding py-2 px-3 font-normal text-gray-700 transition-all focus:border-blue-500 focus:bg-white focus:text-gray-700 focus:outline-none focus:transition-shadow"
                                placeholder="Password" aria-label="Password" aria-describedby="password-addon"/>
+                    </div>
+                    <div class="mb-4 w-60 mx-auto">
+                        <input type="password" name="password_confirmation"
+                               class="placeholder:text-gray-500 text-sm focus:shadow-primary-outline leading-5.6 ease block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding py-2 px-3 font-normal text-gray-700 transition-all focus:border-blue-500 focus:bg-white focus:text-gray-700 focus:outline-none focus:transition-shadow"
+                               placeholder="Password confirmation" aria-label="Password"
+                               aria-describedby="password-addon"/>
                     </div>
                     <div class="min-h-6  text-center mb-0.5 block">
                         {{--                            <input--}}
@@ -128,7 +135,7 @@
                                 Conditions</a> </label>
                     </div>
                     <div class="text-center w-60 mx-auto">
-                        <button type="button"
+                        <button type="submit"
                                 class="inline-block w-full px-5 py-2.5 mt-6 mb-2 font-bold text-center text-white align-middle transition-all bg-transparent border-0 rounded-lg cursor-pointer active:opacity-85 hover:-translate-y-px hover:shadow-xs leading-normal text-sm ease-in tracking-tight-rem shadow-md bg-150 bg-x-25 bg-gradient-to-tl from-zinc-800 to-zinc-700 hover:border-slate-700 hover:bg-slate-700 hover:text-white">
                             Sign up
                         </button>
@@ -144,4 +151,15 @@
 
 
 </div>
+<script>
+    document.getElementById('imageInput').addEventListener('change', function (e) {
+        const file = e.target.files[0]; // Get the file
+        const reader = new FileReader(); // Create a file reader
+        reader.onload = function (e) {
+            const previewImage = document.getElementById('previewImage');
+            previewImage.src = e.target.result; // Set the src of the image to the file content
+        };
+        reader.readAsDataURL(file); // Read the file as a Data URL
+    });
+</script>
 </body>
