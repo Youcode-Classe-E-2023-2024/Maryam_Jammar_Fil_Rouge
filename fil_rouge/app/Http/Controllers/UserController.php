@@ -71,14 +71,14 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-//    public function deleteUser($id)
-//    {
-//        $user = User::find($id);
-//        $user->delete();
-//        return redirect()->back()->with('success', 'User deleted successfully!');
-//
-//    }
-//
+    public function deleteUser($id)
+    {
+        $user = User::find($id);
+        $user->delete();
+        return redirect()->back()->with('success', 'User deleted successfully!');
+
+    }
+
 //    public function restoreUser($id)
 //    {
 //        $user = User::withTrashed()->find($id);
