@@ -79,19 +79,20 @@ class UserController extends Controller
 
     }
 
-//    public function restoreUser($id)
-//    {
-//        $user = User::withTrashed()->find($id);
-//        $user->restore();
-//        return redirect()->back()->with('success', 'User restored successfully!');
-//
-//    }
-//
-//    public function showDeletedUsers()
-//    {
-//        $users = User::onlyTrashed()->get();
-//
-//        return view('admin.deletedUsers', compact('users'));
-//    }
+    public function restoreUser($id)
+    {
+        $user = User::withTrashed()->find($id);
+        $user->restore();
+        return redirect()->back()->with('success', 'User restored successfully!');
+
+    }
+
+    public function showDeletedUsers()
+    {
+        $users = User::onlyTrashed()->get();
+        $roles = Role::all();
+
+        return view('admin.deletedUsers', compact('users', 'roles'));
+    }
 
 }
