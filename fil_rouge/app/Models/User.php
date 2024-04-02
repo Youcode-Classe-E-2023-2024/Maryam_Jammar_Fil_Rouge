@@ -16,10 +16,13 @@ class User extends Authenticatable
 //    {
 //        return $this->hasOne(Role::class);
 //    }
+
     public function role()
     {
-        return $this->belongsTo(Role::class);
+        return $this->belongsTo(Role::class, 'role');
     }
+
+
 
     /**
      * The attributes that are mass assignable.

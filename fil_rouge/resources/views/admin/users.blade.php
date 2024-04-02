@@ -80,9 +80,10 @@
                                                     <span aria-hidden
                                                           class="absolute inset-0 bg-green-200 opacity-50 rounded-full">
                                                     </span>
-
-                                                    @foreach($roles as $role)
-                                                        {{$user->role}}
+                                                    @foreach ($roles as $role)
+                                                        @if ($role->id === $user->role)
+                                                            {{ $role->role }}
+                                                        @endif
                                                     @endforeach
                                                 </span>
                                         </td>
