@@ -50,19 +50,19 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-//    public function update(Request $request, $id)
-//    {
-//        $request->validate([
-//            'role' => 'required'
-//        ]);
-//        $role = Role::find($request->role);
-//        $user = User::find($id);
-//
-//        $user->syncRoles($role->name);
-//
-//        return redirect('/allusers')->with('success', 'Role Updated successfully');
-//
-//    }
+    public function update(Request $request, $id)
+    {
+        $request->validate([
+            'role' => 'required'
+        ]);
+
+        $user = User::find($id);
+        $user->role = $request->role;
+        $user->save();
+
+        return redirect('/users')->with('success', 'Role Updated successfully');
+    }
+
 
 
     /**

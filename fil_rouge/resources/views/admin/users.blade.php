@@ -1,3 +1,5 @@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
+
 @include('admin.layout')
 
 <body class="text-gray-800 font-inter">
@@ -107,7 +109,7 @@
                                         </td>
                                     </tr>
 
-                                    update role
+                                    {{--                                    update role--}}
                                     <!-- Main modal -->
                                     <div id="crud-modal-{{$user->id}}" tabindex="-1" aria-hidden="true"
                                          class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
@@ -134,7 +136,7 @@
                                                     </button>
                                                 </div>
                                                 <!-- Modal body -->
-                                                <form class="" method="post" action="/allusers/{{$user->id}}">
+                                                <form class="" method="post" action="/users/{{$user->id}}">
                                                     @csrf
                                                     <div class="grid gap-4 mb-4">
                                                         <div class="px-6 col-span-2 sm:col-span-1">
@@ -145,7 +147,7 @@
                                                                 <option selected="">Select role</option>
                                                                 @foreach($roles as $role)
                                                                     <option
-                                                                        value="{{ $role->id }}">{{ $role->name }}</option>
+                                                                        value="{{ $role->id }}">{{ $role->role }}</option>
                                                                 @endforeach
                                                             </select>
                                                         </div>
