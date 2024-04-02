@@ -64,7 +64,6 @@ class UserController extends Controller
     }
 
 
-
     /**
      * Remove the specified resource from storage.
      *
@@ -89,7 +88,7 @@ class UserController extends Controller
 
     public function showDeletedUsers()
     {
-        $users = User::onlyTrashed()->get();
+        $users = User::onlyTrashed()->paginate(4);
         $roles = Role::all();
 
         return view('admin.deletedUsers', compact('users', 'roles'));

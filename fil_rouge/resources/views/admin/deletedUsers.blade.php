@@ -95,9 +95,9 @@
                                 @endforeach
                                 </tbody>
                             </table>
-                            {{--                            <div class="flex-col justify-between items-center mt-8 p-4">--}}
-                            {{--                                {{ $users->links() }}--}}
-                            {{--                            </div>--}}
+                            <div class="flex-col justify-between items-center mt-8 p-4">
+                                {{ $users->links() }}
+                            </div>
                         </div>
                     </div>
                 </div>
