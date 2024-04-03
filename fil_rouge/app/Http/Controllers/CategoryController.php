@@ -2,10 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Categories;
 use App\Models\Category;
-use App\Models\Reserver;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class CategoryController extends Controller
 {
@@ -25,11 +24,19 @@ class CategoryController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'name' => 'required|string|max:255|unique:categories,name'
+            'name' => 'required|string|max:255|unique:categories,name',
+            'image' => 'required'
         ]);
 
+        $fileName = time() . $request->file('image')->getClientOriginalName();
+        $path = $request->file('image')->storeAs('image', $fileName, 'public');
+        $picturePath = Storage::url($path);
+
+        $picture["image"] = $picturePath;
+
         Category::create([
-            'name' => $request->name
+            'name' => $request->name,
+            'image' => $picturePath,
         ]);
 
         return redirect()->back();
