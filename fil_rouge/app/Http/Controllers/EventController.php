@@ -2,10 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\ApproveEventEmail;
 use App\Models\Category;
 use App\Models\Event;
+use App\Models\Role;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Storage;
 
 class EventController extends Controller
@@ -73,7 +77,26 @@ class EventController extends Controller
             'category' => $request->category,
         ]);
 
+        $this->sendEmailToAdmin($user);
+
         return back();
+    }
+
+
+    private function sendEmailToAdmin()
+    {
+        $user = Auth::user();
+
+//        $adminRole = Role::where('role', 'admin')->first();
+        $adminRole = User::where('role', '1')->get();
+
+        if ($adminRole) {
+//            $admins = $adminRole->users;
+//            dd($adminRole);
+            foreach ($adminRole as $admin) {
+                Mail::to($admin->email)->send(new ApproveEventEmail($user));
+            }
+        }
     }
 
 
