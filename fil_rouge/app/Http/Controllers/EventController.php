@@ -62,7 +62,7 @@ class EventController extends Controller
             $picturePath = null;
         }
 
-        Event::create([
+        $eventCreated = Event::create([
             'title' => $request->title,
             'location' => $request->location,
             'event_type' => $request->event_type,
@@ -73,11 +73,12 @@ class EventController extends Controller
             'description' => $request->description,
             'image' => $picturePath,
             'creator' => $user,
-//            'category' => $category,
             'category' => $request->category,
         ]);
 
-        $this->sendEmailToAdmin($user);
+        if ($eventCreated) {
+            $this->sendEmailToAdmin($user);
+        }
 
         return back();
     }
@@ -87,12 +88,9 @@ class EventController extends Controller
     {
         $user = Auth::user();
 
-//        $adminRole = Role::where('role', 'admin')->first();
         $adminRole = User::where('role', '1')->get();
 
         if ($adminRole) {
-//            $admins = $adminRole->users;
-//            dd($adminRole);
             foreach ($adminRole as $admin) {
                 Mail::to($admin->email)->send(new ApproveEventEmail($user));
             }
