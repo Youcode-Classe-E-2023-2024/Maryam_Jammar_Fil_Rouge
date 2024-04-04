@@ -122,20 +122,22 @@
                     </div>
 
                     <div class="-mx-3 flex flex-wrap">
-{{--                        <div class="w-full px-3 sm:w-1/2">--}}
-{{--                            <label for="location" class="mb-3 block text-base font-medium text-[#07074D]">--}}
-{{--                                Category--}}
-{{--                            </label>--}}
-{{--                            <select name="category"--}}
-{{--                                    class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"--}}
-{{--                                    required>--}}
-{{--                                <option value="" selected>Choose a category</option>--}}
-{{--                                @foreach($categories as $category)--}}
-{{--                                    <option value="{{ $category->id }}">{{ $category->name }}</option>--}}
-{{--                                @endforeach--}}
-{{--                            </select>--}}
+{{--                        <input type="hidden" name="category" value="{{ request()->query('category') }}">--}}
 
-{{--                        </div>--}}
+                                                <div class="w-full px-3 sm:w-1/2">
+                            <label for="location" class="mb-3 block text-base font-medium text-[#07074D]">
+                                Category
+                            </label>
+                            <select name="category"
+                                    class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
+                                    required>
+                                <option value="" selected>Choose a category</option>
+                                @foreach($categories as $category)
+                                    <option value="{{ $category->id }}">{{ $category->name }}</option>
+                                @endforeach
+                            </select>
+
+                        </div>
                         <div class="w-full px-3 sm:w-1/2">
                             <label for="location" class="mb-3 block text-base font-medium text-[#07074D]">
                                 Where will your event take place?

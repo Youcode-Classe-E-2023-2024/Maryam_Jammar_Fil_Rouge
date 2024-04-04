@@ -46,6 +46,10 @@ class EventController extends Controller
             'category' => 'required',
         ]);
 
+        // from category
+//        $category = $request->input('category');
+
+//        dd($category);
         if ($request->hasFile('image')) {
             $fileName = time() . $request->file('image')->getClientOriginalName();
             $path = $request->file('image')->storeAs('image', $fileName, 'public');
@@ -65,12 +69,10 @@ class EventController extends Controller
             'description' => $request->description,
             'image' => $picturePath,
             'creator' => $user,
+//            'category' => $category,
             'category' => $request->category,
         ]);
 
-//        $this->sendEmailToAdmin($user);
-
-//        return redirect('/allEvents');
         return back();
     }
 
