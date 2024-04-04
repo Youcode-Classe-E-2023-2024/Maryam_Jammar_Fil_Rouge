@@ -38,8 +38,8 @@
 
         <section>
             <nav class="flex space-x-6 text-gray-400 font-medium">
-                <a href="#" class="hover:text-gray-700 dark:hover:text-white">TV Series</a>
-                <a href="#" class="text-gray-700 dark:text-white font-semibold">Movies</a>
+                <a href="#" class="hover:text-gray-700 dark:hover:text-white">Dashboard</a>
+                <a href="#" class="text-gray-700 dark:text-white font-semibold">Home</a>
                 <a href="#" class="hover:text-gray-700 dark:hover:text-white ">Animes</a>
             </nav>
 
