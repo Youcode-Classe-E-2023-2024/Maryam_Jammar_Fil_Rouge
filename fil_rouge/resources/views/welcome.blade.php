@@ -7,8 +7,9 @@
 
 <main>
     <section class="bg-white dark:bg-gray-900">
-        <div class="h-3/5 bg-cover bg-center"
-             style="background-image: url('https://www.gl-events.co.za/sites/default/files/styles/hero_background_image/public/2019-06/gl-events-south-africa-2.jpg?itok=HEz04JDb')">
+        <div class="absolute h-3/5 inset-0 bg-black opacity-35"></div>
+        <div class="h-3/5 inset-0 bg-cover bg-center"
+             style="background-image: url('https://www.gohawaii.jp/sites/default/files/hero-unit-images/MH_01065-Annual%20Events%20and%20Festivals.jpg')">
             <nav x-data="{ isOpen: false }"
                  class="container h-16 bg-black bg-opacity-25 fixed top-0 z-10 p-6 lg:flex lg:items-center lg:justify-around">
                 <div class="flex items-center justify-between">
@@ -106,7 +107,7 @@
             <div class="flex h-full w-full items-center justify-center container mx-auto px-8">
                 <div class="max-w-2xl text-center">
                     <h1 class="text-3xl sm:text-5xl capitalize tracking-widest text-white lg:text-7xl flex justify-between">
-                        <p class="text-blue-600">Comming</p> Soon
+                        <p class="">Comming</p> Soon
                     </h1>
                     {{--                    <span class="text-cyan-400 text-5xl font-bold font-roboto leading-52px">Live.</span>--}}
 
