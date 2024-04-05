@@ -47,6 +47,9 @@
                 <li class="mb-4">
                     <a href="" class="text-gray-900 text-sm flex items-center hover:text-[#f84525] before:contents-[''] before:w-1 before:h-1 before:rounded-full before:bg-gray-300 before:mr-3">My Events</a>
                 </li>
+                <li class="mb-4">
+                    <a href="/check-events" class="text-gray-900 text-sm flex items-center hover:text-[#f84525] before:contents-[''] before:w-1 before:h-1 before:rounded-full before:bg-gray-300 before:mr-3">Check events requests</a>
+                </li>
             </ul>
         </li>
         <li class="mb-1 group">

@@ -131,4 +131,13 @@ class EventController extends Controller
     {
         //
     }
+
+    //check events requests
+    public function CheckEvent()
+    {
+        $events = Event::where('status', 'En attente')->paginate(4);
+
+        return view('admin.check-events', compact('events'));
+    }
+
 }
