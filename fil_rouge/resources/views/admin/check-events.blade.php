@@ -56,37 +56,37 @@
                                         </div>
                                         <div class="flex p-4 pb-2 border-t border-gray-200 "></div>
                                         <div class="flex space-x-3 text-sm font-medium">
-{{--                                            <div class="flex-auto flex space-x-3">--}}
-{{--                                                <form action="/decline-event/{{$event->id}}" method="POST">--}}
-{{--                                                    @csrf--}}
-{{--                                                    <button type="submit"--}}
-{{--                                                            class="mb-2 md:mb-0 bg-white px-4 py-2 shadow-sm tracking-wider border text-gray-600 rounded-full hover:bg-gray-100 inline-flex items-center space-x-2 ">--}}
-{{--                                                        <span class="text-green-400 hover:text-green-500 rounded-lg">--}}
-{{--                                                            <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg"--}}
-{{--                                                                 xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"--}}
-{{--                                                                 width="256"--}}
-{{--                                                                 height="256" viewBox="0 0 256 256" xml:space="preserve">--}}
-{{--                                                                <defs>--}}
-{{--                                                                </defs>--}}
-{{--                                                                <g style="stroke: none; stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: none; fill-rule: nonzero; opacity: 1;"--}}
-{{--                                                                   transform="translate(1.4065934065934016 1.4065934065934016) scale(2.81 2.81)">--}}
-{{--                                                                    <path--}}
-{{--                                                                        d="M 8 90 c -2.047 0 -4.095 -0.781 -5.657 -2.343 c -3.125 -3.125 -3.125 -8.189 0 -11.314 l 74 -74 c 3.125 -3.124 8.189 -3.124 11.314 0 c 3.124 3.124 3.124 8.189 0 11.313 l -74 74 C 12.095 89.219 10.047 90 8 90 z"--}}
-{{--                                                                        style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(236,0,0); fill-rule: nonzero; opacity: 1;"--}}
-{{--                                                                        transform=" matrix(1 0 0 1 0 0) "--}}
-{{--                                                                        stroke-linecap="round"/>--}}
-{{--                                                                    <path--}}
-{{--                                                                        d="M 82 90 c -2.048 0 -4.095 -0.781 -5.657 -2.343 l -74 -74 c -3.125 -3.124 -3.125 -8.189 0 -11.313 c 3.124 -3.124 8.189 -3.124 11.313 0 l 74 74 c 3.124 3.125 3.124 8.189 0 11.314 C 86.095 89.219 84.048 90 82 90 z"--}}
-{{--                                                                        style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(236,0,0); fill-rule: nonzero; opacity: 1;"--}}
-{{--                                                                        transform=" matrix(1 0 0 1 0 0) "--}}
-{{--                                                                        stroke-linecap="round"/>--}}
-{{--                                                                </g>--}}
-{{--                                                            </svg>--}}
-{{--                                                        </span>--}}
-{{--                                                            <span>Decline</span>--}}
-{{--                                                    </button>--}}
-{{--                                                </form>--}}
-{{--                                            </div>--}}
+                                            <div class="flex-auto flex space-x-3">
+                                                <form action="/decline-event/{{$event->id}}" method="POST">
+                                                    @csrf
+                                                    <button type="submit"
+                                                            class="mb-2 md:mb-0 bg-white px-4 py-2 shadow-sm tracking-wider border text-gray-600 rounded-full hover:bg-gray-100 inline-flex items-center space-x-2 ">
+                                                        <span class="text-green-400 hover:text-green-500 rounded-lg">
+                                                            <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg"
+                                                                 xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"
+                                                                 width="256"
+                                                                 height="256" viewBox="0 0 256 256" xml:space="preserve">
+                                                                <defs>
+                                                                </defs>
+                                                                <g style="stroke: none; stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: none; fill-rule: nonzero; opacity: 1;"
+                                                                   transform="translate(1.4065934065934016 1.4065934065934016) scale(2.81 2.81)">
+                                                                    <path
+                                                                        d="M 8 90 c -2.047 0 -4.095 -0.781 -5.657 -2.343 c -3.125 -3.125 -3.125 -8.189 0 -11.314 l 74 -74 c 3.125 -3.124 8.189 -3.124 11.314 0 c 3.124 3.124 3.124 8.189 0 11.313 l -74 74 C 12.095 89.219 10.047 90 8 90 z"
+                                                                        style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(236,0,0); fill-rule: nonzero; opacity: 1;"
+                                                                        transform=" matrix(1 0 0 1 0 0) "
+                                                                        stroke-linecap="round"/>
+                                                                    <path
+                                                                        d="M 82 90 c -2.048 0 -4.095 -0.781 -5.657 -2.343 l -74 -74 c -3.125 -3.124 -3.125 -8.189 0 -11.313 c 3.124 -3.124 8.189 -3.124 11.313 0 l 74 74 c 3.124 3.125 3.124 8.189 0 11.314 C 86.095 89.219 84.048 90 82 90 z"
+                                                                        style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(236,0,0); fill-rule: nonzero; opacity: 1;"
+                                                                        transform=" matrix(1 0 0 1 0 0) "
+                                                                        stroke-linecap="round"/>
+                                                                </g>
+                                                            </svg>
+                                                        </span>
+                                                            <span>Decline</span>
+                                                    </button>
+                                                </form>
+                                            </div>
                                             <form action="/approve-event/{{$event->id}}" method="POST">
                                                 @csrf
                                                 <button type="submit"

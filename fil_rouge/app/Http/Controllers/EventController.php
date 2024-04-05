@@ -150,5 +150,16 @@ class EventController extends Controller
         return redirect()->back();
     }
 
+    //decline events
+    public function declineEvent($id)
+    {
+        $event = Event::findOrFail($id);
+        $event->status = 'Decline';
+        $event->save();
+
+        return redirect()->back();
+    }
+
+
 
 }
