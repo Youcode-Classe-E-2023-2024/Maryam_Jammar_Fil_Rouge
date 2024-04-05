@@ -140,4 +140,15 @@ class EventController extends Controller
         return view('admin.check-events', compact('events'));
     }
 
+    //approve-events
+    public function approveEvent($id)
+    {
+        $event = Event::findOrFail($id);
+        $event->status = 'Public';
+        $event->save();
+
+        return redirect()->back();
+    }
+
+
 }
