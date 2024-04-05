@@ -424,246 +424,58 @@
             </div>
 
             <div class="mt-8 grid grid-cols-1 gap-8 md:mt-16 md:grid-cols-2 xl:grid-cols-3">
-                <div
-                    class="w-[354.53px] bg-white rounded-md shadow">
-                    <div
-                        class="w-full h-[177px] relative bg-neutral-100 border-b border-neutral-200 flex-col justify-start items-start flex">
-                        <img class="w-full h-44 relative" src="https://via.placeholder.com/355x176"/>
-                    </div>
-                    <div class="self-stretch h-[150px] p-5 flex-col justify-center items-start gap-10 inline-flex">
+                @foreach($events as $event)
+                    <div class="flex flex-col rounded-xl overflow-hidden aspect-square border dark:border-zinc-600">
+                        <img src="{{$event->image}}"
+                             class=" h-4/5 object-cover w-full  " alt="">
                         <div
-                            class="self-stretch grow shrink basis-0 flex-col justify-center items-start gap-2.5 inline-flex">
-                            <div
-                                class="self-stretch grow shrink basis-0 pr-[20.59px] justify-start items-center inline-flex">
-                                <div
-                                    class="w-[293.94px] h-5 text-zinc-700 text-base font-semibold font-['Roboto'] leading-tight">
-                                    Third Eye Blind and Yellowcard (Concert)
-                                </div>
-                            </div>
-                            <div
-                                class="self-stretch grow shrink basis-0 pr-[151.93px] justify-start items-center inline-flex">
-                                <div
-                                    class="w-[162.60px] h-5 text-zinc-500 text-[13px] font-normal font-['Roboto'] leading-tight">
-                                    Shoreline Amphitheatre - CA
-                                </div>
-                            </div>
-                        </div>
-                        <div class="self-stretch h-5 justify-start items-center inline-flex">
-                            <div class="w-[310px] flex justify-between">
-                                <div
-                                    class="w-[104.84px] self-stretch pr-[1.34px] justify-center items-center inline-flex">
-                                    <div
-                                        class="w-[103.50px] h-5 text-gray-600 text-[13px] font-semibold font-['Roboto'] uppercase leading-tight">
-                                        Multiple Dates
-                                    </div>
-                                </div>
-                                <div class="">
-                                    220 DH
-                                </div>
+                            class="w-full h-1/5 bg-white dark:bg-zinc-800 dark:text-white px-3 flex items-center justify-between border-t-2 border-t-red-600">
+                            <span class="capitalize  font-medium truncate">{{$event->title}}</span>
+                            <div class="flex space-x-2 items-center text-xs">
+                                <svg class="w-12 h-6" xmlns="http://www.w3.org/2000/svg" width="64" height="32"
+                                     viewBox="0 0 64 32" version="1.1">
+                                    <g fill="#F5C518">
+                                        <rect x="0" y="0" width="100%" height="100%" rx="4"></rect>
+                                    </g>
+                                    <text class="text-bold text-black font-bold text-xs" x="32" y="21" fill="#000000"
+                                          font-family="Arial" font-size="10px" text-anchor="middle">Buy Now!
+                                    </text>
+                                </svg>
+
+                                <span class="text-md font-bold">{{$event->price}} DH</span>
                             </div>
                         </div>
-                    </div>
-                </div>
-                <div
-                    class="w-[354.53px] bg-white rounded-md shadow">
-                    <div
-                        class="w-full h-[177px] relative bg-neutral-100 border-b border-neutral-200 flex-col justify-start items-start flex">
-                        <img class="w-full h-44 relative" src="https://via.placeholder.com/355x176"/>
-                    </div>
-                    <div class="self-stretch h-[150px] p-5 flex-col justify-center items-start gap-10 inline-flex">
                         <div
-                            class="self-stretch grow shrink basis-0 flex-col justify-center items-start gap-2.5 inline-flex">
-                            <div
-                                class="self-stretch grow shrink basis-0 pr-[20.59px] justify-start items-center inline-flex">
-                                <div
-                                    class="w-[293.94px] h-5 text-zinc-700 text-base font-semibold font-['Roboto'] leading-tight">
-                                    Third Eye Blind and Yellowcard (Concert)
-                                </div>
+                            class="w-full h-1/5 bg-white dark:bg-zinc-800 dark:text-white px-3 flex items-center justify-between">
+                            <div class="flex justify-between items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                     version="1.1" width="25" height="25" viewBox="0 0 256 256" xml:space="preserve">
+                                <defs>
+                                </defs>
+                                    <g style="stroke: none; stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: none; fill-rule: nonzero; opacity: 1;"
+                                       transform="translate(1.4065934065934016 1.4065934065934016) scale(2.81 2.81)">
+                                        <path
+                                            d="M 45 1.802 c 16.583 0 30.075 13.491 30.075 30.075 c 0 7.102 -2.538 14.004 -7.145 19.434 L 45 78.317 L 22.07 51.311 c -4.608 -5.43 -7.145 -12.332 -7.145 -19.434 C 14.925 15.294 28.417 1.802 45 1.802 M 45 45.692 c 8.222 0 14.912 -6.689 14.912 -14.912 c 0 -8.222 -6.689 -14.912 -14.912 -14.912 S 30.088 22.557 30.088 30.78 C 30.088 39.002 36.778 45.692 45 45.692 M 45 0 C 27.395 0 13.123 14.272 13.123 31.877 c 0 7.86 2.858 15.043 7.573 20.6 L 45 81.101 l 24.304 -28.624 c 4.716 -5.558 7.573 -12.741 7.573 -20.6 C 76.877 14.272 62.605 0 45 0 L 45 0 z M 45 43.889 c -7.24 0 -13.11 -5.869 -13.11 -13.11 c 0 -7.24 5.869 -13.11 13.11 -13.11 s 13.11 5.869 13.11 13.11 C 58.11 38.02 52.24 43.889 45 43.889 L 45 43.889 z"
+                                            style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(0,0,0); fill-rule: nonzero; opacity: 1;"
+                                            transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round"/>
+                                        <path
+                                            d="M 58.814 71.531 l -1.575 1.575 c 9.772 1.532 15.583 4.707 15.583 7.094 c 0 3.261 -10.838 7.997 -27.822 7.997 S 17.178 83.461 17.178 80.2 c 0 -2.387 5.811 -5.562 15.583 -7.094 l -1.575 -1.575 c -9.401 1.643 -15.81 4.907 -15.81 8.669 c 0 5.412 13.263 9.8 29.625 9.8 c 16.361 0 29.625 -4.388 29.625 -9.8 C 74.625 76.439 68.215 73.174 58.814 71.531 z"
+                                            style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(0,0,0); fill-rule: nonzero; opacity: 1;"
+                                            transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round"/>
+                                    </g>
+                            </svg>
+                                <span class="capitalize  font-medium truncate">{{$event->location}}</span>
                             </div>
-                            <div
-                                class="self-stretch grow shrink basis-0 pr-[151.93px] justify-start items-center inline-flex">
-                                <div
-                                    class="w-[162.60px] h-5 text-zinc-500 text-[13px] font-normal font-['Roboto'] leading-tight">
-                                    Shoreline Amphitheatre - CA
-                                </div>
+                            <div>
+                                <span
+                                    class="capitalize text-md font-medium truncate">{{ \Carbon\Carbon::parse($event->date)->translatedFormat('j F Y') }} at </span>
+                                <span
+                                    class="capitalize text-md font-medium truncate">{{ \Carbon\Carbon::parse($event->time)->format('h:i A') }}</span>
                             </div>
-                        </div>
-                        <div class="self-stretch h-5 justify-start items-center inline-flex">
-                            <div class="w-[310px] flex justify-between">
-                                <div
-                                    class="w-[104.84px] self-stretch pr-[1.34px] justify-center items-center inline-flex">
-                                    <div
-                                        class="w-[103.50px] h-5 text-gray-600 text-[13px] font-semibold font-['Roboto'] uppercase leading-tight">
-                                        Multiple Dates
-                                    </div>
-                                </div>
-                                <div class="">
-                                    220 DH
-                                </div>
-                            </div>
+
                         </div>
                     </div>
-                </div>
-                <div
-                    class="w-[354.53px] bg-white rounded-md shadow">
-                    <div
-                        class="w-full h-[177px] relative bg-neutral-100 border-b border-neutral-200 flex-col justify-start items-start flex">
-                        <img class="w-full h-44 relative" src="https://via.placeholder.com/355x176"/>
-                    </div>
-                    <div class="self-stretch h-[150px] p-5 flex-col justify-center items-start gap-10 inline-flex">
-                        <div
-                            class="self-stretch grow shrink basis-0 flex-col justify-center items-start gap-2.5 inline-flex">
-                            <div
-                                class="self-stretch grow shrink basis-0 pr-[20.59px] justify-start items-center inline-flex">
-                                <div
-                                    class="w-[293.94px] h-5 text-zinc-700 text-base font-semibold font-['Roboto'] leading-tight">
-                                    Third Eye Blind and Yellowcard (Concert)
-                                </div>
-                            </div>
-                            <div
-                                class="self-stretch grow shrink basis-0 pr-[151.93px] justify-start items-center inline-flex">
-                                <div
-                                    class="w-[162.60px] h-5 text-zinc-500 text-[13px] font-normal font-['Roboto'] leading-tight">
-                                    Shoreline Amphitheatre - CA
-                                </div>
-                            </div>
-                        </div>
-                        <div class="self-stretch h-5 justify-start items-center inline-flex">
-                            <div class="w-[310px] flex justify-between">
-                                <div
-                                    class="w-[104.84px] self-stretch pr-[1.34px] justify-center items-center inline-flex">
-                                    <div
-                                        class="w-[103.50px] h-5 text-gray-600 text-[13px] font-semibold font-['Roboto'] uppercase leading-tight">
-                                        Multiple Dates
-                                    </div>
-                                </div>
-                                <div class="">
-                                    220 DH
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div
-                    class="w-[354.53px] bg-white rounded-md shadow">
-                    <div
-                        class="w-full h-[177px] relative bg-neutral-100 border-b border-neutral-200 flex-col justify-start items-start flex">
-                        <img class="w-full h-44 relative" src="https://via.placeholder.com/355x176"/>
-                    </div>
-                    <div class="self-stretch h-[150px] p-5 flex-col justify-center items-start gap-10 inline-flex">
-                        <div
-                            class="self-stretch grow shrink basis-0 flex-col justify-center items-start gap-2.5 inline-flex">
-                            <div
-                                class="self-stretch grow shrink basis-0 pr-[20.59px] justify-start items-center inline-flex">
-                                <div
-                                    class="w-[293.94px] h-5 text-zinc-700 text-base font-semibold font-['Roboto'] leading-tight">
-                                    Third Eye Blind and Yellowcard (Concert)
-                                </div>
-                            </div>
-                            <div
-                                class="self-stretch grow shrink basis-0 pr-[151.93px] justify-start items-center inline-flex">
-                                <div
-                                    class="w-[162.60px] h-5 text-zinc-500 text-[13px] font-normal font-['Roboto'] leading-tight">
-                                    Shoreline Amphitheatre - CA
-                                </div>
-                            </div>
-                        </div>
-                        <div class="self-stretch h-5 justify-start items-center inline-flex">
-                            <div class="w-[310px] flex justify-between">
-                                <div
-                                    class="w-[104.84px] self-stretch pr-[1.34px] justify-center items-center inline-flex">
-                                    <div
-                                        class="w-[103.50px] h-5 text-gray-600 text-[13px] font-semibold font-['Roboto'] uppercase leading-tight">
-                                        Multiple Dates
-                                    </div>
-                                </div>
-                                <div class="">
-                                    220 DH
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div
-                    class="w-[354.53px] bg-white rounded-md shadow">
-                    <div
-                        class="w-full h-[177px] relative bg-neutral-100 border-b border-neutral-200 flex-col justify-start items-start flex">
-                        <img class="w-full h-44 relative" src="https://via.placeholder.com/355x176"/>
-                    </div>
-                    <div class="self-stretch h-[150px] p-5 flex-col justify-center items-start gap-10 inline-flex">
-                        <div
-                            class="self-stretch grow shrink basis-0 flex-col justify-center items-start gap-2.5 inline-flex">
-                            <div
-                                class="self-stretch grow shrink basis-0 pr-[20.59px] justify-start items-center inline-flex">
-                                <div
-                                    class="w-[293.94px] h-5 text-zinc-700 text-base font-semibold font-['Roboto'] leading-tight">
-                                    Third Eye Blind and Yellowcard (Concert)
-                                </div>
-                            </div>
-                            <div
-                                class="self-stretch grow shrink basis-0 pr-[151.93px] justify-start items-center inline-flex">
-                                <div
-                                    class="w-[162.60px] h-5 text-zinc-500 text-[13px] font-normal font-['Roboto'] leading-tight">
-                                    Shoreline Amphitheatre - CA
-                                </div>
-                            </div>
-                        </div>
-                        <div class="self-stretch h-5 justify-start items-center inline-flex">
-                            <div class="w-[310px] flex justify-between">
-                                <div
-                                    class="w-[104.84px] self-stretch pr-[1.34px] justify-center items-center inline-flex">
-                                    <div
-                                        class="w-[103.50px] h-5 text-gray-600 text-[13px] font-semibold font-['Roboto'] uppercase leading-tight">
-                                        Multiple Dates
-                                    </div>
-                                </div>
-                                <div class="">
-                                    220 DH
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div
-                    class="w-[354.53px] bg-white rounded-md shadow">
-                    <div
-                        class="w-full h-[177px] relative bg-neutral-100 border-b border-neutral-200 flex-col justify-start items-start flex">
-                        <img class="w-full h-44 relative" src="https://via.placeholder.com/355x176"/>
-                    </div>
-                    <div class="self-stretch h-[150px] p-5 flex-col justify-center items-start gap-10 inline-flex">
-                        <div
-                            class="self-stretch grow shrink basis-0 flex-col justify-center items-start gap-2.5 inline-flex">
-                            <div
-                                class="self-stretch grow shrink basis-0 pr-[20.59px] justify-start items-center inline-flex">
-                                <div
-                                    class="w-[293.94px] h-5 text-zinc-700 text-base font-semibold font-['Roboto'] leading-tight">
-                                    Third Eye Blind and Yellowcard (Concert)
-                                </div>
-                            </div>
-                            <div
-                                class="self-stretch grow shrink basis-0 pr-[151.93px] justify-start items-center inline-flex">
-                                <div
-                                    class="w-[162.60px] h-5 text-zinc-500 text-[13px] font-normal font-['Roboto'] leading-tight">
-                                    Shoreline Amphitheatre - CA
-                                </div>
-                            </div>
-                        </div>
-                        <div class="self-stretch h-5 justify-start items-center inline-flex">
-                            <div class="w-[310px] flex justify-between">
-                                <div
-                                    class="w-[104.84px] self-stretch pr-[1.34px] justify-center items-center inline-flex">
-                                    <div
-                                        class="w-[103.50px] h-5 text-gray-600 text-[13px] font-semibold font-['Roboto'] uppercase leading-tight">
-                                        Multiple Dates
-                                    </div>
-                                </div>
-                                <div class="">
-                                    220 DH
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </section>
@@ -1097,7 +909,7 @@
                 <div>
                     <button>
                         <a href="/sign-in"
-                            class="w-56 text-gray-900 bg-white hover:bg-gray-100 border border-gray-200 focus:ring-4 focus:outline-none focus:ring-gray-100 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-gray-600 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:hover:bg-gray-700 me-2 mb-2">
+                           class="w-56 text-gray-900 bg-white hover:bg-gray-100 border border-gray-200 focus:ring-4 focus:outline-none focus:ring-gray-100 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-gray-600 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:hover:bg-gray-700 me-2 mb-2">
                         <span class="[&>svg]:h-5 [&>svg]:w-5 me-2 -ms-1">
                           <svg class=" rounded-md" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 96" id="email"><g
                                   data-name="Layer 2"><path
