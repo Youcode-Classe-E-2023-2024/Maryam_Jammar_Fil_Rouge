@@ -7,11 +7,11 @@
 
 <main>
     <section class="bg-white dark:bg-gray-900">
-        <div class="absolute h-3/5 inset-0 bg-black opacity-35"></div>
-        <div class="h-3/5 inset-0 bg-cover bg-center"
-             style="background-image: url('https://www.gohawaii.jp/sites/default/files/hero-unit-images/MH_01065-Annual%20Events%20and%20Festivals.jpg')">
+        {{--        <div class="absolute h-3/5 inset-0 bg-black opacity-35"></div>--}}
+        <div class="h-3/5 inset-0 bg-cover bg-center">
+
             <nav x-data="{ isOpen: false }"
-                 class="container h-16 bg-black bg-opacity-25 fixed top-0 z-10 p-6 lg:flex lg:items-center lg:justify-around">
+                 class="container h-16 bg-black bg-opacity-15 fixed top-0 z-10 p-6 lg:flex lg:items-center lg:justify-around">
                 <div class="flex items-center justify-between">
                     <div>
                         <a class="text-2xl font-bold text-white hover:text-gray-700 dark:text-white dark:hover:text-gray-300 lg:text-3xl"
@@ -103,8 +103,59 @@
                 </div>
             </nav>
 
+            <div id="default-carousel" class="bg-white dark:bg-gray-900 absolute top-0 left-0 right-0 bottom-0 z-0"
+                 data-carousel="slide">
+                <!-- Carousel wrapper -->
+                <div class="relative h-56 overflow-hidden  md:h-96">
+                    <!-- Item 1 -->
+                    <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                        <img
+                            src="https://images.pexels.com/photos/787961/pexels-photo-787961.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                            class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                    </div>
+                    <!-- Item 2 -->
+                    <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                        <img
+                            src="https://images.pexels.com/photos/2563495/pexels-photo-2563495.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                            class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                    </div>
+                    <!-- Item 3 -->
+                    <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                        <img
+                            src="https://images.pexels.com/photos/2893330/pexels-photo-2893330.jpeg?auto=compress&cs=tinysrgb&w=600"
+                            class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                    </div>
+                    <!-- Item 4 -->
+                    <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                        <img
+                            src="https://images.pexels.com/photos/1387174/pexels-photo-1387174.jpeg?auto=compress&cs=tinysrgb&w=600"
+                            class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                    </div>
+                    <!-- Item 5 -->
+                    <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                        <img
+                            src="https://images.pexels.com/photos/1306791/pexels-photo-1306791.jpeg?auto=compress&cs=tinysrgb&w=600"
+                            class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                    </div>
+                </div>
+                <!-- Slider indicators -->
+                <div class="absolute z-30 flex -translate-x-1/2 bottom-5 left-1/2 space-x-3 rtl:space-x-reverse">
+                    <button type="button" class="w-3 h-3 rounded-full" aria-current="true" aria-label="Slide 1"
+                            data-carousel-slide-to="0"></button>
+                    <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 2"
+                            data-carousel-slide-to="1"></button>
+                    <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 3"
+                            data-carousel-slide-to="2"></button>
+                    <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 4"
+                            data-carousel-slide-to="3"></button>
+                    <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 5"
+                            data-carousel-slide-to="4"></button>
+                </div>
+                <!-- Slider controls -->
+            </div>
+
             <!-- component -->
-            <div class="flex h-full w-full items-center justify-center container mx-auto px-8">
+            <div class="flex h-full w-full items-center justify-center container mx-auto px-8 relative z-10">
                 <div class="max-w-2xl text-center">
                     <h1 class="text-3xl sm:text-5xl capitalize tracking-widest text-white lg:text-7xl flex justify-between">
                         <p class="">Comming</p> Soon
