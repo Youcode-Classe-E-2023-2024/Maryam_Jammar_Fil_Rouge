@@ -103,7 +103,7 @@
                 </div>
             </nav>
 
-            <div id="default-carousel" class="bg-white dark:bg-gray-900 absolute top-0 left-0 right-0 bottom-0 z-0"
+            <div id="default-carousel" class="h-3/5 bg-white dark:bg-gray-900 absolute top-0 left-0 right-0 bottom-0 z-0"
                  data-carousel="slide">
                 <!-- Carousel wrapper -->
                 <div class="relative h-56 overflow-hidden  md:h-96">
