@@ -15,7 +15,7 @@
                 <div class="flex items-center justify-between">
                     <div>
                         <a class="text-2xl font-bold text-white hover:text-gray-700 dark:text-white dark:hover:text-gray-300 lg:text-3xl"
-                           href="#">MyKech</a>
+                           href="#">Tchikita</a>
                     </div>
 
                     <!-- Mobile menu button -->
@@ -41,13 +41,35 @@
                 <div x-cloak :class="[isOpen ? 'translate-x-0 opacity-100 ' : 'opacity-0 -translate-x-full']"
                      class="absolute inset-x-0 z-20 w-full bg-white px-6 py-4 shadow-md transition-all duration-300 ease-in-out dark:bg-gray-900 lg:relative lg:top-0 lg:mt-0 lg:flex lg:w-auto lg:translate-x-0 lg:items-center lg:bg-transparent lg:p-0 lg:opacity-100 lg:shadow-none lg:dark:bg-transparent">
                     <div class="lg:-px-8 flex flex-col space-y-4 lg:mt-0 lg:flex-row lg:space-y-0">
-                        <button data-modal-target="default-modal-register" data-modal-toggle="default-modal-register"
-                                class="transform text-gray-300 transition-colors duration-300 hover:text-blue-500 dark:text-gray-200 dark:hover:text-blue-400 lg:mx-8"
-                                type="button">
-                            Create Event
-                        </button>
+                        <div class="flex justify-around items-center">
+{{--                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"--}}
+{{--                                 version="1.1" width="12" height="12" viewBox="0 0 256 256" xml:space="preserve">--}}
+
+{{--                                <defs>--}}
+{{--                                </defs>--}}
+{{--                                <g style="stroke: none; stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: none; fill-rule: nonzero; opacity: 1;"--}}
+{{--                                   transform="translate(1.4065934065934016 1.4065934065934016) scale(2.81 2.81)">--}}
+{{--                                    <path--}}
+{{--                                        d="M 45 90 c -4.418 0 -8 -3.582 -8 -8 V 8 c 0 -4.418 3.582 -8 8 -8 c 4.418 0 8 3.582 8 8 v 74 C 53 86.418 49.418 90 45 90 z"--}}
+{{--                                        style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(0,0,0); fill-rule: nonzero; opacity: 1;"--}}
+{{--                                        transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round"/>--}}
+{{--                                    <path--}}
+{{--                                        d="M 82 53 H 8 c -4.418 0 -8 -3.582 -8 -8 c 0 -4.418 3.582 -8 8 -8 h 74 c 4.418 0 8 3.582 8 8 C 90 49.418 86.418 53 82 53 z"--}}
+{{--                                        style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(0,0,0); fill-rule: nonzero; opacity: 1;"--}}
+{{--                                        transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round"/>--}}
+{{--                                </g>--}}
+{{--                            </svg>--}}
+
+                            <button data-modal-target="default-modal-register"
+                                    data-modal-toggle="default-modal-register"
+
+                                    class="transform text-gray-300 transition-colors duration-300 hover:text-gray-500 dark:text-gray-200 dark:hover:text-gray-400 lg:mx-8"
+                                    type="button">
+                                Create Event
+                            </button>
+                        </div>
                         <button data-modal-target="default-modal" data-modal-toggle="default-modal"
-                                class="transform text-gray-300 transition-colors duration-300 hover:text-blue-500 dark:text-gray-200 dark:hover:text-blue-400 lg:mx-8"
+                                class="transform text-gray-300 transition-colors duration-300 hover:text-gray-500 dark:text-gray-200 dark:hover:text-gray-400 lg:mx-8"
                                 type="button">
                             Sign in
                         </button>
@@ -78,7 +100,7 @@
 
                             <input
                                 type="text"
-                                class="w-full bg-[#0d1829] flex bg-transparent pl-2 text-[#cccccc] outline-0 border-none"
+                                class="w-full bg-[#0d1829] flex bg-transparent pl-2 text-[#cccccc] outline-0 border-none focus:rounded-full focus:border-"none
                                 placeholder="Search name movie or select options"
                             />
                             <button type="submit" class="relative bg-[#0d1829] rounded-full">
@@ -156,7 +178,7 @@
             </div>
 
             <!-- component -->
-            <div class="flex h-full w-full items-center justify-center container mx-auto px-8 relative z-10">
+            <div class="flex h-full w-full items-center justify-center container mx-auto px-8 relative">
                 <div class="max-w-2xl text-center">
                     <h1 class="text-3xl sm:text-5xl capitalize tracking-widest text-white lg:text-7xl flex justify-between">
                         <p class="">Comming</p> Soon
@@ -188,7 +210,7 @@
                                     </svg>
                                 </div>
                                 <input type="text" id="voice-search"
-                                       class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                       class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-black focus:border-black block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-black dark:focus:border-black"
                                        placeholder="Search Mockups, Logos, Design Templates..." required>
                                 <button type="button" class="flex absolute inset-y-0 right-0 items-center pr-3">
                                     <svg
@@ -201,7 +223,7 @@
                                 </button>
                             </div>
                             <button type="submit"
-                                    class="inline-flex items-center py-2.5 px-3 ml-2 text-sm font-medium text-white bg-blue-700 rounded-lg border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                                    class="inline-flex items-center py-2.5 px-3 ml-2 text-sm font-medium text-white bg-black rounded-lg border border-black hover:bg-gray-800 focus:ring-4 focus:outline-none focus:ring-black dark:bg-black dark:hover:bg-black dark:focus:ring-black">
                                 <svg class="mr-2 -ml-1 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"
                                      xmlns="http://www.w3.org/2000/svg">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -902,10 +924,10 @@
         var navbar = document.querySelector('.container');
         if (window.scrollY > 0) {
             navbar.classList.add('bg-black');
-            navbar.classList.remove('bg-opacity-25');
+            navbar.classList.remove('bg-opacity-15');
         } else {
             navbar.classList.remove('bg-black');
-            navbar.classList.add('bg-black', 'bg-opacity-25');
+            navbar.classList.add('bg-black', 'bg-opacity-15');
         }
     });
 </script>
