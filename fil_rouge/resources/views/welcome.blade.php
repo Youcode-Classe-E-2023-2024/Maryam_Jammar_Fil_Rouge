@@ -15,7 +15,7 @@
                 <div class="flex items-center justify-between">
                     <div>
                         <a class="text-2xl font-bold text-white hover:text-gray-700 dark:text-white dark:hover:text-gray-300 lg:text-3xl"
-                           href="#">Brand</a>
+                           href="#">MyKech</a>
                     </div>
 
                     <!-- Mobile menu button -->
@@ -81,8 +81,8 @@
                                 class="w-full bg-[#0d1829] flex bg-transparent pl-2 text-[#cccccc] outline-0 border-none"
                                 placeholder="Search name movie or select options"
                             />
-                            <button type="submit" class="relative p-2 bg-[#0d1829] rounded-full">
-                                <svg width="30px" height="30px" viewBox="0 0 24 24" fill="none"
+                            <button type="submit" class="relative bg-[#0d1829] rounded-full">
+                                <svg width="25px" height="30px" viewBox="0 0 24 24" fill="none"
                                      xmlns="http://www.w3.org/2000/svg">
 
                                     <g id="SVGRepo_bgCarrier" stroke-width="0"/>
@@ -103,7 +103,8 @@
                 </div>
             </nav>
 
-            <div id="default-carousel" class="h-3/5 bg-white dark:bg-gray-900 absolute top-0 left-0 right-0 bottom-0 z-0"
+            <div id="default-carousel"
+                 class="h-3/5 bg-white dark:bg-gray-900 absolute top-0 left-0 right-0 bottom-0 z-0"
                  data-carousel="slide">
                 <!-- Carousel wrapper -->
                 <div class="relative h-56 overflow-hidden  md:h-96">
@@ -531,58 +532,69 @@
         </div>
     </section>
 
-    <div class="bg-white dark:bg-gray-900">
-        <div class="container mx-auto px-6 py-8">
-            <h1 class="text-center text-3xl font-semibold capitalize text-gray-800 dark:text-white lg:text-4xl">Pricing
-                Plan</h1>
+    <section class="bg-gray-100 dark:bg-gray-900">
+        <div class="container px-36 py-10">
+            <div class="">
+                <h1 class=" text-2xl capitalize  font-bold leading-9 dark:text-white lg:text-2xl">
+                    Past events
+                </h1>
+            </div>
+            <div class=" grid grid-cols-1 gap-8 md:mt-4 md:grid-cols-2 xl:grid-cols-3">
+                @foreach($events as $event)
+                    <div class="flex flex-col rounded-xl overflow-hidden aspect-square border dark:border-zinc-600">
+                        <img src="{{$event->image}}"
+                             class=" h-4/5 object-cover w-full  " alt="">
+                        <div
+                            class="w-full h-1/5 bg-white dark:bg-zinc-800 dark:text-white px-3 flex items-center justify-between border-t-2 border-t-red-600">
+                            <span class="capitalize  font-medium truncate">{{$event->title}}</span>
+                            <div class="flex space-x-2 items-center text-xs">
+                                <svg class="w-12 h-6" xmlns="http://www.w3.org/2000/svg" width="64" height="32"
+                                     viewBox="0 0 64 32" version="1.1">
+                                    <g fill="#F5C518">
+                                        <rect x="0" y="0" width="100%" height="100%" rx="4"></rect>
+                                    </g>
+                                    <text class="text-bold text-black font-bold text-xs" x="32" y="21" fill="#000000"
+                                          font-family="Arial" font-size="10px" text-anchor="middle">Buy Now!
+                                    </text>
+                                </svg>
 
-            <p class="mx-auto mt-4 max-w-2xl text-center text-gray-500 dark:text-gray-300 xl:mt-6">Lorem ipsum, dolor
-                sit amet consectetur adipisicing elit. Alias quas magni libero consequuntur voluptatum velit amet id
-                repudiandae ea, deleniti laborum in neque eveniet.</p>
+                                <span class="text-md font-bold">{{$event->price}} DH</span>
+                            </div>
+                        </div>
+                        <div
+                            class="w-full h-1/5 bg-white dark:bg-zinc-800 dark:text-white px-3 flex items-center justify-between">
+                            <div class="flex justify-between items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                     version="1.1" width="25" height="25" viewBox="0 0 256 256" xml:space="preserve">
+                                <defs>
+                                </defs>
+                                    <g style="stroke: none; stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: none; fill-rule: nonzero; opacity: 1;"
+                                       transform="translate(1.4065934065934016 1.4065934065934016) scale(2.81 2.81)">
+                                        <path
+                                            d="M 45 1.802 c 16.583 0 30.075 13.491 30.075 30.075 c 0 7.102 -2.538 14.004 -7.145 19.434 L 45 78.317 L 22.07 51.311 c -4.608 -5.43 -7.145 -12.332 -7.145 -19.434 C 14.925 15.294 28.417 1.802 45 1.802 M 45 45.692 c 8.222 0 14.912 -6.689 14.912 -14.912 c 0 -8.222 -6.689 -14.912 -14.912 -14.912 S 30.088 22.557 30.088 30.78 C 30.088 39.002 36.778 45.692 45 45.692 M 45 0 C 27.395 0 13.123 14.272 13.123 31.877 c 0 7.86 2.858 15.043 7.573 20.6 L 45 81.101 l 24.304 -28.624 c 4.716 -5.558 7.573 -12.741 7.573 -20.6 C 76.877 14.272 62.605 0 45 0 L 45 0 z M 45 43.889 c -7.24 0 -13.11 -5.869 -13.11 -13.11 c 0 -7.24 5.869 -13.11 13.11 -13.11 s 13.11 5.869 13.11 13.11 C 58.11 38.02 52.24 43.889 45 43.889 L 45 43.889 z"
+                                            style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(0,0,0); fill-rule: nonzero; opacity: 1;"
+                                            transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round"/>
+                                        <path
+                                            d="M 58.814 71.531 l -1.575 1.575 c 9.772 1.532 15.583 4.707 15.583 7.094 c 0 3.261 -10.838 7.997 -27.822 7.997 S 17.178 83.461 17.178 80.2 c 0 -2.387 5.811 -5.562 15.583 -7.094 l -1.575 -1.575 c -9.401 1.643 -15.81 4.907 -15.81 8.669 c 0 5.412 13.263 9.8 29.625 9.8 c 16.361 0 29.625 -4.388 29.625 -9.8 C 74.625 76.439 68.215 73.174 58.814 71.531 z"
+                                            style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(0,0,0); fill-rule: nonzero; opacity: 1;"
+                                            transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round"/>
+                                    </g>
+                            </svg>
+                                <span class="capitalize  font-medium truncate">{{$event->location}}</span>
+                            </div>
+                            <div>
+                                <span
+                                    class="capitalize text-md font-medium truncate">{{ \Carbon\Carbon::parse($event->date)->translatedFormat('j F Y') }} at </span>
+                                <span
+                                    class="capitalize text-md font-medium truncate">{{ \Carbon\Carbon::parse($event->time)->format('h:i A') }}</span>
+                            </div>
 
-            <div class="mt-6 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3 xl:mt-12 xl:gap-12">
-                <div class="w-full space-y-8 rounded-lg border border-gray-100 p-8 text-center dark:border-gray-700">
-                    <p class="font-medium uppercase text-gray-500 dark:text-gray-300">Free</p>
-
-                    <h2 class="text-5xl font-bold uppercase text-gray-800 dark:text-gray-100">$0</h2>
-
-                    <p class="font-medium text-gray-500 dark:text-gray-300">Life time</p>
-
-                    <button
-                        class="mt-10 w-full transform rounded-md bg-blue-600 px-4 py-2 capitalize tracking-wide text-white transition-colors duration-300 hover:bg-blue-500 focus:bg-blue-500 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-80">
-                        Start Now
-                    </button>
-                </div>
-
-                <div class="w-full space-y-8 rounded-lg bg-blue-600 p-8 text-center">
-                    <img src="" alt="">
-                    <p class="font-medium uppercase text-gray-200">Premium</p>
-
-                    <h2 class="text-5xl font-bold uppercase text-white dark:text-gray-100">$40</h2>
-
-                    <p class="font-medium text-gray-200">Per month</p>
-
-                    <button
-                        class="mt-10 w-full transform rounded-md bg-white px-4 py-2 capitalize tracking-wide text-blue-500 transition-colors duration-300 hover:bg-gray-100 focus:bg-gray-100 focus:outline-none focus:ring focus:ring-gray-200 focus:ring-opacity-80">
-                        Start Now
-                    </button>
-                </div>
-
-                <div class="w-full space-y-8 rounded-lg border border-gray-100 p-8 text-center dark:border-gray-700">
-                    <p class="font-medium uppercase text-gray-500 dark:text-gray-300">Enterprise</p>
-
-                    <h2 class="text-5xl font-bold uppercase text-gray-800 dark:text-gray-100">$100</h2>
-
-                    <p class="font-medium text-gray-500 dark:text-gray-300">Life time</p>
-
-                    <button
-                        class="mt-10 w-full transform rounded-md bg-blue-600 px-4 py-2 capitalize tracking-wide text-white transition-colors duration-300 hover:bg-blue-500 focus:bg-blue-500 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-80">
-                        Start Now
-                    </button>
-                </div>
+                        </div>
+                    </div>
+                @endforeach
             </div>
         </div>
-    </div>
+    </section>
 
     <section class="bg-white dark:bg-gray-900">
         <div class="container mx-auto max-w-4xl px-6 py-10">
