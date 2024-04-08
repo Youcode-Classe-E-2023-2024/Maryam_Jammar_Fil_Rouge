@@ -111,31 +111,31 @@
                     <!-- Item 1 -->
                     <div class="hidden duration-700 ease-in-out" data-carousel-item>
                         <img
-                            src="https://images.pexels.com/photos/787961/pexels-photo-787961.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                            src="https://i.pinimg.com/564x/16/49/b8/1649b845c47695dc2041946d41859e87.jpg"
                             class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
                     </div>
                     <!-- Item 2 -->
                     <div class="hidden duration-700 ease-in-out" data-carousel-item>
                         <img
-                            src="https://images.pexels.com/photos/2563495/pexels-photo-2563495.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                            src="https://i.pinimg.com/564x/16/49/b8/1649b845c47695dc2041946d41859e87.jpg"
                             class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
                     </div>
                     <!-- Item 3 -->
                     <div class="hidden duration-700 ease-in-out" data-carousel-item>
                         <img
-                            src="https://images.pexels.com/photos/2893330/pexels-photo-2893330.jpeg?auto=compress&cs=tinysrgb&w=600"
+                            src="https://i.pinimg.com/564x/16/49/b8/1649b845c47695dc2041946d41859e87.jpg"
                             class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
                     </div>
                     <!-- Item 4 -->
                     <div class="hidden duration-700 ease-in-out" data-carousel-item>
                         <img
-                            src="https://images.pexels.com/photos/1387174/pexels-photo-1387174.jpeg?auto=compress&cs=tinysrgb&w=600"
+                            src="https://i.pinimg.com/564x/16/49/b8/1649b845c47695dc2041946d41859e87.jpg"
                             class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
                     </div>
                     <!-- Item 5 -->
                     <div class="hidden duration-700 ease-in-out" data-carousel-item>
                         <img
-                            src="https://images.pexels.com/photos/1306791/pexels-photo-1306791.jpeg?auto=compress&cs=tinysrgb&w=600"
+                            src="https://i.pinimg.com/564x/16/49/b8/1649b845c47695dc2041946d41859e87.jpg"
                             class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
                     </div>
                 </div>
