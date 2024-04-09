@@ -109,6 +109,16 @@ class EventController extends Controller
         //
     }
 
+    //show-event-description
+    public function ShowEventDescription($id)
+    {
+//        $event = Event::with('category')->find($id);
+        $event = Event::find($id);
+        $userRole = "organizer";
+
+        return view('description', compact('event', 'userRole'));
+    }
+
     /**
      * Update the specified resource in storage.
      *
