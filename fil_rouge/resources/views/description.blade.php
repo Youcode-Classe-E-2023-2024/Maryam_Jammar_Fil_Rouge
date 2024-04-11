@@ -4,7 +4,114 @@
 
 <!-- component -->
 <script src="//unpkg.com/alpinejs" defer></script>
+{{--<style>--}}
+{{--    .btn {--}}
+{{--        font-size: 1rem;--}}
+{{--        padding: 0.9rem 3.5rem;--}}
+{{--        border: none;--}}
+{{--        outline: none;--}}
+{{--        border-radius: 0.4rem;--}}
+{{--        cursor: pointer;--}}
+{{--        text-transform: uppercase;--}}
+{{--        background-color: #32CD32;--}}
+{{--        color: rgb(234, 234, 234);--}}
+{{--        font-weight: 700;--}}
+{{--        transition: 0.6s;--}}
+{{--        box-shadow: 0px 0px 60px #1f4c65;--}}
+{{--        -webkit-box-reflect: below 10px linear-gradient(to bottom, rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.4));--}}
+{{--    }--}}
 
+{{--    .btn:active {--}}
+{{--        scale: 0.92;--}}
+{{--    }--}}
+
+{{--    .btn:hover {--}}
+{{--        background: rgb(2, 29, 78);--}}
+{{--        background: linear-gradient(270deg, #006400 0%, #008000 60%);--}}
+{{--        color: rgb(4, 4, 38);--}}
+{{--    }--}}
+{{--</style>--}}
+
+<style>
+    .card {
+        width: 200px;
+        height: 64px;
+        background: #32CD32;
+        border-radius: 20px;
+    ;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        transition: 0.2s ease-in-out;
+    }
+
+    .img {
+        /*height: 30%;*/
+        position: absolute;
+        transition: 0.2s ease-in-out;
+        z-index: 1;
+    }
+
+    .textBox {
+        opacity: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        transition: 0.2s ease-in-out;
+        z-index: 2;
+    }
+
+    .textBox > .text {
+        font-weight: bold;
+    }
+
+    .textBox > .head {
+        font-size: 20px;
+    }
+
+    .textBox > .price {
+        font-size: 17px;
+    }
+
+    .textBox > span {
+        font-size: 20px;
+        color: lightgrey;
+    }
+
+    .card:hover > .textBox {
+        opacity: 1;
+    }
+
+    .card:hover > .img {
+        height: 65%;
+        filter: blur(7px);
+        animation: anim 3s infinite;
+    }
+
+    @keyframes anim {
+        0% {
+            transform: translateY(0);
+        }
+
+        50% {
+            transform: translateY(-20px);
+        }
+
+        100% {
+            transform: translateY(0);
+        }
+    }
+
+    .card:hover {
+        transform: scale(1.04) rotate(-1deg);
+    }
+
+
+</style>
 <main>
     <section class="py-16 container mx-auto px-6 md:px-0 bg-white dark:bg-gray-900">
         <div class=""
@@ -134,7 +241,7 @@
                     <!-- Container for demo purpose -->
                     <div class="container my-24 mx-auto md:px-6">
                         <!-- Section: Design Block -->
-                        <section class="mb-32">
+                        <section class="mb-32 flex  flex-col ">
                             <div class="flex flex-wrap">
                                 <div class="mb-12 w-full shrink-0 grow-0 basis-auto lg:mb-0 lg:w-5/12">
                                     <div class="flex lg:py-12">
@@ -148,7 +255,7 @@
                                     <div
                                         class="flex h-full items-center rounded-lg bg-gray-200 shadow-2xl p-6 text-center text-white lg:pl-12 lg:text-left">
                                         <div class="text-black lg:pl-12">
-                                            <h2 class="mb-8 text-3xl font-bold">Let it surprise you</h2>
+                                            <h2 class="mb-8 text-3xl font-bold">{{$event->title}}</h2>
                                             <p class="mb-8 pb-2 lg:pb-0">
                                                 Lorem ipsum dolor, sit amet consectetur adipisicing elit.
                                                 Maxime, sint, repellat vel quo quisquam accusamus in qui at
@@ -159,53 +266,169 @@
                                             <div
                                                 class="mx-auto mb-8 flex flex-col md:flex-row md:justify-around xl:justify-start">
                                                 <p class="mx-auto mb-4 flex items-center md:mx-0 md:mb-2 lg:mb-0 xl:mr-20">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none"
-                                                         viewBox="0 0 24 24" stroke-width="2"
-                                                         stroke="currentColor" class="mr-2 h-5 w-5">
-                                                        <path stroke-linecap="round" stroke-linejoin="round"
-                                                              d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                                    <svg class="mr-2" id='Location_24' width='24' height='24'
+                                                         viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'
+                                                         xmlns:xlink='http://www.w3.org/1999/xlink'>
+                                                        <rect width='24' height='24' stroke='none' fill='#000000'
+                                                              opacity='0'/>
+
+
+                                                        <g transform="matrix(0.74 0 0 0.74 12 12)">
+                                                            <path
+                                                                style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(0,0,0); fill-rule: nonzero; opacity: 1;"
+                                                                transform=" translate(-16.5, -13.5)"
+                                                                d="M 24 0 C 20.686 0 18 2.686 18 6 C 18 10.792 23 12 23 14 C 23 14.549 23.448 15 24 15 C 24.552 15 25 14.549 25 14 C 25 12 30 10.792 30 6 C 30 2.686 27.314 0 24 0 z M 15 3 C 8.383 3 3 8.383 3 15 C 3 21.617 8.383 27 15 27 C 21.617 27 27 21.617 27 15 C 27 14.784 26.97975 14.574328 26.96875 14.361328 C 26.82175 15.569328 25.959406 16.547047 24.816406 16.873047 C 24.743406 17.256047 24.654063 17.634 24.539062 18 L 20.818359 18 C 20.932359 17.045 21 16.046 21 15 C 21 14.72 20.984609 14.451734 20.974609 14.177734 C 20.777609 13.942734 20.331281 13.556719 19.988281 13.261719 C 19.628281 12.951719 19.225359 12.599078 18.818359 12.205078 C 18.931359 13.087078 19 14.019 19 15 C 19 16.055 18.927828 17.061 18.798828 18 L 11.201172 18 C 11.073172 17.061 11 16.055 11 15 C 11 13.945 11.072172 12.939 11.201172 12 L 18.613281 12 C 18.060281 11.44 17.521313 10.778 17.070312 10 L 11.585938 10 C 12.344938 6.961 13.722 5 15 5 C 15.341 5 15.687297 5.1481563 16.029297 5.4101562 C 16.088297 4.6041562 16.267828 3.8333281 16.548828 3.1113281 C 16.040828 3.0463281 15.526 3 15 3 z M 24 4 C 25.105 4 26 4.895 26 6 C 26 7.105 25.105 8 24 8 C 22.895 8 22 7.105 22 6 C 22 4.895 22.895 4 24 4 z M 11.0625 5.8105469 C 10.3985 6.9385469 9.8677188 8.362 9.5117188 10 L 6.3535156 10 C 7.4305156 8.146 9.0785 6.6645469 11.0625 5.8105469 z M 5.4609375 12 L 9.1816406 12 C 9.0676406 12.955 9 13.954 9 15 C 9 16.046 9.0676406 17.045 9.1816406 18 L 5.4609375 18 C 5.1629375 17.052 5 16.045 5 15 C 5 13.955 5.1629375 12.948 5.4609375 12 z M 6.3535156 20 L 9.5117188 20 C 9.8677187 21.638 10.396547 23.061453 11.060547 24.189453 C 9.0775469 23.335453 7.4305156 21.854 6.3535156 20 z M 11.585938 20 L 18.414062 20 C 17.655062 23.039 16.278 25 15 25 C 13.722 25 12.344938 23.039 11.585938 20 z M 20.486328 20 L 23.646484 20 C 22.570484 21.854 20.9225 23.335453 18.9375 24.189453 C 19.6015 23.061453 20.130328 21.638 20.486328 20 z"
+                                                                stroke-linecap="round"/>
+                                                        </g>
                                                     </svg>
-                                                    Best team
+                                                    {{$event->location}}
                                                 </p>
 
                                                 <p class="mx-auto mb-4 flex items-center md:mx-0 md:mb-2 lg:mb-0 xl:mr-20">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none"
-                                                         viewBox="0 0 24 24" stroke-width="2"
-                                                         stroke="currentColor" class="mr-2 h-5 w-5">
-                                                        <path stroke-linecap="round" stroke-linejoin="round"
-                                                              d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                                    <svg class="mr-2" id='Calendar_3_24' width='24' height='24'
+                                                         viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'
+                                                         xmlns:xlink='http://www.w3.org/1999/xlink'>
+                                                        <rect width='24' height='24' stroke='none' fill='#000000'
+                                                              opacity='0'/>
+
+
+                                                        <g transform="matrix(0.83 0 0 0.83 12 12)">
+                                                            <g style="">
+                                                                <g transform="matrix(1 0 0 1 -5 -0.5)">
+                                                                    <path
+                                                                        style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(0,0,0); fill-rule: nonzero; opacity: 1;"
+                                                                        transform=" translate(-7, -11.5)"
+                                                                        d="M 7.5 10.5 L 6.5 10.5 C 5.947715250169207 10.5 5.5 10.947715250169207 5.5 11.5 C 5.5 12.052284749830793 5.947715250169207 12.5 6.5 12.5 L 7.5 12.5 C 8.052284749830793 12.5 8.5 12.052284749830793 8.5 11.5 C 8.5 10.947715250169207 8.052284749830793 10.5 7.5 10.5 Z"
+                                                                        stroke-linecap="round"/>
+                                                                </g>
+                                                                <g transform="matrix(1 0 0 1 0 -0.5)">
+                                                                    <path
+                                                                        style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(0,0,0); fill-rule: nonzero; opacity: 1;"
+                                                                        transform=" translate(-12, -11.5)"
+                                                                        d="M 12.5 10.5 L 11.5 10.5 C 10.947715250169207 10.5 10.5 10.947715250169207 10.5 11.5 C 10.5 12.052284749830793 10.947715250169207 12.5 11.5 12.5 L 12.5 12.5 C 13.052284749830793 12.5 13.5 12.052284749830793 13.5 11.5 C 13.5 10.947715250169207 13.052284749830793 10.5 12.5 10.5 Z"
+                                                                        stroke-linecap="round"/>
+                                                                </g>
+                                                                <g transform="matrix(1 0 0 1 5 -0.5)">
+                                                                    <path
+                                                                        style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(0,0,0); fill-rule: nonzero; opacity: 1;"
+                                                                        transform=" translate(-17, -11.5)"
+                                                                        d="M 17.5 10.5 L 16.5 10.5 C 15.947715250169207 10.5 15.5 10.947715250169207 15.5 11.5 C 15.5 12.052284749830793 15.947715250169207 12.5 16.5 12.5 L 17.5 12.5 C 18.052284749830793 12.5 18.5 12.052284749830793 18.5 11.5 C 18.5 10.947715250169207 18.052284749830793 10.5 17.5 10.5 Z"
+                                                                        stroke-linecap="round"/>
+                                                                </g>
+                                                                <g transform="matrix(1 0 0 1 -5 3.5)">
+                                                                    <path
+                                                                        style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(0,0,0); fill-rule: nonzero; opacity: 1;"
+                                                                        transform=" translate(-7, -15.5)"
+                                                                        d="M 7.5 14.5 L 6.5 14.5 C 5.947715250169207 14.5 5.5 14.947715250169207 5.5 15.5 C 5.5 16.052284749830793 5.947715250169207 16.5 6.5 16.5 L 7.5 16.5 C 8.052284749830793 16.5 8.5 16.052284749830793 8.5 15.5 C 8.5 14.947715250169207 8.052284749830793 14.5 7.5 14.5 Z"
+                                                                        stroke-linecap="round"/>
+                                                                </g>
+                                                                <g transform="matrix(1 0 0 1 0 3.5)">
+                                                                    <path
+                                                                        style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(0,0,0); fill-rule: nonzero; opacity: 1;"
+                                                                        transform=" translate(-12, -15.5)"
+                                                                        d="M 12.5 14.5 L 11.5 14.5 C 10.947715250169207 14.5 10.5 14.947715250169207 10.5 15.5 C 10.5 16.052284749830793 10.947715250169207 16.5 11.5 16.5 L 12.5 16.5 C 13.052284749830793 16.5 13.5 16.052284749830793 13.5 15.5 C 13.5 14.947715250169207 13.052284749830793 14.5 12.5 14.5 Z"
+                                                                        stroke-linecap="round"/>
+                                                                </g>
+                                                                <g transform="matrix(1 0 0 1 5 3.5)">
+                                                                    <path
+                                                                        style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(0,0,0); fill-rule: nonzero; opacity: 1;"
+                                                                        transform=" translate(-17, -15.5)"
+                                                                        d="M 17.5 14.5 L 16.5 14.5 C 15.947715250169207 14.5 15.5 14.947715250169207 15.5 15.5 C 15.5 16.052284749830793 15.947715250169207 16.5 16.5 16.5 L 17.5 16.5 C 18.052284749830793 16.5 18.5 16.052284749830793 18.5 15.5 C 18.5 14.947715250169207 18.052284749830793 14.5 17.5 14.5 Z"
+                                                                        stroke-linecap="round"/>
+                                                                </g>
+                                                                <g transform="matrix(1 0 0 1 -5 7.5)">
+                                                                    <path
+                                                                        style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(0,0,0); fill-rule: nonzero; opacity: 1;"
+                                                                        transform=" translate(-7, -19.5)"
+                                                                        d="M 7.5 18.5 L 6.5 18.5 C 5.947715250169207 18.5 5.5 18.947715250169207 5.5 19.5 C 5.5 20.052284749830793 5.947715250169207 20.5 6.5 20.5 L 7.5 20.5 C 8.052284749830793 20.5 8.5 20.052284749830793 8.5 19.5 C 8.5 18.947715250169207 8.052284749830793 18.5 7.5 18.5 Z"
+                                                                        stroke-linecap="round"/>
+                                                                </g>
+                                                                <g transform="matrix(1 0 0 1 0 7.5)">
+                                                                    <path
+                                                                        style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(0,0,0); fill-rule: nonzero; opacity: 1;"
+                                                                        transform=" translate(-12, -19.5)"
+                                                                        d="M 12.5 18.5 L 11.5 18.5 C 10.947715250169207 18.5 10.5 18.947715250169207 10.5 19.5 C 10.5 20.052284749830793 10.947715250169207 20.5 11.5 20.5 L 12.5 20.5 C 13.052284749830793 20.5 13.5 20.052284749830793 13.5 19.5 C 13.5 18.947715250169207 13.052284749830793 18.5 12.5 18.5 Z"
+                                                                        stroke-linecap="round"/>
+                                                                </g>
+                                                                <g transform="matrix(1 0 0 1 5 7.5)">
+                                                                    <path
+                                                                        style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(0,0,0); fill-rule: nonzero; opacity: 1;"
+                                                                        transform=" translate(-17, -19.5)"
+                                                                        d="M 17.5 18.5 L 16.5 18.5 C 15.947715250169207 18.5 15.5 18.947715250169207 15.5 19.5 C 15.5 20.052284749830793 15.947715250169207 20.5 16.5 20.5 L 17.5 20.5 C 18.052284749830793 20.5 18.5 20.052284749830793 18.5 19.5 C 18.5 18.947715250169207 18.052284749830793 18.5 17.5 18.5 Z"
+                                                                        stroke-linecap="round"/>
+                                                                </g>
+                                                                <g transform="matrix(1 0 0 1 0 0)">
+                                                                    <path
+                                                                        style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(0,0,0); fill-rule: nonzero; opacity: 1;"
+                                                                        transform=" translate(-12, -12)"
+                                                                        d="M 21.5 3 L 18.75 3 C 18.611928812542303 3 18.5 2.8880711874576983 18.5 2.75 L 18.5 1 C 18.5 0.44771525016920655 18.052284749830793 0 17.5 0 C 16.947715250169207 0 16.5 0.44771525016920644 16.5 0.9999999999999999 L 16.5 5.75 C 16.5 6.164213562373095 16.164213562373096 6.5 15.75 6.5 C 15.335786437626904 6.5 15 6.164213562373095 15 5.75 L 15 3.5 C 15 3.2238576250846034 14.776142374915397 3 14.5 3 L 8.25 3 C 8.1119288125423 3 8 2.8880711874576983 8 2.75 L 8 1 C 8 0.44771525016920655 7.552284749830793 0 7 0 C 6.447715250169207 0 6 0.44771525016920644 6 0.9999999999999999 L 6 5.75 C 6 6.164213562373095 5.664213562373095 6.5 5.25 6.5 C 4.835786437626905 6.5 4.5 6.164213562373095 4.5 5.75 L 4.5 3.5 C 4.5 3.2238576250846034 4.276142374915397 3 4 3 L 2.5 3 C 1.395430500338413 3 0.5 3.895430500338413 0.5 5 L 0.5 22 C 0.5 23.104569499661586 1.395430500338413 24 2.5 24 L 21.5 24 C 22.604569499661586 24 23.5 23.104569499661586 23.5 22 L 23.5 5 C 23.5 3.895430500338413 22.604569499661586 3 21.5 3 Z M 21.5 21.5 C 21.5 21.7761423749154 21.2761423749154 22 21 22 L 3 22 C 2.7238576250846034 22 2.5 21.7761423749154 2.5 21.5 L 2.5 9.5 C 2.5 9.223857625084603 2.7238576250846034 9 3 9 L 21 9 C 21.2761423749154 9 21.5 9.223857625084603 21.5 9.5 Z"
+                                                                        stroke-linecap="round"/>
+                                                                </g>
+                                                            </g>
+                                                        </g>
                                                     </svg>
-                                                    Best quality
+                                                    {{$event->date}}
                                                 </p>
 
                                                 <p class="mx-auto mb-2 flex items-center md:mx-0 lg:mb-0">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none"
-                                                         viewBox="0 0 24 24" stroke-width="2"
-                                                         stroke="currentColor" class="mr-2 h-5 w-5">
-                                                        <path stroke-linecap="round" stroke-linejoin="round"
-                                                              d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                                    <svg class="mr-2" id='Clock_Circle_1_24' width='24' height='24'
+                                                         viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'
+                                                         xmlns:xlink='http://www.w3.org/1999/xlink'>
+                                                        <rect width='24' height='24' stroke='none' fill='#000000'
+                                                              opacity='0'/>
+
+
+                                                        <g transform="matrix(0.83 0 0 0.83 12 12)">
+                                                            <g style="">
+                                                                <g transform="matrix(1 0 0 1 0 0)">
+                                                                    <circle
+                                                                        style="stroke: rgb(0,0,0); stroke-width: 2; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: round; stroke-miterlimit: 4; fill: none; fill-rule: nonzero; opacity: 1;"
+                                                                        cx="0" cy="0" r="11"/>
+                                                                </g>
+                                                                <g transform="matrix(1 0 0 1 2 -1)">
+                                                                    <path
+                                                                        style="stroke: rgb(0,0,0); stroke-width: 2; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: round; stroke-miterlimit: 4; fill: none; fill-rule: nonzero; opacity: 1;"
+                                                                        transform=" translate(-14, -11)"
+                                                                        d="M 12 5 L 12 12 L 16 17"
+                                                                        stroke-linecap="round"/>
+                                                                </g>
+                                                            </g>
+                                                        </g>
                                                     </svg>
-                                                    Best experience
+                                                    {{$event->time}}
                                                 </p>
                                             </div>
 
-                                            <p>
-                                                Duis sagittis, turpis in ullamcorper venenatis, ligula nibh
-                                                porta dui, sit amet rutrum enim massa in ante. Curabitur in
-                                                justo at lorem laoreet ultricies. Nunc ligula felis, sagittis
-                                                eget nisi vitae, sodales vestibulum purus. Vestibulum nibh
-                                                ipsum, rhoncus vel sagittis nec, placerat vel justo. Duis
-                                                faucibus sapien eget tortor finibus, a eleifend lectus dictum.
-                                                Cras tempor convallis magna id rhoncus. Suspendisse potenti.
-                                                Nam mattis faucibus imperdiet. Proin tempor lorem at neque
-                                                tempus aliquet. Phasellus at ex volutpat, varius arcu id,
-                                                aliquam lectus. Vestibulum mattis felis quis ex pharetra
-                                                luctus. Etiam luctus sagittis massa, sed iaculis est vehicula
-                                                ut.
-                                            </p>
+{{--                                            <button class="btn mt-8">--}}
+{{--                                                Buy Now !--}}
+{{--                                            </button>--}}
+                                            <div class="card">
+                                                <p class="img font-bold">Buy Now !</p>
+                                                <div class="textBox">
+{{--                                                    <p class="text head">Ethereum</p>--}}
+                                                    <span class="text-lg">Get the ticket</span>
+                                                    <p class="text price">245 DH</p>
+                                                </div>
+                                            </div>
+
                                         </div>
                                     </div>
                                 </div>
+                            </div>
+                            <div class="p-12">
+                                <h3 class="font-bold text-2xl">
+                                    Description
+                                </h3>
+                                <p class="text-justify">Lorem Ipsum is simply dummy text of the printing and typesetting
+                                    industry. Lorem Ipsum has been the industry's standard dummy text ever since the
+                                    1500s, when an unknown printer took a galley of type and scrambled it to make a type
+                                    specimen book. It has survived not only five centuries, but also the leap into
+                                    electronic typesetting, remaining essentially unchanged. It was popularised in the
+                                    1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more
+                                    recently with desktop publishing software like Aldus PageMaker including versions of
+                                    Lorem Ipsum.
+
+                                </p>
                             </div>
                         </section>
                         <!-- Section: Design Block -->
