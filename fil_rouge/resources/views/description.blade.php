@@ -253,7 +253,7 @@
 
                                 <div class="w-full shrink-0 grow-0 basis-auto lg:w-7/12">
                                     <div
-                                        class="flex h-full items-center rounded-lg bg-gray-200 shadow-2xl p-6 text-center text-white lg:pl-12 lg:text-left">
+                                        class="flex h-full items-center rounded-lg bg-[#F8F8FF] shadow-2xl p-6 text-center text-white lg:pl-12 lg:text-left">
                                         <div class="text-black lg:pl-12">
                                             <h2 class="mb-8 text-3xl font-bold">{{$event->title}}</h2>
                                             <p class="mb-8 pb-2 lg:pb-0">
@@ -410,6 +410,7 @@
                                                     <p class="text price">245 DH</p>
                                                 </div>
                                             </div>
+                                            
 
                                         </div>
                                     </div>
@@ -417,17 +418,9 @@
                             </div>
                             <div class="p-12">
                                 <h3 class="font-bold text-2xl">
-                                    Description
+                                    More Details
                                 </h3>
-                                <p class="text-justify">Lorem Ipsum is simply dummy text of the printing and typesetting
-                                    industry. Lorem Ipsum has been the industry's standard dummy text ever since the
-                                    1500s, when an unknown printer took a galley of type and scrambled it to make a type
-                                    specimen book. It has survived not only five centuries, but also the leap into
-                                    electronic typesetting, remaining essentially unchanged. It was popularised in the
-                                    1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more
-                                    recently with desktop publishing software like Aldus PageMaker including versions of
-                                    Lorem Ipsum.
-
+                                <p class="text-justify">{{$event->description}}
                                 </p>
                             </div>
                         </section>
