@@ -16,7 +16,8 @@ return new class extends Migration
         Schema::create('events', function (Blueprint $table) {
             $table->id();
             $table->string('title');
-            $table->string('location');
+            $table->string('country')->nullable();
+            $table->string('city')->nullable();
             $table->enum('event_type',['venue', 'online']);
             $table->date('date');
             $table->time('time');

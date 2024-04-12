@@ -40,7 +40,8 @@ class EventController extends Controller
 
         $request->validate([
             'title' => 'required',
-            'location' => 'required',
+            'country' => '',
+            'city' => '',
             'event_type' => 'required',
             'price' => 'required',
             'date' => 'required',
@@ -64,7 +65,8 @@ class EventController extends Controller
 
         $eventCreated = Event::create([
             'title' => $request->title,
-            'location' => $request->location,
+            'country' => $request->country,
+            'city' => $request->city,
             'event_type' => $request->event_type,
             'date' => $request->date,
             'time' => $request->time,
