@@ -273,37 +273,15 @@
             </h1>
 
             <div class="mt-8 grid grid-cols-1 gap-8 md:grid-cols-4 md:gap-12 xl:mt-12 xl:grid-cols-6 xl:gap-12">
-                <div class="h-40 w-40 rounded-full">
-                    <img class="h-40 w-40 rounded-full object-cover"
-                         src="https://static.seekingalpha.com/cdn/s3/uploads/getty_images/504008174/image_504008174.jpg?io=getty-c-crop-4-3"/>
-                    <h2 class="mt-4 capitalize text-center text-black text-base font-semibold font-open-sans leading-tight">
-                        Business</h2>
-                </div>
-                <div class="h-40 w-40 rounded-full">
-                    <img class="h-40 w-40 rounded-full object-cover"
-                         src="https://variety.com/wp-content/uploads/2022/07/Music-Streaming-Wars.jpg?w=1024"/>
-                    <h2 class="mt-4 capitalize text-center text-black text-base font-semibold font-open-sans leading-tight">
-                        Music</h2>
-                </div>
-                <div class="h-40 w-40 rounded-full">
-                    <img class="h-40 w-40 rounded-full object-cover"
-                         src="https://cdn2.allevents.in/transup/87/45d830226d44b7a6f4806e3e11ca90/Literary-Arts.webp"/>
-                    <h2 class="mt-4 capitalize text-center text-black text-base font-semibold font-open-sans leading-tight">
-                        Literary Arts</h2>
-                </div>
-                <div class="h-40 w-40 rounded-full">
-                    <img class="h-40 w-40 rounded-full object-cover"
-                         src="https://cdn2.allevents.in/transup/f7/16c775257d49ba88baacd4c832d94a/Workshops.webp"/>
-                    <h2 class="mt-4 capitalize text-center text-black text-base font-semibold font-open-sans leading-tight">
-                        Workshops</h2>
-                </div>
-                <div class="h-40 w-40 rounded-full">
-                    <img class="h-40 w-40 rounded-full object-cover"
-                         src="https://cdn2.allevents.in/transup/61/e9bec592c540879eefb33117507bf0/Sports.webp"/>
-                    <h2 class="mt-4 capitalize text-center text-black text-base font-semibold font-open-sans leading-tight">
-                        Sports</h2>
-                </div>
-                <div>
+                @foreach($categories as $category)
+                    <div class="h-40 w-40 rounded-full">
+                        <img class="h-40 w-40 rounded-full object-cover"
+                             src="{{$category->image}}"/>
+                        <h2 class="mt-4 capitalize text-center text-black text-base font-semibold font-open-sans leading-tight">
+                            {{$category->name}}</h2>
+                    </div>
+                @endforeach
+                <button data-modal-target="crypto-modal" data-modal-toggle="crypto-modal">
                     <div class="relative h-40 w-40 rounded-full">
                         <img class="h-40 w-40 rounded-full"
                              src="https://cdn2.allevents.in/transup/58/28516da6a2483f963cd0007b4d0567/Theatre.webp"
@@ -320,7 +298,7 @@
                         All
                         Categories
                     </div>
-                </div>
+                </button>
             </div>
         </div>
     </section>
@@ -1157,6 +1135,50 @@
                                                                                                 class="font-bold text-slate-700">Sign
                                 in</a></p>
                     </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{{--categories--}}
+<div id="crypto-modal" tabindex="-1" aria-hidden="true"
+     class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 max-h-full">
+    <div class="relative p-8 w-4/6 max-h-full">
+        <!-- Modal content -->
+        <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+            <!-- Modal header -->
+            <div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600">
+                <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
+                    All categories
+                </h3>
+                <button type="button"
+                        class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm h-8 w-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white"
+                        data-modal-toggle="crypto-modal">
+                    <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                         viewBox="0 0 14 14">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                              d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+                    </svg>
+                    <span class="sr-only">Close modal</span>
+                </button>
+            </div>
+            <!-- Modal body -->
+            <div class="p-4 md:p-5">
+                {{--                <p class="text-sm font-normal text-gray-500 dark:text-gray-400">Select any categories and show your--}}
+                {{--                    favorites events</p>--}}
+                <div class="h-90 overflow-y-auto">
+                    <div class="grid grid-cols-1 md:grid-cols-4 md:gap-12 xl:grid-cols-4 p-4">
+                        @foreach($allCategories as $category)
+                            <div class="h-40 w-40 rounded-full">
+                                <img class="h-40 w-40 rounded-full object-cover"
+                                     src="{{$category->image}}"/>
+                                <h2 class="mt-4 capitalize text-center text-black text-base font-semibold font-open-sans leading-tight">
+                                    {{$category->name}}</h2>
+                            </div>
+                        @endforeach
+                    </div>
                 </div>
             </div>
         </div>
