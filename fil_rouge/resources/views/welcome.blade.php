@@ -290,7 +290,8 @@
                             class="absolute inset-0 bg-gradient-to-r from-sky-400 to-fuchsia-500 opacity-40 rounded-full"></div>
                         <div
                             class="absolute inset-0 flex justify-center items-center text-white text-[32px] font-semibold font-open-sans leading-tight">
-                            11+
+                            {{ max(0, count($allCategories) - 5) }}+
+
                         </div>
                     </div>
                     <div
@@ -1169,9 +1170,9 @@
                 {{--                <p class="text-sm font-normal text-gray-500 dark:text-gray-400">Select any categories and show your--}}
                 {{--                    favorites events</p>--}}
                 <div class="h-90 overflow-y-auto">
-                    <div class="grid grid-cols-1 md:grid-cols-4 md:gap-12 xl:grid-cols-4 p-4">
+                    <div class="grid grid-cols-1 md:grid-cols-4 md:gap-12 xl:grid-cols-4 p-4 mx-auto">
                         @foreach($allCategories as $category)
-                            <div class="h-40 w-40 rounded-full">
+                            <div class="h-40 w-40 rounded-full mx-auto">
                                 <img class="h-40 w-40 rounded-full object-cover"
                                      src="{{$category->image}}"/>
                                 <h2 class="mt-4 capitalize text-center text-black text-base font-semibold font-open-sans leading-tight">
