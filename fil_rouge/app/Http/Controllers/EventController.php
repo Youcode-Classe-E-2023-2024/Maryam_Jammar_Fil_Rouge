@@ -21,7 +21,7 @@ class EventController extends Controller
      */
     public function showForm()
     {
-        $content = file_get_contents('https://raw.githubusercontent.com/alaouy/sql-moroccan-cities/master/json/ville.json');
+        $content = file_get_contents('https://gist.githubusercontent.com/rogargon/5534902/raw/434445021e155240ca78e378f10f70391dd594ea/countries.json');
         $data = json_decode($content);
 
         $categories = Category::all();

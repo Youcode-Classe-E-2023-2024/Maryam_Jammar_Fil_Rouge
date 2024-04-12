@@ -50,7 +50,7 @@
                     @csrf
                     {{--                            <input type="hidden" name="status">--}}
                     <div class="-mx-3 flex flex-wrap">
-                        <div class="w-full px-3 sm:w-1/3">
+                        <div class="w-full px-3 sm:w-1/2">
                             <div class="mb-5">
                                 <label for="title" class="mb-3 block text-base font-medium text-[#07074D]">
                                     Title
@@ -60,23 +60,7 @@
                                        required/>
                             </div>
                         </div>
-                        <div class="w-full px-3 sm:w-1/3">
-                            <div class="mb-5">
-                                <label for="location" class="mb-3 block text-base font-medium text-[#07074D]">
-                                    Location
-                                </label>
-                                <select name="location"
-                                        class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
-                                        required>
-                                    <option value="" selected>Choose a location</option>
-                                    @foreach($data as $item)
-                                        <option value="{{ $item->ville }}">{{ $item->ville }}</option>
-                                    @endforeach
-                                </select>
-
-                            </div>
-                        </div>
-                        <div class="w-full px-3 sm:w-1/3">
+                        <div class="w-full px-3 sm:w-1/2">
                             <div class="mb-5">
                                 <label for="nbr_place" class="mb-3 block text-base font-medium text-[#07074D]">
                                     Total de places
@@ -122,9 +106,9 @@
                     </div>
 
                     <div class="-mx-3 flex flex-wrap">
-{{--                        <input type="hidden" name="category" value="{{ request()->query('category') }}">--}}
+                        {{--                        <input type="hidden" name="category" value="{{ request()->query('category') }}">--}}
 
-                                                <div class="w-full px-3 sm:w-1/2">
+                        <div class="w-full px-3 sm:w-1/2">
                             <label for="location" class="mb-3 block text-base font-medium text-[#07074D]">
                                 Category
                             </label>
@@ -136,23 +120,50 @@
                                     <option value="{{ $category->id }}">{{ $category->name }}</option>
                                 @endforeach
                             </select>
-
                         </div>
                         <div class="w-full px-3 sm:w-1/2">
-                            <label for="location" class="mb-3 block text-base font-medium text-[#07074D]">
+                            <label for="event_type" class="mb-3 block text-base font-medium text-[#07074D]">
                                 Where will your event take place?
                             </label>
-                            <select name="event_type"
+                            <select name="event_type" id="event_type"
                                     class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
                                     required>
                                 <option value="" selected>Choose an option</option>
                                 <option value="venue">Venue</option>
                                 <option value="online">Online</option>
-
                             </select>
-
                         </div>
                     </div>
+
+                    <div class="-mx-3 flex flex-wrap">
+                        <div class="w-full py-6 px-3 sm:w-1/2">
+                            <div class="mb-5 location-field">
+                                <label for="location" class="mb-3 block text-base font-medium text-[#07074D]">
+                                    Location
+                                </label>
+                                <select name="location"
+                                        class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
+                                        required>
+                                    <option value="" selected>Choose a location</option>
+                                    @foreach($data as $item)
+                                        <option value="{{ $item }}">{{ $item }}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="city py-6 w-full px-3 sm:w-1/2">
+                            <div class="mb-5">
+                                <label for="city" class="mb-3 block text-base font-medium text-[#07074D]">
+                                    City
+                                </label>
+                                <input type="text" name="city" placeholder="City"
+                                       class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
+                                       required/>
+                            </div>
+                        </div>
+                    </div>
+
                     <div class="mb-5">
                         <label for="description" class="mb-3 block text-base font-medium text-[#07074D]">
                             Description
@@ -244,5 +255,31 @@
     <!-- /Right Sidebar -->
 </div>
 </body>
+
+<script>
+    // Sélectionnez l'élément de sélection du type d'événement
+    var eventTypeSelect = document.querySelector('select[name="event_type"]');
+
+    // Sélectionnez l'élément de champ de localisation
+    var locationField = document.querySelector('.location-field');
+    var city = document.querySelector('.city');
+
+    // Fonction pour afficher ou masquer le champ de localisation en fonction du type d'événement sélectionné
+    function toggleLocationField() {
+        if (eventTypeSelect.value === 'venue') {
+            locationField.style.display = 'block';
+            city.style.display = 'block';
+        } else {
+            locationField.style.display = 'none';
+            city.style.display = 'none';
+        }
+    }
+
+    // Écoutez les changements sur le sélecteur du type d'événement
+    eventTypeSelect.addEventListener('change', toggleLocationField);
+
+    // Au chargement initial, vérifiez l'état du sélecteur du type d'événement
+    toggleLocationField();
+</script>
 
 
