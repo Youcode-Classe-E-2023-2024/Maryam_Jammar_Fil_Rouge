@@ -5,6 +5,30 @@
 <!-- component -->
 <script src="//unpkg.com/alpinejs" defer></script>
 
+<style>
+    .card_box {
+        position: relative;
+    }
+
+    .out {
+        content: 'Solde Out!';
+        position: absolute;
+        width: 200%;
+        height: 40px;
+        background-image: linear-gradient(45deg, #ff6547 0%, #ffb144 51%, #ff7053 100%);
+        transform: rotate(-15deg) translateY(-70px);
+        /*transform: rotate(-33deg) translateY(-10px);*/
+        display: flex;
+        align-items: center;
+        justify-content: start;
+        padding-left: 8%;
+        color: #fff;
+        font-weight: 600;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.23);
+    }
+</style>
 <main>
     <section class="bg-white dark:bg-gray-900">
         {{--        <div class="absolute h-3/5 inset-0 bg-black opacity-35"></div>--}}
@@ -42,23 +66,23 @@
                      class="absolute inset-x-0 z-20 w-full bg-white px-6 py-4 shadow-md transition-all duration-300 ease-in-out dark:bg-gray-900 lg:relative lg:top-0 lg:mt-0 lg:flex lg:w-auto lg:translate-x-0 lg:items-center lg:bg-transparent lg:p-0 lg:opacity-100 lg:shadow-none lg:dark:bg-transparent">
                     <div class="lg:-px-8 flex flex-col space-y-4 lg:mt-0 lg:flex-row lg:space-y-0">
                         <div class="flex justify-around items-center">
-{{--                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"--}}
-{{--                                 version="1.1" width="12" height="12" viewBox="0 0 256 256" xml:space="preserve">--}}
+                            {{--                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"--}}
+                            {{--                                 version="1.1" width="12" height="12" viewBox="0 0 256 256" xml:space="preserve">--}}
 
-{{--                                <defs>--}}
-{{--                                </defs>--}}
-{{--                                <g style="stroke: none; stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: none; fill-rule: nonzero; opacity: 1;"--}}
-{{--                                   transform="translate(1.4065934065934016 1.4065934065934016) scale(2.81 2.81)">--}}
-{{--                                    <path--}}
-{{--                                        d="M 45 90 c -4.418 0 -8 -3.582 -8 -8 V 8 c 0 -4.418 3.582 -8 8 -8 c 4.418 0 8 3.582 8 8 v 74 C 53 86.418 49.418 90 45 90 z"--}}
-{{--                                        style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(0,0,0); fill-rule: nonzero; opacity: 1;"--}}
-{{--                                        transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round"/>--}}
-{{--                                    <path--}}
-{{--                                        d="M 82 53 H 8 c -4.418 0 -8 -3.582 -8 -8 c 0 -4.418 3.582 -8 8 -8 h 74 c 4.418 0 8 3.582 8 8 C 90 49.418 86.418 53 82 53 z"--}}
-{{--                                        style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(0,0,0); fill-rule: nonzero; opacity: 1;"--}}
-{{--                                        transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round"/>--}}
-{{--                                </g>--}}
-{{--                            </svg>--}}
+                            {{--                                <defs>--}}
+                            {{--                                </defs>--}}
+                            {{--                                <g style="stroke: none; stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: none; fill-rule: nonzero; opacity: 1;"--}}
+                            {{--                                   transform="translate(1.4065934065934016 1.4065934065934016) scale(2.81 2.81)">--}}
+                            {{--                                    <path--}}
+                            {{--                                        d="M 45 90 c -4.418 0 -8 -3.582 -8 -8 V 8 c 0 -4.418 3.582 -8 8 -8 c 4.418 0 8 3.582 8 8 v 74 C 53 86.418 49.418 90 45 90 z"--}}
+                            {{--                                        style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(0,0,0); fill-rule: nonzero; opacity: 1;"--}}
+                            {{--                                        transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round"/>--}}
+                            {{--                                    <path--}}
+                            {{--                                        d="M 82 53 H 8 c -4.418 0 -8 -3.582 -8 -8 c 0 -4.418 3.582 -8 8 -8 h 74 c 4.418 0 8 3.582 8 8 C 90 49.418 86.418 53 82 53 z"--}}
+                            {{--                                        style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(0,0,0); fill-rule: nonzero; opacity: 1;"--}}
+                            {{--                                        transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round"/>--}}
+                            {{--                                </g>--}}
+                            {{--                            </svg>--}}
 
                             <button data-modal-target="default-modal-register"
                                     data-modal-toggle="default-modal-register"
@@ -100,7 +124,8 @@
 
                             <input
                                 type="text"
-                                class="w-full bg-[#0d1829] flex bg-transparent pl-2 text-[#cccccc] outline-0 border-none focus:rounded-full focus:border-"none
+                                class="w-full bg-[#0d1829] flex bg-transparent pl-2 text-[#cccccc] outline-0 border-none focus:rounded-full focus:border-"
+                                none
                                 placeholder="Search name movie or select options"
                             />
                             <button type="submit" class="relative bg-[#0d1829] rounded-full">
@@ -563,54 +588,48 @@
             </div>
             <div class=" grid grid-cols-1 gap-8 md:mt-4 md:grid-cols-2 xl:grid-cols-3">
                 @foreach($events as $event)
-                    <div class="flex flex-col rounded-xl overflow-hidden aspect-square border dark:border-zinc-600">
-                        <img src="{{$event->image}}"
-                             class=" h-4/5 object-cover w-full  " alt="">
+                    <div
+                        class="card_box relative flex flex-col rounded-xl overflow-hidden aspect-square border dark:border-zinc-600">
+                        <div class="out">
+                            Solde Out!
+                        </div>
+                        <img src="{{$event->image}}" class="h-4/5 object-cover w-full" alt="">
                         <div
                             class="w-full h-1/5 bg-white dark:bg-zinc-800 dark:text-white px-3 flex items-center justify-between border-t-2 border-t-red-600">
-                            <span class="capitalize  font-medium truncate">{{$event->title}}</span>
+                            <span class="capitalize font-medium truncate">{{$event->title}}</span>
                             <div class="flex space-x-2 items-center text-xs">
+                                {{--                                @if($event->sold_out)--}}
+                                <span class="text-red-600 font-bold">Sold Out</span>
+                                {{--                                @else--}}
                                 <svg class="w-12 h-6" xmlns="http://www.w3.org/2000/svg" width="64" height="32"
                                      viewBox="0 0 64 32" version="1.1">
                                     <g fill="#F5C518">
                                         <rect x="0" y="0" width="100%" height="100%" rx="4"></rect>
                                     </g>
-                                    <text class="text-bold text-black font-bold text-xs" x="32" y="21" fill="#000000"
-                                          font-family="Arial" font-size="10px" text-anchor="middle">Buy Now!
+                                    <text class="text-bold text-black font-bold text-xs" x="32" y="21"
+                                          fill="#000000" font-family="Arial" font-size="10px" text-anchor="middle">
+                                        Buy Now!
                                     </text>
                                 </svg>
-
                                 <span class="text-md font-bold">{{$event->price}} DH</span>
+                                {{--                                @endif--}}
                             </div>
                         </div>
                         <div
                             class="w-full h-1/5 bg-white dark:bg-zinc-800 dark:text-white px-3 flex items-center justify-between">
                             <div class="flex justify-between items-center">
                                 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                                     version="1.1" width="25" height="25" viewBox="0 0 256 256" xml:space="preserve">
-                                <defs>
-                                </defs>
-                                    <g style="stroke: none; stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: none; fill-rule: nonzero; opacity: 1;"
-                                       transform="translate(1.4065934065934016 1.4065934065934016) scale(2.81 2.81)">
-                                        <path
-                                            d="M 45 1.802 c 16.583 0 30.075 13.491 30.075 30.075 c 0 7.102 -2.538 14.004 -7.145 19.434 L 45 78.317 L 22.07 51.311 c -4.608 -5.43 -7.145 -12.332 -7.145 -19.434 C 14.925 15.294 28.417 1.802 45 1.802 M 45 45.692 c 8.222 0 14.912 -6.689 14.912 -14.912 c 0 -8.222 -6.689 -14.912 -14.912 -14.912 S 30.088 22.557 30.088 30.78 C 30.088 39.002 36.778 45.692 45 45.692 M 45 0 C 27.395 0 13.123 14.272 13.123 31.877 c 0 7.86 2.858 15.043 7.573 20.6 L 45 81.101 l 24.304 -28.624 c 4.716 -5.558 7.573 -12.741 7.573 -20.6 C 76.877 14.272 62.605 0 45 0 L 45 0 z M 45 43.889 c -7.24 0 -13.11 -5.869 -13.11 -13.11 c 0 -7.24 5.869 -13.11 13.11 -13.11 s 13.11 5.869 13.11 13.11 C 58.11 38.02 52.24 43.889 45 43.889 L 45 43.889 z"
-                                            style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(0,0,0); fill-rule: nonzero; opacity: 1;"
-                                            transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round"/>
-                                        <path
-                                            d="M 58.814 71.531 l -1.575 1.575 c 9.772 1.532 15.583 4.707 15.583 7.094 c 0 3.261 -10.838 7.997 -27.822 7.997 S 17.178 83.461 17.178 80.2 c 0 -2.387 5.811 -5.562 15.583 -7.094 l -1.575 -1.575 c -9.401 1.643 -15.81 4.907 -15.81 8.669 c 0 5.412 13.263 9.8 29.625 9.8 c 16.361 0 29.625 -4.388 29.625 -9.8 C 74.625 76.439 68.215 73.174 58.814 71.531 z"
-                                            style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(0,0,0); fill-rule: nonzero; opacity: 1;"
-                                            transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round"/>
-                                    </g>
-                            </svg>
-                                <span class="capitalize  font-medium truncate">{{$event->location}}</span>
+                                     version="1.1" width="25" height="25" viewBox="0 0 256 256"
+                                     xml:space="preserve">
+                    <!-- SVG content -->
+                </svg>
+                                <span class="capitalize font-medium truncate">{{$event->location}}</span>
                             </div>
                             <div>
-                                <span
-                                    class="capitalize text-md font-medium truncate">{{ \Carbon\Carbon::parse($event->date)->translatedFormat('j F Y') }} at </span>
+                                <span class="capitalize text-md font-medium truncate">{{ \Carbon\Carbon::parse($event->date)->translatedFormat('j F Y') }} at </span>
                                 <span
                                     class="capitalize text-md font-medium truncate">{{ \Carbon\Carbon::parse($event->time)->format('h:i A') }}</span>
                             </div>
-
                         </div>
                     </div>
                 @endforeach
