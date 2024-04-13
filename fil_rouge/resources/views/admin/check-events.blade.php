@@ -41,7 +41,11 @@
                                                           stroke-width="2"
                                                           d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
                                                 </svg>
-                                                <p class="">{{$event->location}}</p>
+                                                @if($event->event_type == 'online')
+                                                    <p>Online</p>
+                                                @else
+                                                    <p>{{$event->country}}, {{$event->city}}</p>
+                                                @endif
                                             </div>
                                             {{--                                            <div class="flex-1 inline-flex items-center">--}}
                                             <svg xmlns="http://www.w3.org/2000/svg"
@@ -63,9 +67,11 @@
                                                             class="mb-2 md:mb-0 bg-white px-4 py-2 shadow-sm tracking-wider border text-gray-600 rounded-full hover:bg-gray-100 inline-flex items-center space-x-2 ">
                                                         <span class="text-green-400 hover:text-green-500 rounded-lg">
                                                             <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg"
-                                                                 xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"
+                                                                 xmlns:xlink="http://www.w3.org/1999/xlink"
+                                                                 version="1.1"
                                                                  width="256"
-                                                                 height="256" viewBox="0 0 256 256" xml:space="preserve">
+                                                                 height="256" viewBox="0 0 256 256"
+                                                                 xml:space="preserve">
                                                                 <defs>
                                                                 </defs>
                                                                 <g style="stroke: none; stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: none; fill-rule: nonzero; opacity: 1;"
@@ -83,14 +89,14 @@
                                                                 </g>
                                                             </svg>
                                                         </span>
-                                                            <span>Decline</span>
+                                                        <span>Decline</span>
                                                     </button>
                                                 </form>
                                             </div>
                                             <form action="/approve-event/{{$event->id}}" method="POST">
                                                 @csrf
                                                 <button type="submit"
-                                                    class="mb-2 md:mb-0 bg-white px-4 py-2 shadow-sm tracking-wider border text-gray-600 rounded-full hover:bg-gray-100 inline-flex items-center space-x-2 ">
+                                                        class="mb-2 md:mb-0 bg-white px-4 py-2 shadow-sm tracking-wider border text-gray-600 rounded-full hover:bg-gray-100 inline-flex items-center space-x-2 ">
                                                     <span class="text-green-400 hover:text-green-500 rounded-lg">
                                                        <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg"
                                                             xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"
