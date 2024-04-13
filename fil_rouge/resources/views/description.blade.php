@@ -37,8 +37,7 @@
         width: 200px;
         height: 64px;
         background: #32CD32;
-        border-radius: 20px;
-    ;
+        border-radius: 20px;;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -112,6 +111,121 @@
 
 
 </style>
+
+{{--update button--}}
+<style>
+    .card2 {
+        position: relative;
+        width: 150px;
+        height: 55px;
+        background: #FFFACD;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 15px;
+        font-weight: bold;
+        border-radius: 15px;
+        cursor: pointer;
+    }
+
+    .card2::before,
+    .card2::after {
+        position: absolute;
+        content: "";
+        width: 60%;
+        height: 20%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 15px;
+        font-weight: bold;
+        background-color: #FFE4B5;
+        transition: all 0.5s;
+    }
+
+    .card2::before {
+        top: 0;
+        right: 0;
+        border-radius: 0 15px 0 100%;
+    }
+
+    .card2::after {
+        bottom: 0;
+        left: 0;
+        border-radius: 0 100% 0 15px;
+    }
+
+    .card2:hover::before,
+    .card2:hover:after {
+        width: 100%;
+        height: 100%;
+        border-radius: 15px;
+        transition: all 0.5s;
+    }
+
+    .card2:hover:after {
+        content: "Update Your Event";
+        color: white;
+    }
+</style>
+
+{{--delete button--}}
+<style>
+    .card3 {
+        position: relative;
+        width: 150px;
+        height: 55px;
+        background: #DCDCDC;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 15px;
+        font-weight: bold;
+        border-radius: 15px;
+        cursor: pointer;
+    }
+
+    .card3::before,
+    .card3::after {
+        position: absolute;
+        content: "";
+        width: 60%;
+        height: 20%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 15px;
+        font-weight: bold;
+        background-color: #D3D3D3;
+        transition: all 0.5s;
+    }
+
+    .card3::before {
+        top: 0;
+        right: 0;
+        border-radius: 0 15px 0 100%;
+    }
+
+    .card3::after {
+        bottom: 0;
+        left: 0;
+        border-radius: 0 100% 0 15px;
+    }
+
+    .card3:hover::before,
+    .card3:hover:after {
+        width: 100%;
+        height: 100%;
+        border-radius: 15px;
+        transition: all 0.5s;
+    }
+
+    .card3:hover:after {
+        content: "Delete Your Event";
+        color: white;
+    }
+</style>
+
 <main>
     <section class="py-16 container mx-auto px-6 md:px-0 bg-white dark:bg-gray-900">
         <div class=""
@@ -281,7 +395,11 @@
                                                                 stroke-linecap="round"/>
                                                         </g>
                                                     </svg>
-                                                    {{$event->location}}
+                                                    @if($event->event_type == 'online')
+                                                        Online
+                                                    @else
+                                                        {{$event->country}}, {{$event->city}}
+                                                    @endif
                                                 </p>
 
                                                 <p class="mx-auto mb-4 flex items-center md:mx-0 md:mb-2 lg:mb-0 xl:mr-20">
@@ -370,7 +488,7 @@
                                                     {{$event->date}}
                                                 </p>
 
-                                                <p class="mx-auto mb-2 flex items-center md:mx-0 lg:mb-0">
+                                                <p class="mx-auto mb-2 flex items-center md:mx-0 md:mb-2 lg:mb-0 xl:mr-20">
                                                     <svg class="mr-2" id='Clock_Circle_1_24' width='24' height='24'
                                                          viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'
                                                          xmlns:xlink='http://www.w3.org/1999/xlink'>
@@ -397,20 +515,61 @@
                                                     </svg>
                                                     {{$event->time}}
                                                 </p>
+
+                                                <p class="mx-auto mb-2 flex items-center md:mx-0 lg:mb-0 ">
+                                                    <svg class="mr-2" id='People_24' width='24' height='24' viewBox='0 0 24 24'
+                                                         xmlns='http://www.w3.org/2000/svg'
+                                                         xmlns:xlink='http://www.w3.org/1999/xlink'>
+                                                        <rect width='24' height='24' stroke='none' fill='#000000'
+                                                              opacity='0'/>
+                                                        <g transform="matrix(0.83 0 0 0.83 12 12)">
+                                                            <g style="">
+                                                                <g transform="matrix(1 0 0 1 -0.04 0)">
+                                                                    <path
+                                                                        style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(0,0,0); fill-rule: nonzero; opacity: 0.3;"
+                                                                        transform=" translate(-11.96, -12)"
+                                                                        d="M 4.629 15.052 C 5.055999999999999 15.052 5.5009999999999994 15.145 5.93 15.29 L 5.93 18.86 L 0.918 18.86 L 0.918 17.041999999999998 C 1.198 16.273 3.045 15.052 4.629 15.052 z M 23 17.182 L 23 19 L 17.988 19 L 17.988 15.43 C 18.416999999999998 15.285 18.862 15.192 19.288999999999998 15.192 C 20.873 15.192 22.72 16.413 23 17.182 z M 17.702 18.619 L 6.298 18.619 L 6.298 16.595 C 6.729 15.74 9.566 14.381 12 14.381 C 14.434 14.381 17.271 15.74 17.701999999999998 16.595 L 17.701999999999998 18.619 z M 12 5 C 10.619288125423017 5 9.5 6.119288125423017 9.5 7.5 C 9.5 8.880711874576983 10.619288125423017 10 12 10 C 13.380711874576983 10 14.5 8.880711874576983 14.5 7.5 C 14.5 6.119288125423017 13.380711874576983 5 12 5 z M 19.5 8 C 18.67157287525381 8 18 8.67157287525381 18 9.5 C 18 10.32842712474619 18.67157287525381 11 19.5 11 C 20.32842712474619 11 21 10.32842712474619 21 9.5 C 21 8.67157287525381 20.32842712474619 8 19.5 8 z M 4.5 8 C 3.6715728752538097 8 3 8.67157287525381 3 9.5 C 3 10.32842712474619 3.6715728752538097 11 4.5 11 C 5.32842712474619 11 6 10.32842712474619 6 9.5 C 6 8.67157287525381 5.32842712474619 8 4.5 8 z"
+                                                                        stroke-linecap="round"/>
+                                                                </g>
+                                                                <g transform="matrix(1 0 0 1 1.5 0)">
+                                                                    <path
+                                                                        style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(0,0,0); fill-rule: nonzero; opacity: 1;"
+                                                                        transform=" translate(-13.5, -12)"
+                                                                        d="M 19.5 7 C 18.119 7 17 8.119 17 9.5 C 17 10.881 18.119 12 19.5 12 C 20.881 12 22 10.881 22 9.5 C 22 8.119 20.881 7 19.5 7 z M 19.5 10.277 C 19.071 10.277 18.723 9.928999999999998 18.723 9.5 C 18.723 9.071 19.070999999999998 8.723 19.5 8.723 C 19.929000000000002 8.723 20.277 9.071000000000002 20.277 9.5 C 20.277 9.929 19.929 10.277 19.5 10.277 z M 12 4 C 10.067 4 8.5 5.567 8.5 7.5 C 8.5 9.433 10.067 11 12 11 C 13.933 11 15.5 9.433 15.5 7.5 C 15.5 5.567 13.933 4 12 4 z M 12 9 C 11.173 9 10.5 8.327 10.5 7.5 C 10.5 6.673 11.173 6 12 6 C 12.827 6 13.5 6.673 13.5 7.5 C 13.5 8.327 12.827 9 12 9 z M 12 13 C 9.664 13 5 14.172 5 16.5 L 5 20 L 19 20 L 19 16.5 C 19 14.172 14.336 13 12 13 z M 17 18 L 7 18 L 7 16.567 C 7.378 15.962 9.866 15 12 15 C 14.134 15 16.622 15.962 17 16.567 L 17 18 z"
+                                                                        stroke-linecap="round"/>
+                                                                </g>
+                                                                <g transform="matrix(1 0 0 1 0 1.5)">
+                                                                    <path
+                                                                        style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(0,0,0); fill-rule: nonzero; opacity: 1;"
+                                                                        transform=" translate(-12, -13.5)"
+                                                                        d="M 19.5 14 C 18.343 14 17.185 14.378 16.331 14.951 C 17.209 15.350000000000001 17.844 15.834 17.97 16.325 C 18.39 16.143 18.913 16 19.5 16 C 20.802 16 21.816 16.689 22 17.009 L 22 18 L 19.5 18 L 18 18 L 18 20 L 19.5 20 L 24 20 L 24 16.932 C 24 15.398 21.737 14 19.5 14 z M 2 9.5 C 2 10.881 3.119 12 4.5 12 C 5.881 12 7 10.881 7 9.5 C 7 8.119 5.881 7 4.5 7 C 3.1189999999999998 7 2 8.119 2 9.5 z M 3.723 9.5 C 3.723 9.071 4.071 8.723 4.5 8.723 C 4.929 8.723 5.277 9.071 5.277 9.5 C 5.277 9.929 4.929 10.277 4.5 10.277 C 4.071 10.277 3.723 9.929 3.723 9.5 z M 4.5 14 C 5.657 14 6.8149999999999995 14.378 7.6690000000000005 14.951 C 6.791 15.350000000000001 6.156000000000001 15.834 6.03 16.325 C 5.61 16.143 5.087 16 4.5 16 C 3.198 16 2.184 16.689 2 17.009 L 2 18 L 4.5 18 L 6 18 L 6 20 L 4.5 20 L 0 20 L 0 16.932 C 0 15.398 2.263 14 4.5 14 z"
+                                                                        stroke-linecap="round"/>
+                                                                </g>
+                                                            </g>
+                                                        </g>
+                                                    </svg>
+                                                    {{$event->nbr_place}} Places
+                                                </p>
                                             </div>
 
-{{--                                            <button class="btn mt-8">--}}
-{{--                                                Buy Now !--}}
-{{--                                            </button>--}}
-                                            <div class="card">
-                                                <p class="img font-bold">Buy Now !</p>
-                                                <div class="textBox">
-{{--                                                    <p class="text head">Ethereum</p>--}}
-                                                    <span class="text-lg">Get the ticket</span>
-                                                    <p class="text price">245 DH</p>
+                                            {{--                                            <button class="btn mt-8">--}}
+                                            {{--                                                Buy Now !--}}
+                                            {{--                                            </button>--}}
+                                            <div class="flex justify-between">
+                                                <div class="card">
+                                                    <p class="img font-bold">Buy Now !</p>
+                                                    <div class="textBox">
+                                                        {{--                                                    <p class="text head">Ethereum</p>--}}
+                                                        <span class="text-lg">Get the ticket</span>
+                                                        <p class="text price">245 DH</p>
+                                                    </div>
                                                 </div>
+                                                <div class="flex space-x-6">
+                                                    <div class="card2">Update</div>
+                                                    <div class="card3">Delete</div>
+                                                </div>
+
                                             </div>
-                                            
 
                                         </div>
                                     </div>
