@@ -485,7 +485,7 @@
                                                             </g>
                                                         </g>
                                                     </svg>
-                                                    {{$event->date}}
+                                                    {{ \Carbon\Carbon::parse($event->date)->translatedFormat('j F Y') }}
                                                 </p>
 
                                                 <p class="mx-auto mb-2 flex items-center md:mx-0 md:mb-2 lg:mb-0 xl:mr-20">
@@ -513,11 +513,12 @@
                                                             </g>
                                                         </g>
                                                     </svg>
-                                                    {{$event->time}}
+                                                    {{ \Carbon\Carbon::parse($event->time)->format('h:i A') }}
                                                 </p>
 
                                                 <p class="mx-auto mb-2 flex items-center md:mx-0 lg:mb-0 ">
-                                                    <svg class="mr-2" id='People_24' width='24' height='24' viewBox='0 0 24 24'
+                                                    <svg class="mr-2" id='People_24' width='24' height='24'
+                                                         viewBox='0 0 24 24'
                                                          xmlns='http://www.w3.org/2000/svg'
                                                          xmlns:xlink='http://www.w3.org/1999/xlink'>
                                                         <rect width='24' height='24' stroke='none' fill='#000000'
@@ -566,9 +567,13 @@
                                                 </div>
                                                 <div class="flex space-x-6">
                                                     <div class="card2">Update</div>
-                                                    <div class="card3">Delete</div>
+                                                    {{--<a href="/updateEvent/{{$event->id}}" class="card2">Update</a>--}}
+                                                    <form action="/deleteEvent/{{$event->id}}" method="post">
+                                                        @csrf
+                                                        @method('delete')
+                                                        <button type="submit" class="card3">Delete</button>
+                                                    </form>
                                                 </div>
-
                                             </div>
 
                                         </div>
