@@ -109,7 +109,7 @@
                         {{--                        <input type="hidden" name="category" value="{{ request()->query('category') }}">--}}
 
                         <div class="w-full px-3 sm:w-1/2">
-                            <label for="location" class="mb-3 block text-base font-medium text-[#07074D]">
+                            <label for="category" class="mb-3 block text-base font-medium text-[#07074D]">
                                 Category
                             </label>
                             <select name="category"

@@ -31,7 +31,7 @@ class EventController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -40,8 +40,6 @@ class EventController extends Controller
 
         $request->validate([
             'title' => 'required',
-            'country' => '',
-            'city' => '',
             'event_type' => 'required',
             'price' => 'required',
             'date' => 'required',
@@ -50,6 +48,17 @@ class EventController extends Controller
             'image' => 'required|image',
             'category' => 'required',
         ]);
+
+        $defaultCountry = $request->event_type === 'venue' ? 'Unknown' : 'Online';
+        $defaultCity = $request->event_type === 'venue' ? 'Unknown' : 'Online';
+
+
+        if ($request->event_type === 'venue') {
+            $request->validate([
+                'country' => 'required',
+                'city' => 'required',
+            ]);
+        }
 
         // from category
 //        $category = $request->input('category');
@@ -65,8 +74,8 @@ class EventController extends Controller
 
         $eventCreated = Event::create([
             'title' => $request->title,
-            'country' => $request->country,
-            'city' => $request->city,
+            'country' => $request->country ?? $defaultCountry, // Utiliser la valeur par défaut si la valeur est vide
+            'city' => $request->city ?? $defaultCity, // Utiliser la valeur par défaut si la valeur est vide
             'event_type' => $request->event_type,
             'date' => $request->date,
             'time' => $request->time,
@@ -103,7 +112,7 @@ class EventController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -124,8 +133,8 @@ class EventController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param \Illuminate\Http\Request $request
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
@@ -136,7 +145,7 @@ class EventController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
@@ -171,7 +180,6 @@ class EventController extends Controller
 
         return redirect()->back();
     }
-
 
 
 }
