@@ -38,17 +38,17 @@
 
         <section class="">
             <div class="flex items-center justify-between">
-                <span class="font-semibold text-gray-700 text-base dark:text-white">My latest events</span>
+                <span class="font-semibold text-gray-700 text-base dark:text-white">My events</span>
             </div>
 
             <div class="mt-4 grid grid-cols-2 gap-y-5 sm:grid-cols-3 gap-x-5 ">
                 @foreach($events as $event)
-                    <div class="flex flex-col rounded-xl overflow-hidden aspect-square border dark:border-zinc-600">
+                    <a href="/description/{{$event->id}}" class="flex flex-col rounded-xl overflow-hidden aspect-square border dark:border-zinc-600">
                         <img src="{{$event->image}}"
                              class=" h-4/5 object-cover w-full  " alt="">
                         <div
                             class="w-full h-1/5 bg-white dark:bg-zinc-800 dark:text-white px-3 flex items-center justify-between border-t-2 border-t-red-600">
-                            <span class="capitalize  font-medium truncate">{{$event->title}}</span>
+                            <span class="capitalize  font-medium truncate">{{ substr($event->title, 0, 8) }}..</span>
                             <div class="flex space-x-2 items-center text-xs">
                                 <svg class="w-12 h-6" xmlns="http://www.w3.org/2000/svg" width="64" height="32"
                                      viewBox="0 0 64 32" version="1.1">
@@ -82,7 +82,13 @@
                                             transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round"/>
                                     </g>
                             </svg>
-                                <span class="capitalize  font-medium truncate">{{$event->location}}</span>
+                                @if($event->event_type == 'online')
+                                    <span class="capitalize font-medium truncate">Online</span>
+                                @else
+                                    <span class="capitalize font-medium truncate">{{$event->country}}</span>,
+                                    <span class="capitalize font-medium truncate">{{$event->city}}</span>
+
+                                @endif
                             </div>
                             <div>
                                 <span class="capitalize font-sm truncate">Status: {{ $event->status}}</span>
@@ -91,7 +97,7 @@
                             </div>
 
                         </div>
-                    </div>
+                    </a>
                 @endforeach
             </div>
             <div class="flex-col justify-between items-center mt-4 p-4">
