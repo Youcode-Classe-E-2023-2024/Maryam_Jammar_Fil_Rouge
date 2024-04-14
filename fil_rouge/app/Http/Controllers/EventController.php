@@ -124,10 +124,29 @@ class EventController extends Controller
     public function ShowEventDescription($id)
     {
 //        $event = Event::with('category')->find($id);
+        $content = file_get_contents('https://gist.githubusercontent.com/rogargon/5534902/raw/434445021e155240ca78e378f10f70391dd594ea/countries.json');
+        $data = json_decode($content);
+
+        $categories = Category::all();
+
         $event = Event::find($id);
+
         $userRole = "organizer";
 
-        return view('description', compact('event', 'userRole'));
+        return view('description', compact('event', 'userRole', 'data', 'categories'));
+    }
+
+
+    public function editEvent($id)
+    {
+        $content = file_get_contents('https://gist.githubusercontent.com/rogargon/5534902/raw/434445021e155240ca78e378f10f70391dd594ea/countries.json');
+        $data = json_decode($content);
+
+        $categories = Category::all();
+
+        $event = Event::find($id);
+
+        return view('organiser.updateEvent', compact('event', 'data', 'categories'));
     }
 
     /**
@@ -137,9 +156,60 @@ class EventController extends Controller
      * @param int $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function updateEvent(Request $request, $id)
     {
-        //
+        $event = Event::findOrFail($id);
+
+        $user = Auth::id();
+
+        $request->validate([
+            'title' => 'required',
+            'event_type' => 'required',
+            'price' => 'required',
+            'date' => 'required',
+            'time' => 'required',
+            'description' => 'required',
+            'category' => 'required',
+        ]);
+
+        if ($request->event_type === 'venue') {
+            $request->validate([
+                'country' => 'required',
+                'city' => 'required',
+            ]);
+        }
+
+        // Vérifier si une nouvelle image a été téléchargée
+        if ($request->hasFile('image')) {
+            $fileName = time() . $request->file('image')->getClientOriginalName();
+            $path = $request->file('image')->storeAs('image', $fileName, 'public');
+            $picturePath = Storage::url($path);
+
+            // Supprimer l'ancienne image s'il en existe une
+            if ($event->image) {
+                Storage::disk('public')->delete($event->image);
+            }
+        } else {
+            // Conserver l'image existante
+            $picturePath = $event->image;
+        }
+
+        // Mettre à jour les champs de l'événement
+        $event->update([
+            'title' => $request->title,
+            'country' => $request->country ?? 'Online',
+            'city' => $request->city ?? 'Unknown',
+            'event_type' => $request->event_type,
+            'date' => $request->date,
+            'time' => $request->time,
+            'price' => $request->price,
+            'description' => $request->description,
+            'image' => $picturePath,
+            'creator' => $user,
+            'category' => $request->category,
+        ]);
+
+        return redirect('/myEvents');
     }
 
     /**

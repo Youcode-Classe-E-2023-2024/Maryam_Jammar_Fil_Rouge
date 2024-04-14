@@ -566,8 +566,8 @@
                                                     </div>
                                                 </div>
                                                 <div class="flex space-x-6">
-                                                    <div class="card2">Update</div>
-                                                    {{--<a href="/updateEvent/{{$event->id}}" class="card2">Update</a>--}}
+                                                    <a data-modal-target="progress-modal-{{$event->id}}"
+                                                       data-modal-toggle="progress-modal-{{$event->id}}" class="card2">Update</a>
                                                     <form action="/deleteEvent/{{$event->id}}" method="post">
                                                         @csrf
                                                         @method('delete')
@@ -917,3 +917,267 @@
         </div>
     </div>
 </div>
+
+{{--update-event--}}
+<div id="progress-modal-{{$event->id}}" tabindex="-1" aria-hidden="true"
+     class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-3/4">
+    <div class="relative p-4 w-full max-w-3xl max-h-full">
+        <!-- Modal content -->
+        <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+            <button type="button"
+                    class="absolute top-3 end-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white"
+                    data-modal-hide="progress-modal-{{$event->id}}">
+                <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                     viewBox="0 0 14 14">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                          d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+                </svg>
+                <span class="sr-only">Close modal</span>
+            </button>
+            <div class="p-4 md:p-5">
+                Update Your Event
+                <div class="mx-auto w-full max-w-[880px] p-6 ">
+                    <form action="/updateEvent/{{$event->id}}" method="post" enctype="multipart/form-data">
+                        @csrf
+                        {{--                            <input type="hidden" name="status">--}}
+                        <div class="-mx-3 flex flex-wrap">
+                            <div class="w-full px-3 sm:w-1/2">
+                                <div class="mb-5">
+                                    <label for="title" class="mb-3 block text-base font-medium text-[#07074D]">
+                                        Title
+                                    </label>
+                                    <input type="text" name="title" placeholder="Event title"
+                                           value="{{$event['title']}}"
+                                           class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
+                                           required/>
+                                </div>
+                            </div>
+                            <div class="w-full px-3 sm:w-1/2">
+                                <div class="mb-5">
+                                    <label for="nbr_place" class="mb-3 block text-base font-medium text-[#07074D]">
+                                        Total de places
+                                    </label>
+                                    <input type="number" name="nbr_place" id="time" placeholder="Nombre de places"
+                                           value="{{$event['nbr_place']}}"
+                                           class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
+                                           required/>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="-mx-3 flex flex-wrap">
+                            <div class="w-full px-3 sm:w-1/3">
+                                <div class="mb-5">
+                                    <label for="date" class="mb-3 block text-base font-medium text-[#07074D]">
+                                        Date
+                                    </label>
+                                    <input type="date" name="date" id="date" value="{{$event['date']}}"
+                                           class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
+                                           required/>
+                                </div>
+                            </div>
+                            <div class="w-full px-3 sm:w-1/3">
+                                <div class="mb-5">
+                                    <label for="time" class="mb-3 block text-base font-medium text-[#07074D]">
+                                        Time
+                                    </label>
+                                    <input type="time" name="time" id="time" value="{{$event['time']}}"
+                                           class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
+                                           required/>
+                                </div>
+                            </div>
+                            <div class="w-full px-3 sm:w-1/3">
+                                <div class="mb-5">
+                                    <label for="price" class="mb-3 block text-base font-medium text-[#07074D]">
+                                        Price
+                                    </label>
+                                    <input type="number" name="price" id="date" placeholder="245.00"
+                                           value="{{$event['price']}}"
+                                           class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
+                                           readonly required/>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="-mx-3 flex flex-wrap">
+                            <div class="w-full px-3 sm:w-1/2">
+                                <label for="category" class="mb-3 block text-base font-medium text-[#07074D]">
+                                    Category
+                                </label>
+                                <select name="category"
+                                        class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
+                                        required>
+                                    <option value="" selected>Choose a category</option>
+                                    @foreach($categories as $category)
+                                        <option value="{{ $category->id }}"
+                                                @if($category->id == $event->category) selected @endif>{{ $category->name }}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                            <div class="w-full px-3 sm:w-1/2">
+                                <label for="event_type" class="mb-3 block text-base font-medium text-[#07074D]">
+                                    Where will your event take place?
+                                </label>
+                                <select name="event_type" id="event_type"
+                                        class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
+                                        required>
+                                    <option value="" {{ $event->event_type == '' ? 'selected' : '' }}>Choose an option
+                                    </option>
+                                    <option value="venue" {{ $event->event_type == 'venue' ? 'selected' : '' }}>Venue
+                                    </option>
+                                    <option value="online" {{ $event->event_type == 'online' ? 'selected' : '' }}>
+                                        Online
+                                    </option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="-mx-3 flex flex-wrap">
+                            <div class="w-full py-6 px-3 sm:w-1/2">
+                                <div class="mb-5 location-field">
+                                    <label for="country" class="mb-3 block text-base font-medium text-[#07074D]">
+                                        Location
+                                    </label>
+                                    <select name="country"
+                                            class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
+                                    >
+                                        <option value="" selected>Choose a Country</option>
+                                        @foreach($data as $item)
+                                            <option
+                                                value="{{ $item }}" {{ $event->country == $item ? 'selected' : '' }}>{{ $item }}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="city py-6 w-full px-3 sm:w-1/2">
+                                <div class="mb-5">
+                                    <label for="city" class="mb-3 block text-base font-medium text-[#07074D]">
+                                        City
+                                    </label>
+                                    <input type="text" name="city" placeholder="City" value="{{$event['city']}}"
+                                           class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
+                                    />
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mb-5">
+                            <label for="description" class="mb-3 block text-base font-medium text-[#07074D]">
+                                Description
+                            </label>
+                            <textarea type="text" name="description" placeholder="Event description"
+                                      class="w-full appearance-none rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
+                                      required/>
+                            {{$event['description']}}
+                            </textarea>
+                        </div>
+
+                        <!-- component -->
+                        <div
+                            class="bg-gray-100 h-36 p-8 text-center rounded-lg border-dashed border-2 border-gray-300 hover:border-blue-500 transition duration-300 ease-in-out transform hover:scale-105 hover:shadow-md"
+                            id="dropzone">
+                            <label for="fileInput" class="cursor-pointer flex flex-col items-center space-y-2">
+                                <svg class="w-16 h-10 text-gray-400" fill="none" viewBox="0 0 24 24"
+                                     stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                          d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
+                                </svg>
+                                <span class="text-gray-600">Drag and drop your files here</span>
+                                <span class="text-gray-500 text-sm">(or click to select)</span>
+                            </label>
+                            <input type="file" id="fileInput" class="hidden" name="image" multiple>
+                        </div>
+                        <div class="mt-6 text-center" id="fileList"></div>
+                        <script>
+                            const dropzone = document.getElementById('dropzone');
+                            const fileInput = document.getElementById('fileInput');
+                            const fileList = document.getElementById('fileList');
+
+                            dropzone.addEventListener('dragover', (e) => {
+                                e.preventDefault();
+                                dropzone.classList.add('border-blue-500', 'border-2');
+                            });
+
+                            dropzone.addEventListener('dragleave', () => {
+                                dropzone.classList.remove('border-blue-500', 'border-2');
+                            });
+
+                            dropzone.addEventListener('drop', (e) => {
+                                e.preventDefault();
+                                dropzone.classList.remove('border-blue-500', 'border-2');
+
+                                const files = e.dataTransfer.files;
+                                handleFiles(files);
+                            });
+
+                            fileInput.addEventListener('change', (e) => {
+                                const files = e.target.files;
+                                handleFiles(files);
+                            });
+
+                            function handleFiles(files) {
+                                fileList.innerHTML = '';
+
+                                for (const file of files) {
+                                    const listItem = document.createElement('div');
+                                    listItem.textContent = `${file.name} (${formatBytes(file.size)})`;
+                                    fileList.appendChild(listItem);
+                                }
+                            }
+
+                            function formatBytes(bytes) {
+                                if (bytes === 0) return '0 Bytes';
+
+                                const k = 1024;
+                                const sizes = ['Bytes', 'KB', 'MB', 'GB', 'TB'];
+                                const i = Math.floor(Math.log(bytes) / Math.log(k));
+
+                                return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
+                            }
+
+                        </script>
+
+                </div>
+
+                <!-- Modal footer -->
+                <div class="flex items-center mt-6 space-x-4 rtl:space-x-reverse">
+                    <button type="submit"
+                            class="text-white bg-black hover:bg-bg-black focus:ring-4 focus:outline-none focus:ring-bg-black font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-black dark:hover:bg-black dark:focus:ring-black">
+                        Update your Event
+                    </button>
+                    <button data-modal-hide="progress-modal-{{$event->id}}" type="button"
+                            class="py-2.5 px-5 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">
+                        Cancel
+                    </button>
+                </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    // Sélectionnez l'élément de sélection du type d'événement
+    var eventTypeSelect = document.querySelector('select[name="event_type"]');
+
+    // Sélectionnez l'élément de champ de localisation
+    var locationField = document.querySelector('.location-field');
+    var city = document.querySelector('.city');
+
+    // Fonction pour afficher ou masquer le champ de localisation en fonction du type d'événement sélectionné
+    function toggleLocationField() {
+        if (eventTypeSelect.value === 'venue') {
+            locationField.style.display = 'block';
+            city.style.display = 'block';
+        } else {
+            locationField.style.display = 'none';
+            city.style.display = 'none';
+        }
+    }
+
+    // Écoutez les changements sur le sélecteur du type d'événement
+    eventTypeSelect.addEventListener('change', toggleLocationField);
+
+    // Au chargement initial, vérifiez l'état du sélecteur du type d'événement
+    toggleLocationField();
+</script>
