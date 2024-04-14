@@ -168,6 +168,7 @@ class EventController extends Controller
             'price' => 'required',
             'date' => 'required',
             'time' => 'required',
+            'nbr_place' => 'required',
             'description' => 'required',
             'category' => 'required',
         ]);
@@ -179,22 +180,18 @@ class EventController extends Controller
             ]);
         }
 
-        // Vérifier si une nouvelle image a été téléchargée
         if ($request->hasFile('image')) {
             $fileName = time() . $request->file('image')->getClientOriginalName();
             $path = $request->file('image')->storeAs('image', $fileName, 'public');
             $picturePath = Storage::url($path);
 
-            // Supprimer l'ancienne image s'il en existe une
             if ($event->image) {
                 Storage::disk('public')->delete($event->image);
             }
         } else {
-            // Conserver l'image existante
             $picturePath = $event->image;
         }
 
-        // Mettre à jour les champs de l'événement
         $event->update([
             'title' => $request->title,
             'country' => $request->country ?? 'Online',
@@ -202,6 +199,7 @@ class EventController extends Controller
             'event_type' => $request->event_type,
             'date' => $request->date,
             'time' => $request->time,
+            'nbr_place' => $request->nbr_place,
             'price' => $request->price,
             'description' => $request->description,
             'image' => $picturePath,
