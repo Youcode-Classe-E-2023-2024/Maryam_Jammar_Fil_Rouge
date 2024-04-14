@@ -457,7 +457,8 @@
                 class="absolute border-b border-neutral-200 sm:grid-cols-3">
                 <div
                     class="w-[72.19px] self-stretch pl-[25.50px] pr-[25.17px] pt-[14.50px] pb-[17.50px] border-b-2 border-neutral-700 justify-center items-center inline-flex">
-                    <a href="/" class="w-[21.52px] h-5 text-neutral-700 text-lg font-medium font-['Roboto'] leading-tight">All
+                    <a href="/"
+                       class="w-[21.52px] h-5 text-neutral-700 text-lg font-medium font-['Roboto'] leading-tight">All
                     </a>
                 </div>
                 <div
@@ -469,33 +470,35 @@
                 </div>
                 <div
                     class="w-[134.58px] self-stretch pl-[25.50px] pr-[25.17px] pt-[14.50px] pb-[17.50px] justify-center items-center inline-flex">
-                    <div class="w-[83.91px] h-5 text-zinc-500 text-lg font-medium font-['Roboto'] leading-tight">This
-                        Week
-                    </div>
+                    <a href="/filter/this_week"
+                       class="w-[83.91px] h-5 text-zinc-500 text-lg font-medium font-['Roboto'] leading-tight">
+                        This Week
+                    </a>
                 </div>
                 <div
                     class="w-[164.23px] self-stretch pl-[25.50px] pr-[25.12px] pt-[14.50px] pb-[17.50px] justify-center items-center inline-flex">
-                    <div class="w-[113.61px] h-5 text-zinc-500 text-lg font-medium font-['Roboto'] leading-tight">This
+                    <a href="/filter/this_week-end" class="w-[113.61px] h-5 text-zinc-500 text-lg font-medium font-['Roboto'] leading-tight">This
                         Weekend
-                    </div>
+                    </a>
                 </div>
                 <div
                     class="w-[137.25px] self-stretch pl-[25.50px] pr-[25.17px] pt-[14.50px] pb-[17.50px] justify-center items-center inline-flex">
-                    <div class="w-[86.58px] h-5 text-zinc-500 text-lg font-medium font-['Roboto'] leading-tight">Next
+                    <a href="/filter/next_week" class="w-[86.58px] h-5 text-zinc-500 text-lg font-medium font-['Roboto'] leading-tight">Next
                         Week
-                    </div>
+                    </a>
                 </div>
                 <div
                     class="w-[166.91px] self-stretch pl-[25.50px] pr-[25.12px] pt-[14.50px] pb-[17.50px] justify-center items-center inline-flex">
-                    <div class="w-[116.29px] h-5 text-zinc-500 text-lg font-medium font-['Roboto'] leading-tight">Next
+                    <a href="/filter/next_week-end" class="w-[116.29px] h-5 text-zinc-500 text-lg font-medium font-['Roboto'] leading-tight">Next
                         Weekend
-                    </div>
+                    </a>
                 </div>
                 <div
                     class="w-[142.30px] self-stretch pl-[25.50px] pr-[25.16px] pt-[14.50px] pb-[17.50px] justify-center items-center inline-flex">
-                    <div class="w-[91.64px] h-5 text-zinc-500 text-lg font-medium font-['Roboto'] leading-tight">This
-                        Month
-                    </div>
+                    <a href="/filter/this_month"
+                       class="w-[91.64px] h-5 text-zinc-500 text-lg font-medium font-['Roboto'] leading-tight">
+                        This Month
+                    </a>
                 </div>
             </div>
             <div id="events-container" class="mt-8 grid grid-cols-1 gap-8 md:mt-16 md:grid-cols-2 xl:grid-cols-3">
