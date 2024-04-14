@@ -557,14 +557,17 @@
                                             {{--                                                Buy Now !--}}
                                             {{--                                            </button>--}}
                                             <div class="flex justify-between">
-                                                <div class="card">
-                                                    <p class="img font-bold">Buy Now !</p>
-                                                    <div class="textBox">
-                                                        {{--                                                    <p class="text head">Ethereum</p>--}}
-                                                        <span class="text-lg">Get the ticket</span>
-                                                        <p class="text price">245 DH</p>
-                                                    </div>
-                                                </div>
+{{--                                                <form action="/paiement/{{$event->id}}" method="post">--}}
+{{--                                                    @csrf--}}
+                                                    <a href="/paiement/{{$event->id}}" class="card">
+                                                        <p class="img font-bold">Buy Now !</p>
+                                                        <div class="textBox">
+                                                            {{--                                                    <p class="text head">Ethereum</p>--}}
+                                                            <span class="text-lg">Get the ticket</span>
+                                                            <p class="text price">245 DH</p>
+                                                        </div>
+                                                    </a>
+{{--                                                </form>--}}
                                                 <div class="flex space-x-6">
                                                     <a data-modal-target="progress-modal-{{$event->id}}"
                                                        data-modal-toggle="progress-modal-{{$event->id}}" class="card2">Update</a>
