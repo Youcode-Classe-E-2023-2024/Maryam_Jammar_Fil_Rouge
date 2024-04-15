@@ -39,7 +39,7 @@
                 <div class="flex items-center justify-between">
                     <div>
                         <a class="text-2xl font-bold text-white hover:text-gray-700 dark:text-white dark:hover:text-gray-300 lg:text-3xl"
-                           href="#">Tchikita</a>
+                           href="/">Tchikita</a>
                     </div>
 
                     <!-- Mobile menu button -->
@@ -305,7 +305,7 @@
             </div>
             <div class=" grid grid-cols-1 gap-8 md:mt-4 md:grid-cols-2 xl:grid-cols-3">
                 @foreach($pastEvents as $event)
-                    <div
+                    <a href="/description/{{$event->id}}"
                         class="card_box relative flex flex-col rounded-xl overflow-hidden aspect-square border dark:border-zinc-600">
                         <div class="out">
                             Solde Out!
@@ -367,7 +367,7 @@
                                 {{--                          --}}
                             </div>
                         </div>
-                    </div>
+                    </a>
                 @endforeach
             </div>
         </div>
