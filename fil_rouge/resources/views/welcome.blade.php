@@ -477,19 +477,22 @@
                 </div>
                 <div
                     class="w-[164.23px] self-stretch pl-[25.50px] pr-[25.12px] pt-[14.50px] pb-[17.50px] justify-center items-center inline-flex">
-                    <a href="/filter/this_week-end" class="w-[113.61px] h-5 text-zinc-500 text-lg font-medium font-['Roboto'] leading-tight">This
+                    <a href="/filter/this_week-end"
+                       class="w-[113.61px] h-5 text-zinc-500 text-lg font-medium font-['Roboto'] leading-tight">This
                         Weekend
                     </a>
                 </div>
                 <div
                     class="w-[137.25px] self-stretch pl-[25.50px] pr-[25.17px] pt-[14.50px] pb-[17.50px] justify-center items-center inline-flex">
-                    <a href="/filter/next_week" class="w-[86.58px] h-5 text-zinc-500 text-lg font-medium font-['Roboto'] leading-tight">Next
+                    <a href="/filter/next_week"
+                       class="w-[86.58px] h-5 text-zinc-500 text-lg font-medium font-['Roboto'] leading-tight">Next
                         Week
                     </a>
                 </div>
                 <div
                     class="w-[166.91px] self-stretch pl-[25.50px] pr-[25.12px] pt-[14.50px] pb-[17.50px] justify-center items-center inline-flex">
-                    <a href="/filter/next_week-end" class="w-[116.29px] h-5 text-zinc-500 text-lg font-medium font-['Roboto'] leading-tight">Next
+                    <a href="/filter/next_week-end"
+                       class="w-[116.29px] h-5 text-zinc-500 text-lg font-medium font-['Roboto'] leading-tight">Next
                         Weekend
                     </a>
                 </div>
@@ -555,11 +558,48 @@
 
                                     @endif
                                 </div>
-                                <div>
-                                <span
-                                    class="capitalize text-md font-medium truncate">{{ \Carbon\Carbon::parse($event->date)->translatedFormat('j F Y') }} </span>
+                                <div
+                                    class="w-full h-1/5 bg-white dark:bg-zinc-800 dark:text-white px-3 flex items-center justify-end">
+                                    <div class="capitalize text-md font-medium truncate"
+                                         id="countdown{{$event->id}}"></div>
                                 </div>
+                                {{--timer--}}
+                                <script>
+                                    // Date de l'événement
+                                    var eventDate{{$event->id}} = new Date("{{ $event->date }}");
 
+                                    // Fonction pour mettre à jour le compte à rebours
+                                    function updateCountdown{{$event->id}}() {
+                                        var now = new Date();
+                                        var distance = eventDate{{$event->id}} - now;
+
+                                        // Calcul des mois, jours, heures, minutes et secondes restants
+                                        var months = Math.floor(distance / (1000 * 60 * 60 * 24 * 30));
+                                        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                                        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                                        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                                        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                                        // Affichage du compte à rebours
+                                        var countdownText = '';
+                                        if (months > 0) {
+                                            countdownText += months + " mois ";
+                                            days -= months * 30; // Soustraire les mois pour éviter la répétition des jours
+                                        }
+                                        countdownText += days + " jours " + hours + "h " + minutes + "m " + seconds + "s ";
+                                        document.getElementById("countdown{{$event->id}}").innerHTML = countdownText;
+
+                                        // Mettre à jour le compte à rebours chaque seconde
+                                        if (distance > 0) {
+                                            setTimeout(updateCountdown{{$event->id}}, 1000);
+                                        } else {
+                                            document.getElementById("countdown{{$event->id}}").innerHTML = "L'événement est en cours !";
+                                        }
+                                    }
+
+                                    // Appel initial à la fonction pour mettre à jour le compte à rebours
+                                    updateCountdown{{$event->id}}();
+                                </script>
                             </div>
                         </a>
                     @endforeach
