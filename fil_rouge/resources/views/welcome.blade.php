@@ -234,9 +234,9 @@
                                               clip-rule="evenodd"></path>
                                     </svg>
                                 </div>
-                                <input type="text" name="title"
+                                <input type="text" name="search"
                                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-black focus:border-black block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-black dark:focus:border-black"
-                                       placeholder="Search by title..." required>
+                                       placeholder="Search by title, country, city..." required>
                                 <button type="button" class="flex absolute inset-y-0 right-0 items-center pr-3">
                                     <svg
                                         class="w-4 h-4 text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white"
