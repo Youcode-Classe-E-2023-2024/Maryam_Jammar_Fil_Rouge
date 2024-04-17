@@ -220,5 +220,25 @@ class HomeController extends Controller
         return view('events', compact('events', 'categories', 'LatestEvents', 'allCategories', 'pastEvents'));
     }
 
-    
+    public function search(Request $request)
+    {
+        $title = $request->input('title');
+
+        $events = Event::where('title', 'like', '%' . $title . '%')
+            ->where('status', 'Public')
+            ->where('date', '>', now())
+            ->paginate(6);
+        $categories = Category::limit(5)->get();
+        $allCategories = Category::all();
+        $LatestEvents = Event::limit(5)->where('status', 'Public')->get();
+
+        $pastEvents = Event::where('title', 'like', '%' . $title . '%')
+            ->where('status', 'Public')
+            ->where('nbr_place', '>', 0)
+            ->where('date', '<', now())
+            ->paginate(6);
+
+        return view('search-results', compact('events', 'categories', 'allCategories', 'LatestEvents', 'pastEvents'));
+    }
+
 }
