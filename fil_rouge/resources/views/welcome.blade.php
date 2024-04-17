@@ -342,7 +342,7 @@
                         <div class="mb-2">Casablanca</div>
                     </div>
                 </a>
-                <a
+                <a href="/events/Marrakech"
                     class="w-64 h-[215px] relative rounded-[5px] flex-col justify-start items-start flex bg-center bg-cover"
                     style="background-image: url('https://media.gq-magazine.co.uk/photos/5d138f50976fa31476f39436/master/pass/marrakech-gq-9oct18_istock_b.jpg');">
                     <div

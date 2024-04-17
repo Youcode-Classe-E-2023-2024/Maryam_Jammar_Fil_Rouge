@@ -293,4 +293,25 @@ class HomeController extends Controller
         return view('events', compact('events', 'categories', 'LatestEvents', 'allCategories', 'pastEvents'));
     }
 
+    public function filterByMarrakech()
+    {
+        $categories = Category::limit(5)->get();
+        $allCategories = Category::all();
+        $LatestEvents = Event::limit(5)->where('status', 'Public')->get();
+
+        $events = Event::where('city', 'Marrakech')
+            ->where('status', 'Public')
+            ->where('nbr_place', '>', 0)
+            ->where('date', '>', now())
+            ->paginate(6);
+
+        $pastEvents = Event::where('city', 'Marrakech')
+            ->where('status', 'Public')
+            ->where('nbr_place', '>', 0)
+            ->where('date', '<', now())
+            ->paginate(6);
+
+        return view('events', compact('events', 'categories', 'LatestEvents', 'allCategories', 'pastEvents'));
+    }
+
 }
