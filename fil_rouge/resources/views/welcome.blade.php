@@ -334,7 +334,7 @@
                         <div class="mb-2">Rabat</div>
                     </div>
                 </a>
-                <a
+                <a href="/events/Casablanca"
                     class="w-64 h-[215px] relative rounded-[5px] flex-col justify-start items-start flex bg-center bg-cover"
                     style="background-image: url('https://a.travel-assets.com/findyours-php/viewfinder/images/res70/469000/469964-Hassan-Ii-Mosque.jpg');">
                     <div
