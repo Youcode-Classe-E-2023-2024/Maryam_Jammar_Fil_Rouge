@@ -326,38 +326,38 @@
 
         <div class="container mx-auto -mt-72 px-36 py-16 sm:-mt-80 md:-mt-96">
             <div class="grid grid-cols-1 gap-8 md:grid-cols-2 xl:grid-cols-4">
-                <div
+                <a href="/events/Rabat"
                     class="w-64 h-[215px] relative rounded-[5px] flex-col justify-start items-start flex bg-center bg-cover"
-                    style="background-image: url('https://www.studying-in-uk.org/wp-content/uploads/2019/05/study-in-london-1068x641.jpg');">
+                    style="background-image: url('https://mediorientedintorni.com/wp-content/uploads/2023/01/photo1673377109-3-1024x790.jpeg');">
                     <div
                         class="w-full h-full flex flex-col justify-end pl-3 text-white text-lg font-extralight font-['Roboto']">
-                        <div class="mb-2">London</div>
+                        <div class="mb-2">Rabat</div>
                     </div>
-                </div>
-                <div
+                </a>
+                <a
                     class="w-64 h-[215px] relative rounded-[5px] flex-col justify-start items-start flex bg-center bg-cover"
-                    style="background-image: url('https://www.studying-in-uk.org/wp-content/uploads/2019/05/study-in-london-1068x641.jpg');">
+                    style="background-image: url('https://a.travel-assets.com/findyours-php/viewfinder/images/res70/469000/469964-Hassan-Ii-Mosque.jpg');">
                     <div
                         class="w-full h-full flex flex-col justify-end pl-3 text-white text-lg font-extralight font-['Roboto']">
-                        <div class="mb-2">London</div>
+                        <div class="mb-2">Casablanca</div>
                     </div>
-                </div>
-                <div
+                </a>
+                <a
                     class="w-64 h-[215px] relative rounded-[5px] flex-col justify-start items-start flex bg-center bg-cover"
-                    style="background-image: url('https://www.studying-in-uk.org/wp-content/uploads/2019/05/study-in-london-1068x641.jpg');">
+                    style="background-image: url('https://media.gq-magazine.co.uk/photos/5d138f50976fa31476f39436/master/pass/marrakech-gq-9oct18_istock_b.jpg');">
                     <div
                         class="w-full h-full flex flex-col justify-end pl-3 text-white text-lg font-extralight font-['Roboto']">
-                        <div class="mb-2">London</div>
+                        <div class="mb-2">Marrakech</div>
                     </div>
-                </div>
-                <div
+                </a>
+                <a
                     class="w-64 h-[215px] relative rounded-[5px] flex-col justify-start items-start flex bg-center bg-cover"
-                    style="background-image: url('https://www.studying-in-uk.org/wp-content/uploads/2019/05/study-in-london-1068x641.jpg');">
+                    style="background-image: url('https://www.tanjamarinabay.ma/wp-content/uploads/2016/05/Sans-titre-1-1.jpg');">
                     <div
                         class="w-full h-full flex flex-col justify-end pl-3 text-white text-lg font-extralight font-['Roboto']">
-                        <div class="mb-2">London</div>
+                        <div class="mb-2">Tanger</div>
                     </div>
-                </div>
+                </a>
             </div>
             <div class="mt-8 flex justify-around">
                 <img class="w-8 h-8 relative rounded-[14px]"
