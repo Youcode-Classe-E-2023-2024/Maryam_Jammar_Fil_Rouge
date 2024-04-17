@@ -361,11 +361,11 @@
             </div>
             <div class="mt-8 flex justify-around">
                 @foreach ($flags as $countryCode => $country)
-                    <a href="{{ route('filter.events', ['country' => $countryCode]) }}">
-                        <img class="w-8 h-8 relative rounded-[14px]" src="{{ $country['image'] }}" alt="{{ $country['name'] }}"/>
+                    <a href="/events/{{$country['name']}}">
+                        <img class="w-8 h-8 relative rounded-[14px]" src="{{ $country['image'] }}"
+                             alt="{{ $country['name'] }}"/>
                     </a>
                 @endforeach
-
                 <button data-modal-target="crypto-modal-flags" data-modal-toggle="crypto-modal-flags"
                         class="w-[78.19px] h-[21px] text-cyan-700 text-[13px] font-normal font-['Roboto'] leading-[21px]">
                     more cities
@@ -1270,10 +1270,12 @@
                 {{--                <p class="text-sm font-normal text-gray-500 dark:text-gray-400">Select any categories and show your--}}
                 {{--                    favorites events</p>--}}
                 <div class="h-90">
-                    <div class="grid grid-cols-1 md:grid-cols-4 xl:grid-cols-12 p-4 mx-auto">
+                    <div class="grid grid-cols-12 md:grid-cols-4 xl:grid-cols-12 p-4 mx-auto">
                         @foreach ($flagsData as $country)
-                            <img class="w-8 h-8 relative rounded-[14px]" src="{{ $country['image'] }}"
-                                 alt="{{ $country['name'] }}"/>
+                            <a href="/events/{{$country['name']}}">
+                                <img class="w-8 h-8 relative rounded-[14px]" src="{{ $country['image'] }}"
+                                     alt="{{ $country['name'] }}"/>
+                            </a>
                         @endforeach
                     </div>
                 </div>

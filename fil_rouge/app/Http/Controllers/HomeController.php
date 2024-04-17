@@ -343,5 +343,32 @@ class HomeController extends Controller
         return view('events', compact('events', 'categories', 'LatestEvents', 'allCategories', 'pastEvents'));
     }
 
+    public function filterByCountries($countryName)
+    {
+        $categories = Category::limit(5)->get();
+        $allCategories = Category::all();
+        $LatestEvents = Event::limit(5)->where('status', 'Public')->get();
+
+        $pastEvents = Event::where('country', $countryName)
+                ->where('status', 'Public')
+                ->where('nbr_place', '>', 0)
+                ->where('date', '<', now())
+            ->paginate(6);
+
+
+        $events = Event::where('country', $countryName)
+            ->where('status', 'Public')
+            ->where('nbr_place', '>', 0)
+            ->where('date', '>', now())
+            ->paginate(6);
+
+        $flagsData = json_decode(file_get_contents('https://cdn.jsdelivr.net/npm/country-flag-emoji-json@2.0.0/dist/index.json'), true);
+        $flags = [];
+        $keys = array_rand($flagsData, 18);
+        foreach ($keys as $key) {
+            $flags[$key] = $flagsData[$key];
+        }
+        return view('events', compact('events', 'categories', 'LatestEvents', 'allCategories', 'pastEvents', 'flags', 'flagsData'));
+    }
 
 }
