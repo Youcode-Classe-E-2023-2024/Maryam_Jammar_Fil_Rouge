@@ -722,7 +722,7 @@
                 <div class="h-90 overflow-y-auto">
                     <div class="grid grid-cols-1 md:grid-cols-4 md:gap-12 xl:grid-cols-4 p-4 mx-auto">
                         @foreach($allCategories as $category)
-                            <a href="/filter/{{$category->name}}" class="h-40 w-40 rounded-full">
+                            <a href="/events/filter/{{$category->name}}" class="h-40 w-40 rounded-full">
                                 <img class="h-40 w-40 rounded-full object-cover"
                                      src="{{$category->image}}"/>
                                 <h2 class="mt-4 capitalize text-center text-black text-base font-semibold font-open-sans leading-tight">

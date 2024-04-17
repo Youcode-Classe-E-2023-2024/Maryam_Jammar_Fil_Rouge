@@ -137,7 +137,6 @@ class HomeController extends Controller
             ->paginate(6);
 
 
-
         return view('welcome', compact('events', 'categories', 'allCategories', 'pastEvents'));
     }
 
@@ -201,22 +200,25 @@ class HomeController extends Controller
     {
         $categories = Category::limit(5)->get();
         $allCategories = Category::all();
-
         $LatestEvents = Event::limit(5)->where('status', 'Public')->get();
 
-        $pastEvents = Event::where('status', 'Public')
-            ->where(function ($query) {
-                $query->where('nbr_place', 0)
-                    ->orWhere('date', '<', now()->toDateString());
-            })
+        // Sélectionner les événements passés de la catégorie spécifiée
+        $category = Category::where('name', $categoryName)->firstOrFail();
+        $pastEvents = Event::where('category', $category->id)
+            ->where('status', 'Public')
+            ->where('nbr_place', '>', 0)
+            ->where('date', '<', now()) // Sélectionner les événements passés
             ->paginate(6);
 
-        $category = Category::where('name', $categoryName)->firstOrFail();
-
+        // Sélectionner les événements à venir de la catégorie spécifiée
         $events = Event::where('category', $category->id)
-            ->where('status', 'Public')->paginate(6);
+            ->where('status', 'Public')
+            ->where('nbr_place', '>', 0)
+            ->where('date', '>', now()) // Sélectionner les événements à venir
+            ->paginate(6);
 
-        //dd($events);
         return view('events', compact('events', 'categories', 'LatestEvents', 'allCategories', 'pastEvents'));
     }
+
+    
 }
