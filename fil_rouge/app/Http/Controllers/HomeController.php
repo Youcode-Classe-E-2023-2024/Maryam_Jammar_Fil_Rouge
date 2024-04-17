@@ -6,6 +6,7 @@ use App\Models\Category;
 use App\Models\Event;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Http;
 
 class HomeController extends Controller
 {
@@ -19,7 +20,7 @@ class HomeController extends Controller
         $categories = Category::limit(5)->get();
         $allCategories = Category::all();
 
-//        $LatestEvents = Event::limit(5)->where('status', 'Public')->get();
+        // Fetching events
         $events = Event::where('status', 'Public')
             ->where('date', '>=', now()->toDateString())
             ->paginate(6);
@@ -30,7 +31,14 @@ class HomeController extends Controller
             })
             ->paginate(6);
 
-        return view('welcome', compact('events', 'categories', 'allCategories', 'pastEvents'));
+        // Fetching country flag emojis from CDN
+        $flagsData = json_decode(file_get_contents('https://cdn.jsdelivr.net/npm/country-flag-emoji-json@2.0.0/dist/index.json'), true);
+        $flags = [];
+        $keys = array_rand($flagsData, 18);
+        foreach ($keys as $key) {
+            $flags[$key] = $flagsData[$key];
+        }
+        return view('welcome', compact('events', 'categories', 'allCategories', 'pastEvents', 'flags', 'flagsData'));
     }
 
     public function tomorrow()
@@ -334,5 +342,6 @@ class HomeController extends Controller
 
         return view('events', compact('events', 'categories', 'LatestEvents', 'allCategories', 'pastEvents'));
     }
+
 
 }

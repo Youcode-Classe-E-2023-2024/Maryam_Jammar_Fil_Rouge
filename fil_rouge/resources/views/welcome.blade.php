@@ -305,7 +305,7 @@
     </section>
 
     <section class="bg-white dark:bg-gray-900">
-        <div class="h-[32rem] bg-gray-100 dark:bg-gray-800">
+        <div class="h-[28rem] bg-gray-100 dark:bg-gray-800">
             <div class="container mx-auto px-36 py-10">
                 <h1 class=" text-2xl capitalize  font-bold leading-9 dark:text-white lg:text-2xl">
                     Explore Events
@@ -327,32 +327,32 @@
         <div class="container mx-auto -mt-72 px-36 py-16 sm:-mt-80 md:-mt-96">
             <div class="grid grid-cols-1 gap-8 md:grid-cols-2 xl:grid-cols-4">
                 <a href="/events/Rabat"
-                    class="w-64 h-[215px] relative rounded-[5px] flex-col justify-start items-start flex bg-center bg-cover"
-                    style="background-image: url('https://mediorientedintorni.com/wp-content/uploads/2023/01/photo1673377109-3-1024x790.jpeg');">
+                   class="w-64 h-[215px] relative rounded-[5px] flex-col justify-start items-start flex bg-center bg-cover"
+                   style="background-image: url('https://mediorientedintorni.com/wp-content/uploads/2023/01/photo1673377109-3-1024x790.jpeg');">
                     <div
                         class="w-full h-full flex flex-col justify-end pl-3 text-white text-lg font-extralight font-['Roboto']">
                         <div class="mb-2">Rabat</div>
                     </div>
                 </a>
                 <a href="/events/Casablanca"
-                    class="w-64 h-[215px] relative rounded-[5px] flex-col justify-start items-start flex bg-center bg-cover"
-                    style="background-image: url('https://a.travel-assets.com/findyours-php/viewfinder/images/res70/469000/469964-Hassan-Ii-Mosque.jpg');">
+                   class="w-64 h-[215px] relative rounded-[5px] flex-col justify-start items-start flex bg-center bg-cover"
+                   style="background-image: url('https://a.travel-assets.com/findyours-php/viewfinder/images/res70/469000/469964-Hassan-Ii-Mosque.jpg');">
                     <div
                         class="w-full h-full flex flex-col justify-end pl-3 text-white text-lg font-extralight font-['Roboto']">
                         <div class="mb-2">Casablanca</div>
                     </div>
                 </a>
                 <a href="/events/Marrakech"
-                    class="w-64 h-[215px] relative rounded-[5px] flex-col justify-start items-start flex bg-center bg-cover"
-                    style="background-image: url('https://media.gq-magazine.co.uk/photos/5d138f50976fa31476f39436/master/pass/marrakech-gq-9oct18_istock_b.jpg');">
+                   class="w-64 h-[215px] relative rounded-[5px] flex-col justify-start items-start flex bg-center bg-cover"
+                   style="background-image: url('https://media.gq-magazine.co.uk/photos/5d138f50976fa31476f39436/master/pass/marrakech-gq-9oct18_istock_b.jpg');">
                     <div
                         class="w-full h-full flex flex-col justify-end pl-3 text-white text-lg font-extralight font-['Roboto']">
                         <div class="mb-2">Marrakech</div>
                     </div>
                 </a>
                 <a href="/events/Tanger"
-                    class="w-64 h-[215px] relative rounded-[5px] flex-col justify-start items-start flex bg-center bg-cover"
-                    style="background-image: url('https://www.tanjamarinabay.ma/wp-content/uploads/2016/05/Sans-titre-1-1.jpg');">
+                   class="w-64 h-[215px] relative rounded-[5px] flex-col justify-start items-start flex bg-center bg-cover"
+                   style="background-image: url('https://www.tanjamarinabay.ma/wp-content/uploads/2016/05/Sans-titre-1-1.jpg');">
                     <div
                         class="w-full h-full flex flex-col justify-end pl-3 text-white text-lg font-extralight font-['Roboto']">
                         <div class="mb-2">Tanger</div>
@@ -360,35 +360,16 @@
                 </a>
             </div>
             <div class="mt-8 flex justify-around">
-                <img class="w-8 h-8 relative rounded-[14px]"
-                     src="https://upload.wikimedia.org/wikipedia/en/0/03/Flag_of_Italy.svg"/>
-                <img class="w-8 h-8 relative rounded-[14px]" src="https://cdn5.allevents.in/images/flags/32/US.png"/>
-                <img class="w-8 h-8 relative rounded-[14px]"
-                     src="https://cdn2.allevents.in/transup/7c/1b048249aa476d8446f7ca8cff69fa/UK.png"/>
-                <img class="w-8 h-8 relative rounded-[14px]" src="https://cdn5.allevents.in/images/flags/32/IN.png"/>
-                <img class="w-8 h-8 relative rounded-[14px]" src="https://cdn5.allevents.in/images/flags/32/CH.png"/>
-                <img class="w-8 h-8 relative rounded-[14px]"
-                     src="https://cdn2.allevents.in/transup/7c/1b048249aa476d8446f7ca8cff69fa/UK.png"/>
-                <img class="w-8 h-8 relative rounded-[14px]" src="https://cdn5.allevents.in/images/flags/32/ES.png"/>
-                <img class="w-8 h-8 relative rounded-[14px]" src="https://cdn5.allevents.in/images/flags/32/IT.png"/>
-                <img class="w-8 h-8 relative rounded-[14px]" src="https://cdn5.allevents.in/images/flags/32/NZ.png"/>
-                <img class="w-8 h-8 relative rounded-[14px]" src="https://cdn5.allevents.in/images/flags/32/CH.png"/>
-                <img class="w-8 h-8 relative rounded-[14px]" src="https://cdn5.allevents.in/images/flags/32/NZ.png"/>
-                <img class="w-8 h-8 relative rounded-[14px]" src="https://cdn5.allevents.in/images/flags/32/NO.png"/>
-                <img class="w-8 h-8 relative rounded-[14px]" src="https://cdn5.allevents.in/images/flags/32/CH.png"/>
-                <img class="w-8 h-8 relative rounded-[14px]" src="https://cdn5.allevents.in/images/flags/32/PL.png"/>
-                <img class="w-8 h-8 relative rounded-[14px]" src="https://cdn5.allevents.in/images/flags/32/IN.png"/>
-                <img class="w-8 h-8 relative rounded-[14px]" src="https://cdn5.allevents.in/images/flags/32/CH.png"/>
-                <img class="w-8 h-8 relative rounded-[14px]" src="https://cdn5.allevents.in/images/flags/32/BE.png"/>
-                <img class="w-8 h-8 relative rounded-[14px]" src="https://cdn5.allevents.in/images/flags/32/CH.png"/>
-                {{--                <img class="w-8 h-8 relative rounded-[14px]" src="https://via.placeholder.com/32x32" />--}}
-                {{--                <img class="w-8 h-8 relative rounded-[14px]" src="https://via.placeholder.com/32x32" />--}}
-                {{--                <img class="w-8 h-8 relative rounded-[14px]" src="https://via.placeholder.com/32x32" />--}}
-                {{--                <img class="w-8 h-8 relative rounded-[14px]" src="https://via.placeholder.com/32x32" />--}}
+                @foreach ($flags as $countryCode => $country)
+                    <a href="{{ route('filter.events', ['country' => $countryCode]) }}">
+                        <img class="w-8 h-8 relative rounded-[14px]" src="{{ $country['image'] }}" alt="{{ $country['name'] }}"/>
+                    </a>
+                @endforeach
 
-                <div class="w-[78.19px] h-[21px] text-cyan-700 text-[13px] font-normal font-['Roboto'] leading-[21px]">
+                <button data-modal-target="crypto-modal-flags" data-modal-toggle="crypto-modal-flags"
+                        class="w-[78.19px] h-[21px] text-cyan-700 text-[13px] font-normal font-['Roboto'] leading-[21px]">
                     more cities
-                </div>
+                </button>
             </div>
         </div>
 
@@ -1261,6 +1242,46 @@
         </div>
     </div>
 </div>
+
+{{--flags--}}
+<div id="crypto-modal-flags" tabindex="-1" aria-hidden="true"
+     class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 max-h-full">
+    <div class="relative p-8 w-4/6 max-h-full">
+        <!-- Modal content -->
+        <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+            <!-- Modal header -->
+            <div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600">
+                <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
+                    All countries
+                </h3>
+                <button type="button"
+                        class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm h-8 w-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white"
+                        data-modal-toggle="crypto-modal-flags">
+                    <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                         viewBox="0 0 14 14">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                              d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+                    </svg>
+                    <span class="sr-only">Close modal</span>
+                </button>
+            </div>
+            <!-- Modal body -->
+            <div class=" overflow-y-auto p-4 md:p-5">
+                {{--                <p class="text-sm font-normal text-gray-500 dark:text-gray-400">Select any categories and show your--}}
+                {{--                    favorites events</p>--}}
+                <div class="h-90">
+                    <div class="grid grid-cols-1 md:grid-cols-4 xl:grid-cols-12 p-4 mx-auto">
+                        @foreach ($flagsData as $country)
+                            <img class="w-8 h-8 relative rounded-[14px]" src="{{ $country['image'] }}"
+                                 alt="{{ $country['name'] }}"/>
+                        @endforeach
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 
 <script>
     function filterEvents(date) {
