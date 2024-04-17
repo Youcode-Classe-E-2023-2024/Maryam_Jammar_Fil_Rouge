@@ -350,7 +350,7 @@
                         <div class="mb-2">Marrakech</div>
                     </div>
                 </a>
-                <a
+                <a href="/events/Tanger"
                     class="w-64 h-[215px] relative rounded-[5px] flex-col justify-start items-start flex bg-center bg-cover"
                     style="background-image: url('https://www.tanjamarinabay.ma/wp-content/uploads/2016/05/Sans-titre-1-1.jpg');">
                     <div
