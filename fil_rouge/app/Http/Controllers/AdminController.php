@@ -15,7 +15,7 @@ class AdminController extends Controller
     {
         $totalEvents = Event::where('status', 'Public')->count();
 
-        $totalConfirmationRequests =  Event::where('status', 'En attente')->count();
+        $totalConfirmationRequests = Event::where('status', 'En attente')->count();
 
         $totalUsers = User::where('deleted', '0')->count();
 
@@ -26,4 +26,38 @@ class AdminController extends Controller
         ]);
     }
 
+//    public function editProfile($id)
+//    {
+//        $user = User::find($id);
+//
+//        return view('admin.profile', compact('user'));
+//    }
+    public function manage_profile(Request $request)
+    {
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'email' => 'required|string|email|max:255|unique:users,email,' . auth()->user()->id,
+            'picture' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
+        ]);
+
+        $user = auth()->user();
+        $user->name = $request->name;
+        $user->email = $request->email;
+
+        // Gérer l'image de profil si elle est téléchargée
+        $fileName = time() . $request->file('picture')->getClientOriginalName();
+        $path = $request->file('picture')->storeAs('picture', $fileName, 'public');
+        $picturePath = Storage::url($path);
+
+        $picture["picture"] = $picturePath;
+
+        $user->update([
+            'name' => $request->name,
+            'email' => $request->email,
+            'picture' => $picturePath,
+        ]);
+//        $user->save();
+
+        return redirect()->back()->with('success', 'Your profile has been updated successfully!');
+    }
 }
