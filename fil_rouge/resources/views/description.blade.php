@@ -569,14 +569,17 @@
                                                     </a>
 {{--                                                </form>--}}
                                                 <div class="flex space-x-6">
-                                                    <a data-modal-target="progress-modal-{{$event->id}}"
-                                                       data-modal-toggle="progress-modal-{{$event->id}}" class="card2">Update</a>
-                                                    <form action="/deleteEvent/{{$event->id}}" method="post">
-                                                        @csrf
-                                                        @method('delete')
-                                                        <button type="submit" class="card3">Delete</button>
-                                                    </form>
+                                                    @if($event->creator == auth()->id())
+                                                        <a data-modal-target="progress-modal-{{$event->id}}"
+                                                           data-modal-toggle="progress-modal-{{$event->id}}" class="card2">Update</a>
+                                                        <form action="/deleteEvent/{{$event->id}}" method="post">
+                                                            @csrf
+                                                            @method('delete')
+                                                            <button type="submit" class="card3">Delete</button>
+                                                        </form>
+                                                    @endif
                                                 </div>
+
                                             </div>
 
                                         </div>
