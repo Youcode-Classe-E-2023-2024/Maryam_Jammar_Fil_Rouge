@@ -1,13 +1,13 @@
 @include('organizer.layout')
 
-<body class="font-montserrat text-sm bg-white dark:bg-zinc-900 ">
+<body class="overflow-y-hidden font-montserrat text-sm bg-white dark:bg-zinc-900 ">
 <div
-    class="flex min-h-screen  2xl:max-w-screen-2xl 2xl:mx-auto 2xl:border-x-2 2xl:border-gray-200 dark:2xl:border-zinc-700 ">
+    class="flex min-h-screen 2xl:max-w-screen-2xl 2xl:mx-auto 2xl:border-x-2 2xl:border-gray-200 dark:2xl:border-zinc-700 ">
     <!-- Left Sidebar -->
     @include('organizer.left_side')
     <!-- /Left Sidebar -->
 
-    <main class=" flex-1 py-10  px-5 sm:px-10 ">
+    <main class=" flex-1 py-8 px-5 sm:px-10 ">
 
         <header class=" font-bold text-lg flex items-center  gap-x-3 md:hidden mb-12 ">
                 <span class="mr-6">
