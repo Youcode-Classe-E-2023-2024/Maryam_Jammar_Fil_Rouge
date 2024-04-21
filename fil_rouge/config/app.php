@@ -153,6 +153,10 @@ return [
     | this array to grant expanded functionality to your applications.
     |
     */
+    'curl' => [
+        'ca_info' => '/path/to/ca-bundle.crt',
+    ],
+
 
     'providers' => [
 
