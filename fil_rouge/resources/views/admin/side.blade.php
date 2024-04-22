@@ -155,18 +155,22 @@
             </a>
         </li>
         <li class="mb-1 group">
-            <a href=""
-               class="flex font-semibold items-center py-2 px-3 text-gray-900 hover:bg-gray-950 hover:text-gray-100 rounded-md group-[.active]:bg-gray-800 group-[.active]:text-white group-[.selected]:bg-gray-950 group-[.selected]:text-gray-100">
-                <svg class="mr-3 text-lg w-6 h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-                    <g data-name="check out">
-                        <path
-                            d="M27.9 2.58a.86.86 0 0 0-.07-.1.71.71 0 0 0-.19-.23h-.09a1.12 1.12 0 0 0-.25-.11L27.1 2H12a1 1 0 0 0-1 1v6a1 1 0 0 0 2 0V4h7.19l-3.48 1A1 1 0 0 0 16 6v19h-3v-3a1 1 0 0 0-2 0v4a1 1 0 0 0 1 1h4v2a1 1 0 0 0 .4.8 1 1 0 0 0 .6.2 1 1 0 0 0 .29 0l10-3a1 1 0 0 0 .71-1V3a1 1 0 0 0-.1-.42zM26 25.26l-8 2.4V6.74l8-2.4z"/>
-                        <path
-                            d="M7.41 17H14a1 1 0 0 0 0-2H7.41l1.3-1.29a1 1 0 0 0-1.42-1.42l-3 3a1 1 0 0 0-.21.33 1 1 0 0 0 0 .76 1 1 0 0 0 .21.33l3 3a1 1 0 0 0 1.42 0 1 1 0 0 0 0-1.42zM20 17a1 1 0 0 0 0-2 1 1 0 1 0 0 2z"/>
-                    </g>
-                </svg>
-                <span class="text-sm">Logout</span>
-            </a>
+            <form action="/logout" method="POST">
+                @csrf
+                <button
+
+                    class="flex font-semibold items-center py-2 px-3 text-white hover:bg-white hover:text-white rounded-md group-[.active]:bg-white group-[.active]:text-white group-[.selected]:bg-white group-[.selected]:text-white">
+                    <svg class="mr-3 text-lg w-6 h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+                        <g data-name="check out">
+                            <path
+                                d="M27.9 2.58a.86.86 0 0 0-.07-.1.71.71 0 0 0-.19-.23h-.09a1.12 1.12 0 0 0-.25-.11L27.1 2H12a1 1 0 0 0-1 1v6a1 1 0 0 0 2 0V4h7.19l-3.48 1A1 1 0 0 0 16 6v19h-3v-3a1 1 0 0 0-2 0v4a1 1 0 0 0 1 1h4v2a1 1 0 0 0 .4.8 1 1 0 0 0 .6.2 1 1 0 0 0 .29 0l10-3a1 1 0 0 0 .71-1V3a1 1 0 0 0-.1-.42zM26 25.26l-8 2.4V6.74l8-2.4z"/>
+                            <path
+                                d="M7.41 17H14a1 1 0 0 0 0-2H7.41l1.3-1.29a1 1 0 0 0-1.42-1.42l-3 3a1 1 0 0 0-.21.33 1 1 0 0 0 0 .76 1 1 0 0 0 .21.33l3 3a1 1 0 0 0 1.42 0 1 1 0 0 0 0-1.42zM20 17a1 1 0 0 0 0-2 1 1 0 1 0 0 2z"/>
+                        </g>
+                    </svg>
+                    <span class="text-sm">Logout</span>
+                </button>
+            </form>
         </li>
     </ul>
 </div>
