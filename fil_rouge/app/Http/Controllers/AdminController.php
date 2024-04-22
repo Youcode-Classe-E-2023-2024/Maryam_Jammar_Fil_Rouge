@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Category;
 use App\Models\Event;
+use App\Models\Role;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -64,10 +65,16 @@ class AdminController extends Controller
 
         $totalUsers = User::where('deleted', '0')->count();
 
+        $roles = Role::all();
+        $LatestUsers = User::limit(4)->get();
+
+
         return view('admin.dashboard', [
             'totalEvents' => $totalEvents,
             'totalCategories' => $totalCategories,
             'totalUsers' => $totalUsers,
+            'LatestUsers' => $LatestUsers,
+            'roles' => $roles
         ]);
     }
 
