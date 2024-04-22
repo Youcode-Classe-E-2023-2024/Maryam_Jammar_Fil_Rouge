@@ -141,9 +141,9 @@
 
 <style>
     .card {
-        width: 200px;
-        height: 64px;
-        background: #32CD32;
+        width: 150px;
+        height: 50px;
+        /*background: #32CD32;*/
         border-radius: 20px;;
         display: flex;
         flex-direction: column;
@@ -467,49 +467,48 @@
                                 <div class="mb-12 w-full shrink-0 grow-0 basis-auto lg:mb-0 lg:w-5/12">
                                     <div class="flex lg:py-12">
                                         <img src="{{$event->image}}"
-                                             class="z-0 w-full rounded-lg shadow-lg dark:shadow-black/20 lg:ml-[50px]"
+                                             class="z-0 w-full rounded-lg shadow-md dark:shadow-black/20 lg:ml-[50px]"
                                              alt="image"/>
                                     </div>
                                 </div>
 
                                 <div class="w-full shrink-0 grow-0 basis-auto lg:w-7/12">
                                     <div
-                                        class="flex h-full items-center rounded-lg bg-[#F8F8FF] shadow-2xl p-6 text-center text-white lg:pl-12 lg:text-left">
+                                        class="flex h-full items-center rounded-lg bg-gray-100  shadow-xl p-6 text-center text-white lg:pl-12 lg:text-left">
                                         <div class="text-black lg:pl-12">
-                                            <h2 class="mb-8 text-3xl font-bold">{{$event->title}}</h2>
-                                            <p class="mb-8 pb-2 lg:pb-0">
-                                                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                                                Maxime, sint, repellat vel quo quisquam accusamus in qui at
-                                                ipsa enim quibusdam illo laboriosam omnis. Labore itaque illum
-                                                distinctio eum neque!
+                                            <h2 class=" text-3xl font-bold">{{$event->title}}</h2>
+                                            <p class="mb-4 text-lg flex items-center md:mx-0 md:mb-2 lg:mb-0">
+                                                <svg class="mr-2" id='Location_24' width='24' height='24'
+                                                     viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'
+                                                     xmlns:xlink='http://www.w3.org/1999/xlink'>
+                                                    <rect width='24' height='24' stroke='none' fill='#000000'
+                                                          opacity='0'/>
+
+
+                                                    <g transform="matrix(0.74 0 0 0.74 12 12)">
+                                                        <path
+                                                            style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(0,0,0); fill-rule: nonzero; opacity: 1;"
+                                                            transform=" translate(-16.5, -13.5)"
+                                                            d="M 24 0 C 20.686 0 18 2.686 18 6 C 18 10.792 23 12 23 14 C 23 14.549 23.448 15 24 15 C 24.552 15 25 14.549 25 14 C 25 12 30 10.792 30 6 C 30 2.686 27.314 0 24 0 z M 15 3 C 8.383 3 3 8.383 3 15 C 3 21.617 8.383 27 15 27 C 21.617 27 27 21.617 27 15 C 27 14.784 26.97975 14.574328 26.96875 14.361328 C 26.82175 15.569328 25.959406 16.547047 24.816406 16.873047 C 24.743406 17.256047 24.654063 17.634 24.539062 18 L 20.818359 18 C 20.932359 17.045 21 16.046 21 15 C 21 14.72 20.984609 14.451734 20.974609 14.177734 C 20.777609 13.942734 20.331281 13.556719 19.988281 13.261719 C 19.628281 12.951719 19.225359 12.599078 18.818359 12.205078 C 18.931359 13.087078 19 14.019 19 15 C 19 16.055 18.927828 17.061 18.798828 18 L 11.201172 18 C 11.073172 17.061 11 16.055 11 15 C 11 13.945 11.072172 12.939 11.201172 12 L 18.613281 12 C 18.060281 11.44 17.521313 10.778 17.070312 10 L 11.585938 10 C 12.344938 6.961 13.722 5 15 5 C 15.341 5 15.687297 5.1481563 16.029297 5.4101562 C 16.088297 4.6041562 16.267828 3.8333281 16.548828 3.1113281 C 16.040828 3.0463281 15.526 3 15 3 z M 24 4 C 25.105 4 26 4.895 26 6 C 26 7.105 25.105 8 24 8 C 22.895 8 22 7.105 22 6 C 22 4.895 22.895 4 24 4 z M 11.0625 5.8105469 C 10.3985 6.9385469 9.8677188 8.362 9.5117188 10 L 6.3535156 10 C 7.4305156 8.146 9.0785 6.6645469 11.0625 5.8105469 z M 5.4609375 12 L 9.1816406 12 C 9.0676406 12.955 9 13.954 9 15 C 9 16.046 9.0676406 17.045 9.1816406 18 L 5.4609375 18 C 5.1629375 17.052 5 16.045 5 15 C 5 13.955 5.1629375 12.948 5.4609375 12 z M 6.3535156 20 L 9.5117188 20 C 9.8677187 21.638 10.396547 23.061453 11.060547 24.189453 C 9.0775469 23.335453 7.4305156 21.854 6.3535156 20 z M 11.585938 20 L 18.414062 20 C 17.655062 23.039 16.278 25 15 25 C 13.722 25 12.344938 23.039 11.585938 20 z M 20.486328 20 L 23.646484 20 C 22.570484 21.854 20.9225 23.335453 18.9375 24.189453 C 19.6015 23.061453 20.130328 21.638 20.486328 20 z"
+                                                            stroke-linecap="round"/>
+                                                    </g>
+                                                </svg>
+                                                @if($event->event_type == 'online')
+                                                    Online
+                                                @else
+                                                    {{$event->country}}, {{$event->city}}
+                                                @endif
+                                            </p>
+                                            <p class="mb-8 mt-8 pb-2 lg:pb-0">
+                                                Les places sont limitées, alors assurez-vous de réserver rapidement pour
+                                                ne pas manquer cette expérience exceptionnelle. Nous avons hâte de vous
+                                                accueillir et de partager ce moment spécial avec vous !
                                             </p>
 
                                             <div
-                                                class="mx-auto mb-8 flex flex-col md:flex-row md:justify-around xl:justify-start">
-                                                <p class="mx-auto mb-4 flex items-center md:mx-0 md:mb-2 lg:mb-0 xl:mr-20">
-                                                    <svg class="mr-2" id='Location_24' width='24' height='24'
-                                                         viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'
-                                                         xmlns:xlink='http://www.w3.org/1999/xlink'>
-                                                        <rect width='24' height='24' stroke='none' fill='#000000'
-                                                              opacity='0'/>
+                                                class="mx-auto mb-8 flex grid grid-cols-3 md:flex-row md:justify-around xl:justify-start">
 
-
-                                                        <g transform="matrix(0.74 0 0 0.74 12 12)">
-                                                            <path
-                                                                style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(0,0,0); fill-rule: nonzero; opacity: 1;"
-                                                                transform=" translate(-16.5, -13.5)"
-                                                                d="M 24 0 C 20.686 0 18 2.686 18 6 C 18 10.792 23 12 23 14 C 23 14.549 23.448 15 24 15 C 24.552 15 25 14.549 25 14 C 25 12 30 10.792 30 6 C 30 2.686 27.314 0 24 0 z M 15 3 C 8.383 3 3 8.383 3 15 C 3 21.617 8.383 27 15 27 C 21.617 27 27 21.617 27 15 C 27 14.784 26.97975 14.574328 26.96875 14.361328 C 26.82175 15.569328 25.959406 16.547047 24.816406 16.873047 C 24.743406 17.256047 24.654063 17.634 24.539062 18 L 20.818359 18 C 20.932359 17.045 21 16.046 21 15 C 21 14.72 20.984609 14.451734 20.974609 14.177734 C 20.777609 13.942734 20.331281 13.556719 19.988281 13.261719 C 19.628281 12.951719 19.225359 12.599078 18.818359 12.205078 C 18.931359 13.087078 19 14.019 19 15 C 19 16.055 18.927828 17.061 18.798828 18 L 11.201172 18 C 11.073172 17.061 11 16.055 11 15 C 11 13.945 11.072172 12.939 11.201172 12 L 18.613281 12 C 18.060281 11.44 17.521313 10.778 17.070312 10 L 11.585938 10 C 12.344938 6.961 13.722 5 15 5 C 15.341 5 15.687297 5.1481563 16.029297 5.4101562 C 16.088297 4.6041562 16.267828 3.8333281 16.548828 3.1113281 C 16.040828 3.0463281 15.526 3 15 3 z M 24 4 C 25.105 4 26 4.895 26 6 C 26 7.105 25.105 8 24 8 C 22.895 8 22 7.105 22 6 C 22 4.895 22.895 4 24 4 z M 11.0625 5.8105469 C 10.3985 6.9385469 9.8677188 8.362 9.5117188 10 L 6.3535156 10 C 7.4305156 8.146 9.0785 6.6645469 11.0625 5.8105469 z M 5.4609375 12 L 9.1816406 12 C 9.0676406 12.955 9 13.954 9 15 C 9 16.046 9.0676406 17.045 9.1816406 18 L 5.4609375 18 C 5.1629375 17.052 5 16.045 5 15 C 5 13.955 5.1629375 12.948 5.4609375 12 z M 6.3535156 20 L 9.5117188 20 C 9.8677187 21.638 10.396547 23.061453 11.060547 24.189453 C 9.0775469 23.335453 7.4305156 21.854 6.3535156 20 z M 11.585938 20 L 18.414062 20 C 17.655062 23.039 16.278 25 15 25 C 13.722 25 12.344938 23.039 11.585938 20 z M 20.486328 20 L 23.646484 20 C 22.570484 21.854 20.9225 23.335453 18.9375 24.189453 C 19.6015 23.061453 20.130328 21.638 20.486328 20 z"
-                                                                stroke-linecap="round"/>
-                                                        </g>
-                                                    </svg>
-                                                    @if($event->event_type == 'online')
-                                                        Online
-                                                    @else
-                                                        {{$event->country}}, {{$event->city}}
-                                                    @endif
-                                                </p>
-
-                                                <p class="mx-auto mb-4 flex items-center md:mx-0 md:mb-2 lg:mb-0 xl:mr-20">
+                                                <p class="mx-auto mb-4 flex items-center md:mx-0 md:mb-2 lg:mb-0">
                                                     <svg class="mr-2" id='Calendar_3_24' width='24' height='24'
                                                          viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'
                                                          xmlns:xlink='http://www.w3.org/1999/xlink'>
@@ -595,8 +594,8 @@
                                                     {{ \Carbon\Carbon::parse($event->date)->translatedFormat('j F Y') }}
                                                 </p>
 
-{{--                                                id="countdown{{$event->id}}"--}}
-                                                <p class="mx-auto mb-2 flex items-center md:mx-0 md:mb-2 lg:mb-0 xl:mr-20">
+                                                {{--                                                id="countdown{{$event->id}}"--}}
+                                                <p class="mx-auto mb-2 flex items-center md:mx-0 md:mb-2 lg:mb-0">
                                                     <svg class="mr-2" id='Clock_Circle_1_24' width='24' height='24'
                                                          viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'
                                                          xmlns:xlink='http://www.w3.org/1999/xlink'>
@@ -702,7 +701,8 @@
                                             <div class="flex justify-between">
                                                 {{--                                                <form action="/paiement/{{$event->id}}" method="post">--}}
                                                 {{--                                                    @csrf--}}
-                                                <a href="/paiement/{{$event->id}}" class="card  mt-8">
+                                                <a href="/paiement/{{$event->id}}"
+                                                   class="card  mt-8 bg-gradient-to-r from-teal-400 via-teal-500 to-teal-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-teal-300">
                                                     <p class="img font-bold">Buy Now !</p>
                                                     <div class="textBox">
                                                         {{--                                                    <p class="text head">Ethereum</p>--}}
@@ -712,7 +712,9 @@
                                                 </a>
                                                 {{--                                                </form>--}}
                                                 <div class="flex space-x-6  mt-10">
-                                                    @if($event->creator == auth()->id())
+                                                    <p>{{$event->id}} DH</p>
+
+                                                @if($event->creator == auth()->id())
                                                         <a data-modal-target="progress-modal-{{$event->id}}"
                                                            data-modal-toggle="progress-modal-{{$event->id}}"
                                                            class="fancy">
@@ -734,20 +736,25 @@
                                                         </form>
                                                     @endif
                                                 </div>
-
                                             </div>
 
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="xl:pt-24 text-center">
-                                <h3 class="font-bold text-2xl">
+                            <div class="max-w-4xl text-justify m-auto px-10 mt-16  py-6 rounded-lg shadow-md">
+                                <h3 class="text-center font-bold text-2xl">
                                     More Details
                                 </h3>
-                                <p class="px-12 mx-auto text-normal mt-6 sm:mt-6 text-justify">{{$event->description}}
-                                </p>
+                                <p class="mt-6 text-gray-600">{{$event->description}}</p>
                             </div>
+                            {{--                            <div class="xl:pt-24 text-center">--}}
+                            {{--                                <h3 class="font-bold text-2xl">--}}
+                            {{--                                    More Details--}}
+                            {{--                                </h3>--}}
+                            {{--                                <p class="w-max-4xl px-24 mx-auto text-normal mt-6 sm:mt-6 text-justify">{{$event->description}}--}}
+                            {{--                                </p>--}}
+                            {{--                            </div>--}}
                         </section>
                         <!-- Section: Design Block -->
                     </div>
@@ -759,49 +766,8 @@
         </div>
     </section>
 
-    <footer class="px-28 bg-white dark:bg-gray-900">
-        <div class="container mx-auto px-28 pb-4">
+    @include('footer')
 
-            <hr class="my-6 border-gray-200 dark:border-gray-700 md:my-10"/>
-
-            <div class="flex justify-around">
-                <div>
-                    <p class="font-semibold text-gray-800 dark:text-white">Quick Link</p>
-
-                    <div class="mt-5 flex flex-col items-start space-y-2">
-                        <a href="/"
-                           class="text-gray-600 transition-colors duration-300 hover:text-blue-500 hover:underline dark:text-gray-300 dark:hover:text-blue-400">Home</a>
-                        <a href="#"
-                           class="text-gray-600 transition-colors duration-300 hover:text-blue-500 hover:underline dark:text-gray-300 dark:hover:text-blue-400">Who
-                            We Are</a>
-                    </div>
-                </div>
-
-                <div>
-                    <p class="font-semibold text-gray-800 dark:text-white">Contact Us</p>
-
-                    <div class="mt-5 flex flex-col items-start space-y-2">
-                        <a href="#"
-                           class="text-gray-600 transition-colors duration-300 hover:text-blue-500 hover:underline dark:text-gray-300 dark:hover:text-blue-400">+212
-                            768 473 4978</a>
-                        <a href="#"
-                           class="text-gray-600 transition-colors duration-300 hover:text-blue-500 hover:underline dark:text-gray-300 dark:hover:text-blue-400">info@tchikita.com</a>
-                    </div>
-                </div>
-            </div>
-
-            <hr class="my-6 border-gray-200 dark:border-gray-700 md:my-10"/>
-
-            <div class="flex flex-col items-center justify-between sm:flex-row">
-                <a href="/"
-                   class="text-2xl font-bold text-gray-800 transition-colors duration-300 hover:text-gray-700 dark:text-white dark:hover:text-gray-300">Tchikita</a>
-
-                <p class="mt-4 text-sm text-gray-500 dark:text-gray-300 sm:mt-0">
-                    © {{ date('Y') }}. All Rights Reserved.
-                </p>
-            </div>
-        </div>
-    </footer>
 </main>
 <script>
     window.addEventListener('scroll', function () {
