@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Mail\TicketReservation;
 use App\Models\Category;
 use App\Models\Event;
+use App\Models\Reservation;
 use Barryvdh\DomPDF\Facade\Pdf;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -37,6 +38,11 @@ class ReservationController extends Controller
         if ($event && $event->nbr_place > 0) {
             $event->nbr_place -= 1;
             $event->save();
+
+            $reservation = new Reservation();
+            $reservation->client = $user->id;
+            $reservation->event = $event->id;
+            $reservation->save();
 
             // Générer le PDF
             $pdf = PDF::loadView('pdf.ticket', compact('event', 'user'));
