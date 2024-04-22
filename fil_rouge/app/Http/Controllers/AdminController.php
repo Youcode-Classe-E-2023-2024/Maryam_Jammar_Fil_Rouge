@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use App\Models\Event;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -26,12 +27,6 @@ class AdminController extends Controller
         ]);
     }
 
-//    public function editProfile($id)
-//    {
-//        $user = User::find($id);
-//
-//        return view('admin.profile', compact('user'));
-//    }
     public function manage_profile(Request $request)
     {
         $request->validate([
@@ -60,4 +55,20 @@ class AdminController extends Controller
 
         return redirect()->back()->with('success', 'Your profile has been updated successfully!');
     }
+
+    public function statistiques()
+    {
+        $totalEvents = Event::where('status', 'Public')->count();
+
+        $totalCategories = Category::count();
+
+        $totalUsers = User::where('deleted', '0')->count();
+
+        return view('admin.dashboard', [
+            'totalEvents' => $totalEvents,
+            'totalCategories' => $totalCategories,
+            'totalUsers' => $totalUsers,
+        ]);
+    }
+
 }

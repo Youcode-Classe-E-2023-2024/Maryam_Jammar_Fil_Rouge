@@ -123,7 +123,7 @@
         </li>
         <span class="text-gray-400 font-bold">Profile</span>
         <li class="mb-1 group">
-            <a href=""
+            <a href="/profile"
                class="flex font-semibold items-center py-2 px-4 text-gray-900 hover:bg-gray-950 hover:text-gray-100 rounded-md group-[.active]:bg-gray-800 group-[.active]:text-white group-[.selected]:bg-gray-950 group-[.selected]:text-gray-100">
                 <svg class="mr-3 text-lg w-6 h-6" xmlns="http://www.w3.org/2000/svg"
                      xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="256" height="256"
@@ -159,7 +159,7 @@
                 @csrf
                 <button
 
-                    class="flex font-semibold items-center py-2 px-3 text-white hover:bg-white hover:text-white rounded-md group-[.active]:bg-white group-[.active]:text-white group-[.selected]:bg-white group-[.selected]:text-white">
+                    class="flex font-semibold items-center py-2 px-3 text-black hover:bg-black hover:text-white rounded-md group-[.active]:bg-black group-[.active]:text-black group-[.selected]:bg-black group-[.selected]:text-black">
                     <svg class="mr-3 text-lg w-6 h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
                         <g data-name="check out">
                             <path
