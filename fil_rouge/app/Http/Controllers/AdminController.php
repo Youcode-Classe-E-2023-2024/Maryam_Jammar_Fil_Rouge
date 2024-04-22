@@ -67,6 +67,7 @@ class AdminController extends Controller
 
         $roles = Role::all();
         $LatestUsers = User::limit(4)->get();
+        $LatestEvents = Event::limit(5)->get();
 
 
         return view('admin.dashboard', [
@@ -74,7 +75,8 @@ class AdminController extends Controller
             'totalCategories' => $totalCategories,
             'totalUsers' => $totalUsers,
             'LatestUsers' => $LatestUsers,
-            'roles' => $roles
+            'roles' => $roles,
+            'LatestEvents' => $LatestEvents,
         ]);
     }
 
