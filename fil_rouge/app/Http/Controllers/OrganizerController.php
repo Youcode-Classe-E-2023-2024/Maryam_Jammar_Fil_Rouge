@@ -16,17 +16,20 @@ class OrganizerController extends Controller
     {
         $user = Auth::user()->id;
 
-        $events = Event::paginate(3)->where('creator', $user);
+        $events = Event::where('creator', $user)->orderBy('created_at', 'desc')->paginate(3);
         $categories = Category::paginate(4);
 
-        return view('organizer.dashboard', compact('categories', 'events'));
+        $content = file_get_contents('https://gist.githubusercontent.com/rogargon/5534902/raw/434445021e155240ca78e378f10f70391dd594ea/countries.json');
+        $data = json_decode($content);
+
+        return view('organizer.dashboard', compact('categories', 'events', 'data'));
     }
 
     public function myEvents()
     {
         $user = Auth::user()->id;
 
-        $events = Event::where('creator', $user)->paginate(6);
+        $events = Event::where('creator', $user)->orderBy('created_at', 'desc')->paginate(6);
         $categories = Category::paginate(4);
 
         return view('organizer.myEvents', compact('categories', 'events'));
