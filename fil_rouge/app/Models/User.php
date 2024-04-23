@@ -20,7 +20,10 @@ class User extends Authenticatable
         return $this->belongsTo(Role::class, 'role');
     }
 
-
+    public function reservations()
+    {
+        return $this->hasMany(Reservation::class, 'client');
+    }
 
     /**
      * The attributes that are mass assignable.

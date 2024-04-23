@@ -58,4 +58,18 @@ class OrganizerController extends Controller
 
         return view('organizer.statistics', compact('totalEvents', 'totalCategories', 'totalReservations', 'events', 'reservations', 'users', 'LatestReservatios', 'event', 'client'));
     }
+
+    public function reservations(){
+
+        $user = Auth::user()->id;
+
+        $client = User::all();
+
+        $event = Event::all();
+        $reservations = Reservation::whereIn('event', function($query) use ($user) {
+            $query->select('id')->from('events')->where('creator', $user);
+        })->with(['event', 'client'])->paginate(6);
+
+        return view('organizer.reservations', compact('client', 'event', 'reservations'));
+    }
 }
