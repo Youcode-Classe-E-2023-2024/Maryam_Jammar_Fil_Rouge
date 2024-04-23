@@ -47,7 +47,7 @@ class HomeController extends Controller
         $allCategories = Category::all();
 
         $events = Event::where('status', 'Public')
-            ->where('date', '>=', now()->toDateString())
+            ->where('date', '>', now()->toDateString())
             ->paginate(6);
         $pastEvents = Event::where('status', 'Public')
             ->where(function ($query) {
@@ -61,7 +61,14 @@ class HomeController extends Controller
             ->where('status', 'Public')
             ->paginate(6);
 
-        return view('welcome', compact('events', 'categories', 'allCategories', 'pastEvents'));
+        $flagsData = json_decode(file_get_contents('https://cdn.jsdelivr.net/npm/country-flag-emoji-json@2.0.0/dist/index.json'), true);
+        $flags = [];
+        $keys = array_rand($flagsData, 18);
+        foreach ($keys as $key) {
+            $flags[$key] = $flagsData[$key];
+        }
+
+        return view('events', compact('events', 'categories', 'allCategories', 'pastEvents', 'flags', 'flagsData'));
     }
 
     public function thisWeek()
@@ -69,55 +76,39 @@ class HomeController extends Controller
         $categories = Category::limit(5)->get();
         $allCategories = Category::all();
 
-        $events = Event::where('status', 'Public')
-            ->where('date', '>=', now()->toDateString())
-            ->paginate(6);
-        $pastEvents = Event::where('status', 'Public')
-            ->where(function ($query) {
-                $query->where('nbr_place', 0)
-                    ->orWhere('date', '<', now()->toDateString());
-            })
-            ->paginate(6);
+        $tomorrow = Carbon::tomorrow()->toDateString();
 
-
-        $startOfWeek = Carbon::now()->startOfWeek()->toDateString();
-
-        $endOfWeek = Carbon::now()->endOfWeek()->toDateString();
-
-        $events = Event::whereBetween('date', [$startOfWeek, $endOfWeek])
+        $events = Event::whereDate('date', $tomorrow)
             ->where('status', 'Public')
             ->paginate(6);
 
-        return view('welcome', compact('events', 'categories', 'allCategories', 'pastEvents'));
+        return view('events', compact('events', 'categories', 'allCategories'));
     }
+
 
     public function thisMonth()
     {
         $categories = Category::limit(5)->get();
         $allCategories = Category::all();
 
-        $events = Event::where('status', 'Public')
-            ->where('date', '>=', now()->toDateString())
-            ->paginate(6);
-        $pastEvents = Event::where('status', 'Public')
-            ->where(function ($query) {
-                $query->where('nbr_place', 0)
-                    ->orWhere('date', '<', now()->toDateString());
-            })
-            ->paginate(6);
-
-
+        // Récupérer le premier et le dernier jour du mois en cours
         $startOfMonth = now()->startOfMonth();
         $endOfMonth = now()->endOfMonth();
 
         // Filtrer les événements de ce mois
-        $events = Event::whereYear('date', $startOfMonth->year)
-            ->whereMonth('date', $startOfMonth->month)
+        $events = Event::whereBetween('date', [$startOfMonth, $endOfMonth])
             ->where('status', 'Public')
             ->paginate(6);
 
+        // Filtrer les événements passés du mois en cours
+        $pastEvents = Event::where('status', 'Public')
+            ->where(function ($query) use ($startOfMonth) {
+                $query->where('nbr_place', 0)
+                    ->orWhere('date', '<', $startOfMonth);
+            })
+            ->paginate(6);
 
-        return view('welcome', compact('events', 'categories', 'allCategories', 'pastEvents'));
+        return view('events', compact('events', 'categories', 'allCategories', 'pastEvents'));
     }
 
     public function thisWeekend()
@@ -145,7 +136,7 @@ class HomeController extends Controller
             ->paginate(6);
 
 
-        return view('welcome', compact('events', 'categories', 'allCategories', 'pastEvents'));
+        return view('events', compact('events', 'categories', 'allCategories', 'pastEvents'));
     }
 
     public function nextWeek()
@@ -173,7 +164,7 @@ class HomeController extends Controller
             ->paginate(6);
 
 
-        return view('welcome', compact('events', 'categories', 'allCategories', 'pastEvents'));
+        return view('events', compact('events', 'categories', 'allCategories', 'pastEvents'));
     }
 
     public function nextWeekend()
@@ -201,7 +192,7 @@ class HomeController extends Controller
             ->paginate(6);
 
 
-        return view('welcome', compact('events', 'categories', 'allCategories', 'pastEvents'));
+        return view('events', compact('events', 'categories', 'allCategories', 'pastEvents'));
     }
 
     public function filterByCategory($categoryName)
@@ -224,8 +215,15 @@ class HomeController extends Controller
             ->where('nbr_place', '>', 0)
             ->where('date', '>', now()) // Sélectionner les événements à venir
             ->paginate(6);
+        // Fetching country flag emojis from CDN
+        $flagsData = json_decode(file_get_contents('https://cdn.jsdelivr.net/npm/country-flag-emoji-json@2.0.0/dist/index.json'), true);
+        $flags = [];
+        $keys = array_rand($flagsData, 18);
+        foreach ($keys as $key) {
+            $flags[$key] = $flagsData[$key];
+        }
 
-        return view('events', compact('events', 'categories', 'LatestEvents', 'allCategories', 'pastEvents'));
+        return view('events', compact('events', 'categories', 'LatestEvents', 'allCategories', 'pastEvents', 'flags', 'flagsData'));
     }
 
     public function search(Request $request)
@@ -277,7 +275,15 @@ class HomeController extends Controller
             ->where('date', '<', now())
             ->paginate(6);
 
-        return view('events', compact('events', 'categories', 'LatestEvents', 'allCategories', 'pastEvents'));
+        $flagsData = json_decode(file_get_contents('https://cdn.jsdelivr.net/npm/country-flag-emoji-json@2.0.0/dist/index.json'), true);
+        $flags = [];
+        $keys = array_rand($flagsData, 18);
+        foreach ($keys as $key) {
+            $flags[$key] = $flagsData[$key];
+        }
+
+
+        return view('events', compact('events', 'categories', 'LatestEvents', 'allCategories', 'pastEvents', 'flags', 'flagsData'));
     }
 
     public function filterByCasablanca()
@@ -298,7 +304,15 @@ class HomeController extends Controller
             ->where('date', '<', now())
             ->paginate(6);
 
-        return view('events', compact('events', 'categories', 'LatestEvents', 'allCategories', 'pastEvents'));
+        $flagsData = json_decode(file_get_contents('https://cdn.jsdelivr.net/npm/country-flag-emoji-json@2.0.0/dist/index.json'), true);
+        $flags = [];
+        $keys = array_rand($flagsData, 18);
+        foreach ($keys as $key) {
+            $flags[$key] = $flagsData[$key];
+        }
+
+
+        return view('events', compact('events', 'categories', 'LatestEvents', 'allCategories', 'pastEvents', 'flags', 'flagsData'));
     }
 
     public function filterByMarrakech()
@@ -319,7 +333,14 @@ class HomeController extends Controller
             ->where('date', '<', now())
             ->paginate(6);
 
-        return view('events', compact('events', 'categories', 'LatestEvents', 'allCategories', 'pastEvents'));
+        $flagsData = json_decode(file_get_contents('https://cdn.jsdelivr.net/npm/country-flag-emoji-json@2.0.0/dist/index.json'), true);
+        $flags = [];
+        $keys = array_rand($flagsData, 18);
+        foreach ($keys as $key) {
+            $flags[$key] = $flagsData[$key];
+        }
+
+        return view('events', compact('events', 'categories', 'LatestEvents', 'allCategories', 'pastEvents', 'flags', 'flagsData'));
     }
 
     public function filterByTanger()
@@ -340,7 +361,14 @@ class HomeController extends Controller
             ->where('date', '<', now())
             ->paginate(6);
 
-        return view('events', compact('events', 'categories', 'LatestEvents', 'allCategories', 'pastEvents'));
+        $flagsData = json_decode(file_get_contents('https://cdn.jsdelivr.net/npm/country-flag-emoji-json@2.0.0/dist/index.json'), true);
+        $flags = [];
+        $keys = array_rand($flagsData, 18);
+        foreach ($keys as $key) {
+            $flags[$key] = $flagsData[$key];
+        }
+
+        return view('events', compact('events', 'categories', 'LatestEvents', 'allCategories', 'pastEvents', 'flags', 'flagsData'));
     }
 
     public function filterByCountries($countryName)

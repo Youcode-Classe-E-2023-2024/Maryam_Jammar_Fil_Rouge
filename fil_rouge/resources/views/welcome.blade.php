@@ -485,7 +485,7 @@
                     </a>
                 </div>
             </div>
-            <div id="events-container" class="mt-8 grid grid-cols-1 gap-8 md:mt-16 md:grid-cols-2 xl:grid-cols-3">
+            <div class="mt-8 grid grid-cols-1 gap-8 md:mt-16 md:grid-cols-2 xl:grid-cols-3">
                 @if (count($events) > 0)
                     @foreach($events as $event)
                         <a href="/description/{{$event->id}}"
