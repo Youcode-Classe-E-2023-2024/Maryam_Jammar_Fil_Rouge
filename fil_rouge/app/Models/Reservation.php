@@ -14,7 +14,6 @@ class Reservation extends Model
     protected $fillable = [
         'client',
         'event',
-        'status'
     ];
 
     public function client()
@@ -25,4 +24,5 @@ class Reservation extends Model
     {
         return $this->belongsTo(Event::class, 'event');
     }
+
 }

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Category;
 use App\Models\Event;
 use App\Models\Reservation;
+use App\Models\Role;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -47,6 +48,14 @@ class OrganizerController extends Controller
         })->count();
         $users = User::where('role', '3')->count();
 
-        return view('organizer.statistics', compact('totalEvents', 'totalCategories', 'totalReservations', 'events', 'reservations', 'users'));
+        $client = User::all();
+
+        $event = Event::all();
+        $LatestReservatios = Reservation::whereIn('event', function($query) use ($user) {
+            $query->select('id')->from('events')->where('creator', $user);
+        })->with(['event', 'client'])->limit(5)->get();
+
+
+        return view('organizer.statistics', compact('totalEvents', 'totalCategories', 'totalReservations', 'events', 'reservations', 'users', 'LatestReservatios', 'event', 'client'));
     }
 }
