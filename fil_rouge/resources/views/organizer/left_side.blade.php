@@ -44,16 +44,14 @@
             </svg>
             <span>Reservations</span>
         </a>
-
-        <div class="mt-8 text-gray-400/70  font-medium uppercase">Social</div>
         <a class=" flex items-center space-x-2 py-1  group hover:border-r-4 hover:border-r-red-600 hover:font-semibold dark:hover:text-white "
-           href="#">
-            <svg class="h-5 w-5 group-hover:fill-red-600" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                <path
-                    d="M12 2v0C9.23 2 7 4.23 7 7c0 2.76 2.23 5 5 5 2.76 0 5-2.24 5-5v0c0-2.77-2.24-5-5-5Zm0 8v0c-1.66 0-3-1.35-3-3 0-1.66 1.34-3 3-3 1.65 0 3 1.34 3 3v0c0 1.65-1.35 3-3 3Zm9 11v-1 0c0-3.87-3.14-7-7-7h-4v0c-3.87 0-7 3.13-7 7v1h2v-1 0c0-2.77 2.23-5 5-5h4v0c2.76 0 5 2.23 5 5v1Z"></path>
+           href="/all_categories">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 group-hover:fill-red-600" viewBox="0 0 24 24" fill="currentColor">
+                <path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M9 8h10M9 12h10M9 16h10M4.99 8H5m-.02 4h.01m0 4H5"/>
             </svg>
-            <span>Profile</span>
+            <span>Categories</span>
         </a>
+
         <div class="mt-8 text-gray-400/70  font-medium uppercase">General</div>
 
         <form method="POST" action="/logout">
@@ -71,16 +69,6 @@
                 <span>Logout</span>
             </button>
         </form>
-        <a class=" flex items-center space-x-2 py-1 mt-4" href="#">
-            <div class="relative inline-block w-10 mr-2 align-middle select-none transition duration-200 ease-in">
-                <input type="checkbox" name="toggle" id="toggle"
-                       class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 border-gray-300 appearance-none cursor-pointer"
-                       @click="isDark = !isDark" :value="isDark"/>
-                <label for="toggle"
-                       class="toggle-label block overflow-hidden h-6 rounded-full bg-gray-300 cursor-pointer"></label>
-            </div>
-            <label for="toggle" class="">Dark Theme</label>
-        </a>
 
 
     </div><!-- /Menu -->

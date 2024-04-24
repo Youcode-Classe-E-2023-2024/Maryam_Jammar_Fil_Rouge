@@ -36,24 +36,27 @@
             </div>
         </header>
 
-        <section>
-            <nav class="flex space-x-6 text-gray-400 font-medium">
-                <a href="/statistics" class="hover:text-gray-700 dark:hover:text-white">Dashboard</a>
-                <a href="#" class="text-gray-700 dark:text-white font-semibold">Home</a>
-            </nav>
-        </section>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap"
+            rel="stylesheet">
+
+        <style>
+            body {
+                font-family: 'Plus Jakarta Sans', sans-serif;
+            }
+        </style>
 
         <section class="mt-9">
             <div class="flex items-center justify-between">
                 <span class="font-semibold text-gray-700 text-base dark:text-white">Categories</span>
-                <a class="underline hover:text-gray-500 text-gray-600 text-base dark:text-white">View
-                    all</a>
             </div>
 
-            <div id="carousel" class="mt-4 grid grid-cols-2 sm:grid-cols-4 gap-x-5 gap-y-5">
+            <div id="carousel" class="mt-4 grid grid-cols-2 sm:grid-cols-6 gap-x-5 gap-y-5">
                 @foreach($categories as $category)
-                    <div class="relative rounded-xl overflow-hidden category"> <!-- Ajoutez la classe category ici -->
-                        <img src="{{$category->image}}" alt="" class="rounded-full w-full h-full">
+                    <div class="mx-auto relative rounded-xl overflow-hidden category"> <!-- Ajoutez la classe category ici -->
+                        <img src="{{$category->image}}" alt="" class="rounded-full object-cover w-40 h-40">
                         <div class="absolute top-0 h-full w-full p-3 flex flex-col justify-between">
 
                             <a data-modal-target="crud-modal" data-modal-toggle="crud-modal"
@@ -299,114 +302,15 @@
 
                 @endforeach
             </div>
-        </section>
-
-        <section class="mt-9">
-            <div class="flex items-center justify-between">
-                <span class="font-semibold text-gray-700 text-base dark:text-white">My latest events</span>
-                <a href="/myEvents" class="underline hover:text-gray-500 text-gray-600 text-base dark:text-white">View
-                    all</a>
-            </div>
-
-            <div class="mt-4 grid grid-cols-2 gap-y-5 sm:grid-cols-3 gap-x-5 ">
-                @foreach($events as $event)
-                    <div class="flex flex-col rounded-xl overflow-hidden aspect-square border dark:border-zinc-600">
-                        <img src="{{$event->image}}"
-                             class=" h-4/5 object-cover w-full  " alt="">
-                        <div
-                            class="w-full h-1/5 bg-white dark:bg-zinc-800 dark:text-white px-3 flex items-center justify-between border-t-2 border-t-red-600">
-                            <span class="capitalize  font-medium truncate">{{$event->title}}</span>
-                            <div class="flex space-x-2 items-center text-xs">
-                                <svg class="w-12 h-6" xmlns="http://www.w3.org/2000/svg" width="64" height="32"
-                                     viewBox="0 0 64 32" version="1.1">
-                                    <g fill="#F5C518">
-                                        <rect x="0" y="0" width="100%" height="100%" rx="4"></rect>
-                                    </g>
-                                    <text class="text-bold text-black font-bold text-xs" x="32" y="21" fill="#000000"
-                                          font-family="Arial" font-size="10px" text-anchor="middle">Buy Now!
-                                    </text>
-                                </svg>
-
-                                <span class="font-bold">{{$event->price}} DH</span>
-                            </div>
-                        </div>
-                        <div
-                            class="w-full h-1/5 bg-white dark:bg-zinc-800 dark:text-white px-3 flex items-center justify-between">
-                            <div class="flex justify-between items-center">
-                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                                     version="1.1" width="25" height="25" viewBox="0 0 256 256" xml:space="preserve">
-                                <defs>
-                                </defs>
-                                    <g style="stroke: none; stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: none; fill-rule: nonzero; opacity: 1;"
-                                       transform="translate(1.4065934065934016 1.4065934065934016) scale(2.81 2.81)">
-                                        <path
-                                            d="M 45 1.802 c 16.583 0 30.075 13.491 30.075 30.075 c 0 7.102 -2.538 14.004 -7.145 19.434 L 45 78.317 L 22.07 51.311 c -4.608 -5.43 -7.145 -12.332 -7.145 -19.434 C 14.925 15.294 28.417 1.802 45 1.802 M 45 45.692 c 8.222 0 14.912 -6.689 14.912 -14.912 c 0 -8.222 -6.689 -14.912 -14.912 -14.912 S 30.088 22.557 30.088 30.78 C 30.088 39.002 36.778 45.692 45 45.692 M 45 0 C 27.395 0 13.123 14.272 13.123 31.877 c 0 7.86 2.858 15.043 7.573 20.6 L 45 81.101 l 24.304 -28.624 c 4.716 -5.558 7.573 -12.741 7.573 -20.6 C 76.877 14.272 62.605 0 45 0 L 45 0 z M 45 43.889 c -7.24 0 -13.11 -5.869 -13.11 -13.11 c 0 -7.24 5.869 -13.11 13.11 -13.11 s 13.11 5.869 13.11 13.11 C 58.11 38.02 52.24 43.889 45 43.889 L 45 43.889 z"
-                                            style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(0,0,0); fill-rule: nonzero; opacity: 1;"
-                                            transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round"/>
-                                        <path
-                                            d="M 58.814 71.531 l -1.575 1.575 c 9.772 1.532 15.583 4.707 15.583 7.094 c 0 3.261 -10.838 7.997 -27.822 7.997 S 17.178 83.461 17.178 80.2 c 0 -2.387 5.811 -5.562 15.583 -7.094 l -1.575 -1.575 c -9.401 1.643 -15.81 4.907 -15.81 8.669 c 0 5.412 13.263 9.8 29.625 9.8 c 16.361 0 29.625 -4.388 29.625 -9.8 C 74.625 76.439 68.215 73.174 58.814 71.531 z"
-                                            style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(0,0,0); fill-rule: nonzero; opacity: 1;"
-                                            transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round"/>
-                                    </g>
-                            </svg>
-                                @if($event->event_type == 'online')
-                                    <span class="capitalize font-medium truncate">Online</span>
-                                @else
-                                    <span class="capitalize font-medium truncate">{{$event->country}}</span>,
-                                    <span class="capitalize font-medium truncate">{{$event->city}}</span>
-
-                                @endif                            </div>
-                            <div>
-                                <span class="capitalize font-sm truncate">Status: {{ $event->status}}</span>
-                                {{--                                <span class="capitalize font-medium truncate">{{ \Carbon\Carbon::parse($event->date)->translatedFormat('j F Y') }}</span>--}}
-                                {{--                                <span class="capitalize font-medium truncate">{{ \Carbon\Carbon::parse($event->time)->format('h:i A') }}</span>--}}
-                            </div>
-
-                        </div>
-                    </div>
-                @endforeach
+            <div class="flex-col justify-between items-center mt-4 p-4">
+                {{ $categories->links() }}
             </div>
         </section>
+
     </main>
-
-    <!-- Right Sidebar -->
-    @include('organizer.right_side')
-    <!-- /Right Sidebar -->
 </div>
 
 </body>
-<script>
-    let currentIndex = 0;
-    const itemsPerPage = 4;
-    const categories = document.querySelectorAll('.category');
-
-    function showPreviousCategories() {
-        if (currentIndex > 0) {
-            currentIndex -= itemsPerPage;
-            if (currentIndex < 0) currentIndex = 0;
-            updateCarousel();
-        }
-    }
-
-    function showNextCategories() {
-        const maxIndex = categories.length - itemsPerPage;
-        if (currentIndex < maxIndex) {
-            currentIndex += itemsPerPage;
-            if (currentIndex > maxIndex) currentIndex = maxIndex;
-            updateCarousel();
-        }
-    }
-
-    function updateCarousel() {
-        const carousel = document.getElementById('carousel');
-        carousel.innerHTML = '';
-
-        for (let i = currentIndex; i < currentIndex + itemsPerPage && i < categories.length; i++) {
-            carousel.appendChild(categories[i]);
-        }
-    }
-</script>
-
 <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
 <script>
     // Sélectionnez l'élément de sélection du type d'événement

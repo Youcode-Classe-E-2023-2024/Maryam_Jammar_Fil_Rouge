@@ -7,7 +7,7 @@
     @include('organizer.left_side')
     <!-- /Left Sidebar -->
 
-    <main class=" flex-1 py-10  px-5 sm:px-10 ">
+    <main class=" flex-1 pt-4  px-5 sm:px-10 ">
 
         <header class=" font-bold text-lg flex items-center  gap-x-3 md:hidden mb-12 ">
                 <span class="mr-6">
