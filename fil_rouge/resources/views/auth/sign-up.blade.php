@@ -22,7 +22,8 @@
                     <form role="form text-left" action="/sign-up" method="post" enctype="multipart/form-data">
                         @csrf
                         <div>
-                            <h1 class="font-semibold text-gray-600 text-sm text-center dark:text-white">Select a Profile Image</h1>
+                            <h1 class="font-semibold text-gray-600 text-sm text-center dark:text-white">Select a Profile
+                                Image</h1>
                             <input class="login-input" name="picture" value="{{ old('picture') }}" type="file"
                                    accept="image/*" id="imageInput"
                                    style="display: none">
@@ -58,10 +59,7 @@
                                    aria-describedby="password-addon"/>
                         </div>
                         <div class=" pt-2">
-                            <label class="mb-3 block text-base font-medium">
-                                Would you like to sign up as an Organizer or a Client?
-                            </label>
-                            <div class="flex items-center space-x-6 px-24">
+                            <div class="flex items-center justify-center space-x-6 px-24">
                                 <div class="flex items-center">
                                     <input type="radio" name="role" value="2" id="radioButton1"
                                            class="h-5 w-5"/>
@@ -77,16 +75,6 @@
                                     </label>
                                 </div>
                             </div>
-                        </div>
-                        <div class="min-h-6  text-center mb-0.5 block">
-                            {{--                            <input--}}
-                            {{--                                class="text-center w-4.8 h-4.8 ease -ml-7 rounded-1.4 checked:bg-gradient-to-tl checked:from-blue-500 checked:to-violet-500 after:text-xxs after:font-awesome after:duration-250 after:ease-in-out duration-250 relative float-left mt-1 cursor-pointer appearance-none border border-solid border-slate-200 bg-white bg-contain bg-center bg-no-repeat align-top transition-all after:absolute after:flex after:h-full after:w-full after:items-center after:justify-center after:text-white after:opacity-0 after:transition-all after:content-['\f00c'] checked:border-0 checked:border-transparent checked:bg-transparent checked:after:opacity-100"--}}
-                            {{--                                type="checkbox" value="" checked/>--}}
-                            <label class="mb-2 ml-1 font-normal cursor-pointer text-sm text-slate-700"
-                                   for="flexCheckDefault">By Signup In, I agree the <a href="javascript:;"
-                                                                                       class="font-bold text-slate-700">Terms
-                                    and
-                                    Conditions</a> </label>
                         </div>
                         <div class="text-center w-60 mx-auto">
                             <button type="submit"

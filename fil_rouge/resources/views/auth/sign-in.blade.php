@@ -8,10 +8,6 @@
 
     <div class="w-1/2 bg-cover bg-cover bg-center md:block hidden"
          style="background-image:  url('https://res.cloudinary.com/simpleview/image/upload/v1684446594/clients/evansville/events_980da43a-db5e-4c04-b163-a44bd4bcefa4.jpg')"></div>
-    <!-- <div class="bg-no-repeat bg-right bg-cover max-w-max max-h-8 h-12 overflow-hidden">
-        <img src="log_in.webp" alt="hey">
-    </div> -->
-
 
     <div class="md:w-1/2 max-w-lg mx-auto my-auto px-4 py-5 shadow-none">
         <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
@@ -55,16 +51,6 @@
                             <input type="password" name="password"
                                    class="placeholder:text-gray-500 text-sm focus:shadow-primary-outline leading-5.6 ease block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding py-2 px-3 font-normal text-gray-700 transition-all focus:border-blue-500 focus:bg-white focus:text-gray-700 focus:outline-none focus:transition-shadow"
                                    placeholder="Password" aria-label="Password" aria-describedby="password-addon"/>
-                        </div>
-                        <div class="min-h-6  text-center mb-0.5 block">
-                            {{--                            <input--}}
-                            {{--                                class="text-center w-4.8 h-4.8 ease -ml-7 rounded-1.4 checked:bg-gradient-to-tl checked:from-blue-500 checked:to-violet-500 after:text-xxs after:font-awesome after:duration-250 after:ease-in-out duration-250 relative float-left mt-1 cursor-pointer appearance-none border border-solid border-slate-200 bg-white bg-contain bg-center bg-no-repeat align-top transition-all after:absolute after:flex after:h-full after:w-full after:items-center after:justify-center after:text-white after:opacity-0 after:transition-all after:content-['\f00c'] checked:border-0 checked:border-transparent checked:bg-transparent checked:after:opacity-100"--}}
-                            {{--                                type="checkbox" value="" checked/>--}}
-                            <label class="mb-2 ml-1 font-normal cursor-pointer text-sm text-slate-700"
-                                   for="flexCheckDefault">By Signin, I agree the <a href="javascript:;"
-                                                                                    class="font-bold text-slate-700">Terms
-                                    and
-                                    Conditions</a> </label>
                         </div>
                         <div class="text-center w-80 mx-auto">
                             <p class="text-center text-sm font-light text-gray-500 dark:text-gray-400">
