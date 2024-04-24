@@ -10,20 +10,20 @@
 <main class="w-full md:w-[calc(100%-256px)] md:ml-64 bg-gray-200 min-h-screen transition-all main">
     @include('admin.nav')
 
-    <main class="profile-page">
-        <section class="relative block h-500-px">
+    <main class="profile-page overflow-y-hidden">
+        <section class="relative block h-3/4 my-auto overflow-y-hidden">
             <div class="absolute top-0 w-full h-full bg-center bg-cover" style="
             background-image: url('https://www.eventbrite.ie/blog/wp-content/uploads/2022/09/dance-event.jpg');
           ">
                 <span id="blackOverlay" class="w-full h-full absolute opacity-50 bg-black"></span>
             </div>
-            <div class="top-auto bottom-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden h-70-px" style="transform: translateZ(0px)">
+            <div class="top-auto bottom-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden h-36" style="transform: translateZ(0px)">
                 <svg class="absolute bottom-0 overflow-hidden" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" version="1.1" viewBox="0 0 2560 100" x="0" y="0">
                     <polygon class="text-blueGray-200 fill-current" points="2560 0 2560 100 0 100"></polygon>
                 </svg>
             </div>
         </section>
-        <section class="relative py-16 bg-blueGray-200">
+        <section class="relative pt-24 bg-blueGray-200 ">
             <div class="container mx-auto px-4">
                 <div class="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-xl rounded-lg -mt-64">
                     <div class="px-6">
