@@ -116,7 +116,7 @@
         </div>
     </nav>
 </header>
-<main class="py-16 grid sm:px-10 lg:grid-cols-2 lg:px-20 xl:px-32">
+<main class="pt-24 grid sm:px-10 lg:grid-cols-2 lg:px-20 xl:px-32">
     <div class="px-4 pt-12">
         <p class="text-xl font-medium">Order Summary</p>
         <p class="text-gray-400">Check your items. And select a suitable shipping method.</p>
@@ -253,18 +253,6 @@
                        class="flex-shrink-0 rounded-md border border-gray-200 px-4 py-3 text-sm shadow-sm outline-none sm:w-1/6 focus:z-10 focus:border-blue-500 focus:ring-blue-500"
                        placeholder="33"/>
             </div>
-
-            <!-- Total -->
-            {{--            <div class="mt-6 border-t border-b py-2">--}}
-            {{--                <div class="flex items-center justify-between">--}}
-            {{--                    <p class="text-sm font-medium text-gray-900">Subtotal</p>--}}
-            {{--                    <p class="font-semibold text-gray-900">$399.00</p>--}}
-            {{--                </div>--}}
-            {{--                <div class="flex items-center justify-between">--}}
-            {{--                    <p class="text-sm font-medium text-gray-900">Shipping</p>--}}
-            {{--                    <p class="font-semibold text-gray-900">$8.00</p>--}}
-            {{--                </div>--}}
-            {{--            </div>--}}
             <div class="mt-6 flex items-center justify-between">
                 <p class="text-sm font-medium text-gray-900">Total</p>
                 <p class="text-2xl font-semibold text-gray-900">{{$event->price}} DH</p>
@@ -275,6 +263,7 @@
             <button class="mt-4 mb-8 w-full rounded-md bg-gray-900 px-6 py-3 font-medium text-white">
                 Place Order
             </button>
+            hhh
         </form>
     </div>
 </main>
