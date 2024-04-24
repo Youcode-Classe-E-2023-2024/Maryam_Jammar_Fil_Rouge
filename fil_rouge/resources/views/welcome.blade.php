@@ -305,18 +305,12 @@
     </section>
 
     <section class="bg-white dark:bg-gray-900">
-        <div class="h-[28rem] bg-gray-100 dark:bg-gray-800">
+        <div class="h-[26rem] bg-gray-100 dark:bg-gray-800">
             <div class="container mx-auto px-36 py-10">
                 <h1 class=" text-2xl capitalize  font-bold leading-9 dark:text-white lg:text-2xl">
                     Explore Events
                     across the World
                 </h1>
-
-                <div class="mx-auto mt-6 flex ">
-                    <span class="inline-block h-1 w-40 rounded-full bg-blue-500"></span>
-                    <span class="mx-1 inline-block h-1 w-3 rounded-full bg-blue-500"></span>
-                    <span class="inline-block h-1 w-1 rounded-full bg-blue-500"></span>
-                </div>
 
                 {{--                <p class="mx-auto mt-6 max-w-2xl text-center text-gray-500 dark:text-gray-300">Lorem ipsum dolor sit--}}
                 {{--                    amet consectetur adipisicing elit. Illo incidunt ex placeat modi magni quia error alias, adipisci--}}
@@ -380,12 +374,6 @@
             <h1 class="text-center text-3xl font-semibold capitalize text-gray-800 dark:text-white lg:text-4xl">What
                 clients saying</h1>
 
-            <div class="mx-auto mt-6 flex justify-center">
-                <span class="inline-block h-1 w-40 rounded-full bg-blue-500"></span>
-                <span class="mx-1 inline-block h-1 w-3 rounded-full bg-blue-500"></span>
-                <span class="inline-block h-1 w-1 rounded-full bg-blue-500"></span>
-            </div>
-
             <div class="mx-auto mt-16 flex max-w-6xl items-start">
                 <button
                     class="hidden rounded-full border p-2 text-gray-800 transition-colors duration-300 hover:bg-gray-100 rtl:-scale-x-100 dark:border-gray-700 dark:text-gray-200 dark:hover:bg-gray-800 lg:block">
@@ -429,7 +417,7 @@
     <section class="bg-white dark:bg-gray-900">
         <div class="container px-36 py-10">
             <div class="">
-                <h1 class=" text-2xl capitalize  font-bold leading-9 dark:text-white lg:text-2xl">
+                <h1 class="text-2xl capitalize  font-bold leading-9 dark:text-white lg:text-2xl">
                     Explore Events
                     across the World
                 </h1>
@@ -615,21 +603,8 @@
                             class="w-full h-1/5 bg-white dark:bg-zinc-800 dark:text-white px-3 flex items-center justify-between border-t-2 border-t-red-600">
                             <span class="capitalize font-medium truncate">{{ substr($event->title, 0, 16) }}...</span>
                             <div class="flex space-x-2 items-center text-xs">
-                                {{--                                @if($event->sold_out)--}}
                                 <span class="text-red-600 font-bold">Sold Out</span>
-                                {{--                                @else--}}
-                                {{--                                <svg class="w-12 h-6" xmlns="http://www.w3.org/2000/svg" width="64" height="32"--}}
-                                {{--                                     viewBox="0 0 64 32" version="1.1">--}}
-                                {{--                                    <g fill="#F5C518">--}}
-                                {{--                                        <rect x="0" y="0" width="100%" height="100%" rx="4"></rect>--}}
-                                {{--                                    </g>--}}
-                                {{--                                    <text class="text-bold text-black font-bold text-xs" x="32" y="21"--}}
-                                {{--                                          fill="#000000" font-family="Arial" font-size="10px" text-anchor="middle">--}}
-                                {{--                                        Buy Now!--}}
-                                {{--                                    </text>--}}
-                                {{--                                </svg>--}}
                                 <span class="text-md font-bold">{{$event->price}} DH</span>
-                                {{--                                @endif--}}
                             </div>
                         </div>
                         <div
@@ -669,6 +644,9 @@
                         </div>
                     </div>
                 @endforeach
+            </div>
+            <div class="flex-col justify-between items-center mt-4 p-4">
+                {{ $pastEvents->links() }}
             </div>
         </div>
     </section>
@@ -715,21 +693,6 @@
                 <p class="text-center p-4 text-sm text-gray-900">Join events, get recommendations based on your
                     interest.
                     Find where your friends are going.</p>
-                <div>
-                    <button type="button"
-                            class="w-56 text-gray-900 bg-white hover:bg-gray-100 border border-gray-200 focus:ring-4 focus:outline-none focus:ring-gray-100 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-gray-600 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:hover:bg-gray-700 me-2 mb-2">
-                        <span class="[&>svg]:h-6 [&>svg]:w-6 me-2 -ms-1">
-                            <svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 100 100"
-                                 viewBox="0 0 100 100" id="facebook"><g><path
-                                        fill="#1877f2"
-                                        d="M50,2.5c-58.892,1.725-64.898,84.363-7.46,95l0,0h0H50h7.46l0,0C114.911,86.853,108.879,4.219,50,2.5z"></path><path
-                                        fill="#f1f1f1" d="M57.46,64.104h11.125l2.117-13.814H57.46v-8.965c0-3.779,1.85-7.463,7.781-7.463h6.021
-                                        c0,0,0-11.761,0-11.761c-12.894-2.323-28.385-1.616-28.722,17.66V50.29H30.417v13.814H42.54c0,0,0,33.395,0,33.396H50h7.46l0,0h0
-                                        V64.104z"></path></g></svg>
-                        </span>
-                        Continue with Facebook
-                    </button>
-                </div>
                 <div>
                     <form action="{{ route('google-auth') }}" method="GET">
                         @csrf

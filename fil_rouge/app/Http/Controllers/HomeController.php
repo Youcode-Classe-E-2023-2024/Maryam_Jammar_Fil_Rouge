@@ -23,12 +23,14 @@ class HomeController extends Controller
         // Fetching events
         $events = Event::where('status', 'Public')
             ->where('date', '>=', now()->toDateString())
+            ->orderBy('created_at', 'desc')
             ->paginate(6);
         $pastEvents = Event::where('status', 'Public')
             ->where(function ($query) {
                 $query->where('nbr_place', 0)
                     ->orWhere('date', '<', now()->toDateString());
             })
+            ->orderBy('created_at', 'desc')
             ->paginate(6);
 
         // Fetching country flag emojis from CDN
