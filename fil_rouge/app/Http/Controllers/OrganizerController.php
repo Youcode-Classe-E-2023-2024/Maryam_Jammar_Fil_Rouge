@@ -22,7 +22,14 @@ class OrganizerController extends Controller
         $content = file_get_contents('https://gist.githubusercontent.com/rogargon/5534902/raw/434445021e155240ca78e378f10f70391dd594ea/countries.json');
         $data = json_decode($content);
 
-        return view('organizer.dashboard', compact('categories', 'events', 'data'));
+        $client = User::all();
+
+        $event = Event::all();
+        $reservations = Reservation::whereIn('event', function($query) use ($user) {
+            $query->select('id')->from('events')->where('creator', $user);
+        })->with(['event', 'client'])->paginate(6);
+
+        return view('organizer.dashboard', compact('categories', 'events', 'data', 'client', 'event', 'reservations', 'user'));
     }
 
     public function myEvents()
@@ -74,5 +81,27 @@ class OrganizerController extends Controller
         })->with(['event', 'client'])->paginate(6);
 
         return view('organizer.reservations', compact('client', 'event', 'reservations'));
+    }
+
+    public function latestReservations(){
+        $user = Auth::user()->id;
+
+        $client = User::all();
+
+        $event = Event::all();
+        $reservations = Reservation::whereIn('event', function($query) use ($user) {
+            $query->select('id')->from('events')->where('creator', $user);
+        })->with(['event', 'client'])->paginate(6);
+        return view('organizer.right_side', compact('client', 'event', 'reservations'));
+    }
+
+    public function categories(){
+
+        $content = file_get_contents('https://gist.githubusercontent.com/rogargon/5534902/raw/434445021e155240ca78e378f10f70391dd594ea/countries.json');
+        $data = json_decode($content);
+
+        $categories = Category::paginate(18);
+        return view('organizer.categories', compact('categories', 'data'));
+
     }
 }
