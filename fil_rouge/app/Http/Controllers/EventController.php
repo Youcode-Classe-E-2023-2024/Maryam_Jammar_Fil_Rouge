@@ -3,14 +3,17 @@
 namespace App\Http\Controllers;
 
 use App\Mail\ApproveEventEmail;
+use App\Mail\NewsletterEmail;
 use App\Models\Category;
 use App\Models\Event;
+use App\Models\Member;
 use App\Models\Role;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Storage;
+use Carbon\Carbon;
 
 class EventController extends Controller
 {
@@ -240,7 +243,23 @@ class EventController extends Controller
         $event->status = 'Public';
         $event->save();
 
+        if ($event) {
+            $this->sendEmailToSubsbribers();
+        }
+
         return redirect()->back();
+    }
+
+    private function sendEmailToSubsbribers()
+    {
+        $subscribers = Member::where('status', 'subscribed')->get();
+
+        if ($subscribers) {
+            foreach ($subscribers as $subscriber) {
+                Mail::to($subscriber->email)->send(new NewsletterEmail($subscriber->email));
+            }
+        }
+
     }
 
     //decline events
@@ -252,6 +271,5 @@ class EventController extends Controller
 
         return redirect()->back();
     }
-
 
 }
