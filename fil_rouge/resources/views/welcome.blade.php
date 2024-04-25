@@ -38,10 +38,14 @@
                  class="container h-16 bg-black bg-opacity-15 fixed top-0 z-10 p-6 lg:flex lg:items-center lg:justify-around">
                 <div class="flex items-center justify-between">
                     <div>
-                        <a class="text-2xl font-bold text-white hover:text-gray-700 dark:text-white dark:hover:text-gray-300 lg:text-3xl"
+                        <a class="text-2xl font-bold text-white hover:text-gray-300 dark:text-white dark:hover:text-gray-300 lg:text-3xl"
                            href="/">Tchikita</a>
                     </div>
 
+{{--                    <div>--}}
+{{--                        <img class="w-36 font-bold text-white hover:text-gray-700 dark:text-white dark:hover:text-gray-300 lg:text-3xl"--}}
+{{--                             src="https://cdn.discordapp.com/attachments/1173898263309586467/1233079515417280573/Capture-removebg-preview_6.png?ex=662bca49&is=662a78c9&hm=68f3bc8f926523554381139b66240023a07ea1d15167bf709556caad2b64b5eb&"></img>--}}
+{{--                    </div>--}}
                     <!-- Mobile menu button -->
                     <div class="flex lg:hidden">
                         <button x-cloak @click="isOpen = !isOpen" type="button"
