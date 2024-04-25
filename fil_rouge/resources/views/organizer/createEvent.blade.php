@@ -251,7 +251,7 @@
     </main>
 
     <!-- Right Sidebar -->
-    @include('organizer.right_side')
+{{--    @include('organizer.right_side')--}}
     <!-- /Right Sidebar -->
 </div>
 </body>
