@@ -27,9 +27,21 @@ class OrganizerController extends Controller
         $event = Event::all();
         $reservations = Reservation::whereIn('event', function($query) use ($user) {
             $query->select('id')->from('events')->where('creator', $user);
-        })->with(['event', 'client'])->paginate(6);
+        })->with(['event', 'client'])->get();
 
-        return view('organizer.dashboard', compact('categories', 'events', 'data', 'client', 'event', 'reservations', 'user'));
+//        dd($reservations);
+        $newReservations = [];
+        foreach($reservations as $reservation) {
+            $user = User::where('id', $reservation->client)->get();
+            $event = User::where('id', $reservation->event)->get();
+            $newReservations[] = [
+                'event' => $event,
+                'user' => $user
+            ];
+        }
+//        dd($newReservations[0]['user'][0] );
+
+        return view('organizer.dashboard', compact('categories', 'events', 'data', 'client', 'event', 'newReservations', 'user'));
     }
 
     public function myEvents()

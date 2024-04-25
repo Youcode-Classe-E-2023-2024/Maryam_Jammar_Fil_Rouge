@@ -123,6 +123,18 @@
       <excludeFolder url="file://$MODULE_DIR$/fil_rouge/vendor/vlucas/phpdotenv" />
       <excludeFolder url="file://$MODULE_DIR$/fil_rouge/vendor/voku/portable-ascii" />
       <excludeFolder url="file://$MODULE_DIR$/fil_rouge/vendor/webmozart/assert" />
+      <excludeFolder url="file://$MODULE_DIR$/fil_rouge/vendor/barryvdh/laravel-dompdf" />
+      <excludeFolder url="file://$MODULE_DIR$/fil_rouge/vendor/dompdf/dompdf" />
+      <excludeFolder url="file://$MODULE_DIR$/fil_rouge/vendor/masterminds/html5" />
+      <excludeFolder url="file://$MODULE_DIR$/fil_rouge/vendor/phenx/php-font-lib" />
+      <excludeFolder url="file://$MODULE_DIR$/fil_rouge/vendor/phenx/php-svg-lib" />
+      <excludeFolder url="file://$MODULE_DIR$/fil_rouge/vendor/sabberworm/php-css-parser" />
+      <excludeFolder url="file://$MODULE_DIR$/fil_rouge/vendor/firebase/php-jwt" />
+      <excludeFolder url="file://$MODULE_DIR$/fil_rouge/vendor/laravel/socialite" />
+      <excludeFolder url="file://$MODULE_DIR$/fil_rouge/vendor/league/oauth1-client" />
+      <excludeFolder url="file://$MODULE_DIR$/fil_rouge/vendor/paragonie/constant_time_encoding" />
+      <excludeFolder url="file://$MODULE_DIR$/fil_rouge/vendor/paragonie/random_compat" />
+      <excludeFolder url="file://$MODULE_DIR$/fil_rouge/vendor/phpseclib/phpseclib" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

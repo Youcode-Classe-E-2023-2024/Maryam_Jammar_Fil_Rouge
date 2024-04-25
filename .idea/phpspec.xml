@@ -8,6 +8,12 @@
       <PhpSpecSuiteConfiguration>
         <option name="myPath" value="$PROJECT_DIR$/fil_rouge" />
       </PhpSpecSuiteConfiguration>
+      <PhpSpecSuiteConfiguration>
+        <option name="myPath" value="$PROJECT_DIR$/fil_rouge" />
+      </PhpSpecSuiteConfiguration>
+      <PhpSpecSuiteConfiguration>
+        <option name="myPath" value="$PROJECT_DIR$/fil_rouge" />
+      </PhpSpecSuiteConfiguration>
     </suites>
   </component>
 </project>

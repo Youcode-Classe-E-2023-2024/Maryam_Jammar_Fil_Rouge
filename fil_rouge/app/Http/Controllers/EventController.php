@@ -27,6 +27,7 @@ class EventController extends Controller
         $content = file_get_contents('https://gist.githubusercontent.com/rogargon/5534902/raw/434445021e155240ca78e378f10f70391dd594ea/countries.json');
         $data = json_decode($content);
 
+
         $categories = Category::all();
         return view('organizer.createEvent', compact('data', 'categories'));
     }
@@ -63,10 +64,6 @@ class EventController extends Controller
             ]);
         }
 
-        // from category
-//        $category = $request->input('category');
-
-//        dd($category);
         if ($request->hasFile('image')) {
             $fileName = time() . $request->file('image')->getClientOriginalName();
             $path = $request->file('image')->storeAs('image', $fileName, 'public');
