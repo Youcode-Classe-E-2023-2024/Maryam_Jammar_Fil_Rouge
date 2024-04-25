@@ -306,6 +306,35 @@
     }
 </style>
 
+
+<style>
+    .price {
+        padding: 1.3em 3em;
+        font-size: 12px;
+        text-transform: uppercase;
+        letter-spacing: 2.5px;
+        font-weight: 500;
+        color: #000;
+        background-color: #fff;
+        border: none;
+        border-radius: 45px;
+        box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease 0s;
+        cursor: pointer;
+        outline: none;
+    }
+
+    .price:hover {
+        background-color: #23c483;
+        box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+        color: #fff;
+        transform: translateY(-7px);
+    }
+
+    .price:active {
+        transform: translateY(-1px);
+    }
+</style>
 <main>
     <section class="py-16 container mx-auto px-6 md:px-0 bg-white dark:bg-gray-900">
         <div class=""
@@ -561,19 +590,20 @@
                                                 {{--                                                <form action="/paiement/{{$event->id}}" method="post">--}}
                                                 {{--                                                    @csrf--}}
                                                 <a href="/paiement/{{$event->id}}"
-                                                   class="card  mt-8 bg-gradient-to-r from-teal-400 via-teal-500 to-teal-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-teal-300">
-                                                    <p class="img font-bold">Buy Now !</p>
-                                                    <div class="textBox">
-                                                        {{--                                                    <p class="text head">Ethereum</p>--}}
-                                                        <span class="text-lg">Get the ticket</span>
-                                                        <p class="text price">245 DH</p>
-                                                    </div>
+                                                   class="mt-8">
+{{--                                                    <p class="img font-bold">Buy Now !</p>--}}
+                                                    <button class="price">
+                                                        Buy Now ! {{$event->price}} DH
+                                                    </button>
+{{--                                                    <div class="textBox">--}}
+{{--                                                        --}}{{--                                                    <p class="text head">Ethereum</p>--}}
+{{--                                                        <span class="text-lg">Get the ticket</span>--}}
+{{--                                                        <p class="text price">245 DH</p>--}}
+{{--                                                    </div>--}}
                                                 </a>
                                                 {{--                                                </form>--}}
-                                                <div class="flex space-x-6  mt-10">
-                                                    <p>{{$event->id}} DH</p>
-
-                                                @if($event->creator == auth()->id())
+                                                <div class="flex space-x-6  mt-8">
+                                                    @if($event->creator == auth()->id())
                                                         <a data-modal-target="progress-modal-{{$event->id}}"
                                                            data-modal-toggle="progress-modal-{{$event->id}}"
                                                            class="fancy">
