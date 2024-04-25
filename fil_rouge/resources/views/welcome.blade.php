@@ -39,7 +39,7 @@
                 <div class="flex items-center justify-between">
                     <div>
                         <a class="text-2xl font-bold text-white hover:text-gray-700 dark:text-white dark:hover:text-gray-300 lg:text-3xl"
-                           href="#">Tchikita</a>
+                           href="/">Tchikita</a>
                     </div>
 
                     <!-- Mobile menu button -->

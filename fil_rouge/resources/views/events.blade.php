@@ -34,93 +34,7 @@
         {{--        <div class="absolute h-3/5 inset-0 bg-black opacity-35"></div>--}}
         <div class="pt-12 inset-0 bg-cover bg-center">
 
-            <nav x-data="{ isOpen: false }"
-                 class="container h-16 bg-black bg-opacity-15 fixed top-0 z-10 p-6 lg:flex lg:items-center lg:justify-around">
-                <div class="flex items-center justify-between">
-                    <div>
-                        <a class="text-2xl font-bold text-white hover:text-gray-700 dark:text-white dark:hover:text-gray-300 lg:text-3xl"
-                           href="/">Tchikita</a>
-                    </div>
-
-                    <!-- Mobile menu button -->
-                    <div class="flex lg:hidden">
-                        <button x-cloak @click="isOpen = !isOpen" type="button"
-                                class="text-gray-500 hover:text-gray-600 focus:text-gray-600 focus:outline-none dark:text-gray-200 dark:hover:text-gray-400 dark:focus:text-gray-400"
-                                aria-label="toggle menu">
-                            <svg x-show="!isOpen" xmlns="http://www.w3.org/2000/svg" class="text-white h-6 w-6"
-                                 fill="none"
-                                 viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M4 8h16M4 16h16"/>
-                            </svg>
-
-                            <svg x-show="isOpen" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
-                                 viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
-                            </svg>
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Mobile Menu open: "block", Menu closed: "hidden" -->
-                <div x-cloak :class="[isOpen ? 'translate-x-0 opacity-100 ' : 'opacity-0 -translate-x-full']"
-                     class="absolute inset-x-0 z-20 w-full bg-white px-6 py-4 shadow-md transition-all duration-300 ease-in-out dark:bg-gray-900 lg:relative lg:top-0 lg:mt-0 lg:flex lg:w-auto lg:translate-x-0 lg:items-center lg:bg-transparent lg:p-0 lg:opacity-100 lg:shadow-none lg:dark:bg-transparent">
-                    <div class="lg:-px-8 flex flex-col space-y-4 lg:mt-0 lg:flex-row lg:space-y-0">
-                        <div class="flex justify-around items-center">
-                            <button data-modal-target="default-modal-register"
-                                    data-modal-toggle="default-modal-register"
-
-                                    class="transform text-gray-300 transition-colors duration-300 hover:text-gray-500 dark:text-gray-200 dark:hover:text-gray-400 lg:mx-8"
-                                    type="button">
-                                Create Event
-                            </button>
-                        </div>
-                        <button data-modal-target="default-modal" data-modal-toggle="default-modal"
-                                class="transform text-gray-300 transition-colors duration-300 hover:text-gray-500 dark:text-gray-200 dark:hover:text-gray-400 lg:mx-8"
-                                type="button">
-                            Sign in
-                        </button>
-                        {{--                        <button data-modal-target="default-modal" data-modal-toggle="default-modal"--}}
-                        {{--                                class="block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"--}}
-                        {{--                                type="button">--}}
-                        {{--                            Toggle modal--}}
-                        {{--                        </button>--}}
-
-                        {{--                        <a class="transform text-gray-300 transition-colors duration-300 hover:text-blue-500 dark:text-gray-200 dark:hover:text-blue-400 lg:mx-8"--}}
-                        {{--                           href="#">Pricing</a>--}}
-                        {{--                        <a class="transform text-gray-300 transition-colors duration-300 hover:text-blue-500 dark:text-gray-200 dark:hover:text-blue-400 lg:mx-8"--}}
-                        {{--                           href="#">Contact</a>--}}
-                    </div>
-
-                    <!-- searchbar -->
-                    <div class='flex items-center justify-center '>
-                        <div class="flex rounded-full bg-[#0d1829] px-2 w-full max-w-[600px]">
-                            <input
-                                type="text"
-                                class="w-full bg-[#0d1829] flex bg-transparent pl-2 text-[#cccccc] outline-0 border-none focus:rounded-full focus:border-"
-                                none
-                                placeholder="Search name movie or select options"
-                            />
-                            <button type="submit" class="relative bg-[#0d1829] rounded-full">
-                                <svg width="25px" height="30px" viewBox="0 0 24 24" fill="none"
-                                     xmlns="http://www.w3.org/2000/svg">
-
-                                    <g id="SVGRepo_bgCarrier" stroke-width="0"/>
-
-                                    <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"/>
-
-                                    <g id="SVGRepo_iconCarrier">
-                                        <path
-                                            d="M14.9536 14.9458L21 21M17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10Z"
-                                            stroke="#999" stroke-width="2" stroke-linecap="round"
-                                            stroke-linejoin="round"/>
-                                    </g>
-
-                                </svg>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </nav>
+            @include('nav')
         </div>
     </section>
 
@@ -161,7 +75,6 @@
             </div>
         </div>
     </section>
-
 
     <section class="bg-white dark:bg-gray-900">
         <div class="container px-36 py-10">
@@ -373,7 +286,6 @@
         </div>
     </section>
 
-
     <section class="bg-white dark:bg-gray-900">
         <div class="h-[26rem] bg-gray-100 dark:bg-gray-800">
             <div class="container mx-auto px-36 py-10">
@@ -446,21 +358,8 @@
 
     </section>
 
-
     @include('footer')
 </main>
-<script>
-    window.addEventListener('scroll', function () {
-        var navbar = document.querySelector('.container');
-        if (window.scrollY > 0) {
-            navbar.classList.add('bg-black');
-            navbar.classList.remove('bg-opacity-15');
-        } else {
-            navbar.classList.remove('bg-black');
-            navbar.classList.add('bg-black', 'bg-opacity-15');
-        }
-    });
-</script>
 
 {{--signin--}}
 <div id="default-modal" tabindex="-1" aria-hidden="true"
