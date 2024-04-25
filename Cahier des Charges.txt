@@ -34,43 +34,25 @@ Le projet vise à développer un site web complet de gestion de réservation de 
 
 - Système de réservation en ligne permettant aux utilisateurs de sélectionner des tickets, de choisir des sièges et de payer en ligne de manière sécurisée.
 
-- Intégration d'une carte interactive pour visualiser les lieux des événements et sélectionner des sièges spécifiques pour les événements assis.
+- Gestion des utilisateurs avec inscription, connexion.
 
-- Gestion des utilisateurs avec inscription, connexion, et historique des réservations pour les utilisateurs enregistrés.
-
-- Notifications automatiques par e-mail ou SMS pour les confirmations de réservation et les rappels avant l'événement.
-
-- Système d'évaluation et de commentaires pour permettre aux utilisateurs de partager leurs expériences et leurs avis sur les événements.
+- Notifications automatiques par e-mail pour les confirmations de la publication des évènements.
 
 - Intégration avec les réseaux sociaux pour partager des événements et se connecter avec des comptes sociaux.
 
 - Tableau de bord pour les organisateurs avec des statistiques sur les ventes de billets, les réservations, etc.
 
-- Personnalisation de l'apparence du site web et la possibilité d'ajouter des codes promotionnels.
-
-- Support client avec chat en direct pour répondre aux questions des utilisateurs et une section FAQ pour les informations fréquemment demandées.
-
-- Intégration d'API tierces pour des fonctionnalités telles que Google Maps, PayPal, Stripe, etc.
-
-- Gestion claire des annulations et des remboursements avec une interface utilisateur conviviale.
-
-
 
 ### 2.2 Contraintes Techniques
 
-- Utilisation de HTML5, CSS3 et JavaScript pour le développement front-end.
+- Utilisation de Tailwind et JavaScript pour le développement front-end.
 
-- Utilisation d'un langage serveur (par exemple, Python, Ruby, Node.js) et d'un système de gestion de base de données (par exemple, MySQL, PostgreSQL).
-
-- Implémentation de mesures de sécurité robustes pour protéger les données utilisateur et les transactions en ligne.
+- Utilisation du framework Laravel pour le Backend et de PostgreSQL pour la gestion de base de données.
 
 - Conception d'une interface utilisateur réactive et conviviale pour une expérience utilisateur optimale sur tous les appareils et navigateurs.
 
 
-
 ## 3. Livrables
-
-
 
 - Code source complet du site web, organisé en modules réutilisables et bien documentés.
 
@@ -81,10 +63,7 @@ Le projet vise à développer un site web complet de gestion de réservation de 
 - Support technique initial pour résoudre les problèmes rencontrés après le déploiement initial.
 
 
-
 ## 4. Calendrier et Phases du Projet
-
-
 
 ### 4.1 Phases du Projet
 
@@ -101,16 +80,12 @@ Le projet vise à développer un site web complet de gestion de réservation de 
 6. Formation des administrateurs du site web et début du support technique initial.
 
 
-
 ### 4.2 Durée Estimée
 
-La durée totale du projet est estimée à [insérer la durée estimée], avec des jalons spécifiques pour chaque phase.
-
+La durée totale du projet est estimée à 3 mois, avec des jalons spécifiques pour chaque phase.
 
 
 ## 5. Contrôle de Qualité
-
-
 
 - Réalisation régulière de tests de qualité pour garantir la fiabilité, la sécurité et les performances du site web.
 
