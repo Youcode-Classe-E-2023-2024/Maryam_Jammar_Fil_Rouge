@@ -8,7 +8,7 @@
                 <form action="/subscribe" method="post">
                     @csrf
                     <div class="flex flex-col mx-auto mt-6 space-y-3 md:space-y-0 md:flex-row pr-10">
-                        <input type="text" id="email" name="email" class=" text-blue-400  w-2/3  p-2  rounded-l-lg"
+                        <input type="text" id="email" name="email" class=" text-gray-800  w-2/3  p-2  rounded-l-lg"
                                placeholder="Email Adress"/>
                         <button class=" p-2  w-1/3  bg-blue-400 rounded-r-lg  text-white hover: bg-blue-400"
                                 type="submit">Subscribe
