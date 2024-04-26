@@ -587,21 +587,22 @@
                                             </div>
 
                                             <div class="flex justify-between">
-                                                {{--                                                <form action="/paiement/{{$event->id}}" method="post">--}}
-                                                {{--                                                    @csrf--}}
-                                                <a href="/paiement/{{$event->id}}"
-                                                   class="mt-8">
-{{--                                                    <p class="img font-bold">Buy Now !</p>--}}
-                                                    <button class="price">
-                                                        Buy Now ! {{$event->price}} DH
-                                                    </button>
-{{--                                                    <div class="textBox">--}}
-{{--                                                        --}}{{--                                                    <p class="text head">Ethereum</p>--}}
-{{--                                                        <span class="text-lg">Get the ticket</span>--}}
-{{--                                                        <p class="text price">245 DH</p>--}}
-{{--                                                    </div>--}}
-                                                </a>
-                                                {{--                                                </form>--}}
+
+                                                @if($event->nbr_place == 0 || $event->date < now())
+                                                    <a href="/paiement/{{$event->id}}"
+                                                       class="mt-8">
+                                                        <button class="price hover:bg-red-600">
+                                                            Solde Out ! {{$event->price}} DH
+                                                        </button>
+                                                    </a>
+                                                @else
+                                                    <a href="/paiement/{{$event->id}}"
+                                                       class="mt-8">
+                                                        <button class="price">
+                                                            Buy Now ! {{$event->price}} DH
+                                                        </button>
+                                                    </a>
+                                                @endif
                                                 <div class="flex space-x-6  mt-8">
                                                     @if($event->creator == auth()->id())
                                                         <a data-modal-target="progress-modal-{{$event->id}}"
