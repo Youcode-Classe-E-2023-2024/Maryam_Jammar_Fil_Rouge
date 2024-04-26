@@ -32,10 +32,10 @@
 <main>
     <section class="bg-white dark:bg-gray-900">
         {{--        <div class="absolute h-3/5 inset-0 bg-black opacity-35"></div>--}}
-        <div class="h-3/5 inset-0 bg-cover bg-center">
+        <div class="h-3/5 flex justify-center items-center flex-col mx-auto inset-0 bg-cover bg-center">
 
             <nav x-data="{ isOpen: false }"
-                 class="container h-16 bg-black bg-opacity-15 fixed top-0 z-10 p-6 lg:flex lg:items-center lg:justify-around">
+                 class="container w-full h-16 bg-black bg-opacity-15 fixed top-0 z-10 p-6 lg:flex lg:items-center lg:justify-around">
                 <div class="flex items-center justify-between">
                     <div>
                         <a class="text-2xl font-bold text-white hover:text-gray-300 dark:text-white dark:hover:text-gray-300 lg:text-3xl"
@@ -185,7 +185,7 @@
 
             <!-- component -->
             <div class="flex h-full w-full items-center justify-center container mx-auto px-8 relative">
-                <div class="max-w-2xl text-center">
+                <div class="max-w-2xl text-center mb-72 lg:mb-0">
                     <h1 class="text-3xl sm:text-5xl capitalize tracking-widest text-white lg:text-7xl flex justify-between">
                         <p class="">Comming</p> Soon
                     </h1>
@@ -394,57 +394,57 @@
                     across the World
                 </h1>
             </div>
-            <div
-                class="absolute border-b border-neutral-200 sm:grid-cols-3">
-                <div
-                    class="w-[72.19px] self-stretch pl-[25.50px] pr-[25.17px] pt-[14.50px] pb-[17.50px] border-b-2 border-neutral-700 justify-center items-center inline-flex">
-                    <a href="/"
-                       class="w-[21.52px] h-5 text-neutral-700 text-lg font-medium font-['Roboto'] leading-tight">All
-                    </a>
-                </div>
-                <div
-                    class="w-[132.23px] self-stretch pl-[25.50px] pr-[24.80px] pt-[14.50px] pb-[17.50px] justify-center items-center inline-flex">
-                    <a href="/filter/{{ \Carbon\Carbon::tomorrow()->format('Y-m-d') }}"
-                       class="w-[81.93px] h-5 text-zinc-500 text-lg font-medium font-['Roboto'] leading-tight">
-                        Tomorrow
-                    </a>
-                </div>
-                <div
-                    class="w-[134.58px] self-stretch pl-[25.50px] pr-[25.17px] pt-[14.50px] pb-[17.50px] justify-center items-center inline-flex">
-                    <a href="/filter/this_week"
-                       class="w-[83.91px] h-5 text-zinc-500 text-lg font-medium font-['Roboto'] leading-tight">
-                        This Week
-                    </a>
-                </div>
-                <div
-                    class="w-[164.23px] self-stretch pl-[25.50px] pr-[25.12px] pt-[14.50px] pb-[17.50px] justify-center items-center inline-flex">
-                    <a href="/filter/this_week-end"
-                       class="w-[113.61px] h-5 text-zinc-500 text-lg font-medium font-['Roboto'] leading-tight">This
-                        Weekend
-                    </a>
-                </div>
-                <div
-                    class="w-[137.25px] self-stretch pl-[25.50px] pr-[25.17px] pt-[14.50px] pb-[17.50px] justify-center items-center inline-flex">
-                    <a href="/filter/next_week"
-                       class="w-[86.58px] h-5 text-zinc-500 text-lg font-medium font-['Roboto'] leading-tight">Next
-                        Week
-                    </a>
-                </div>
-                <div
-                    class="w-[166.91px] self-stretch pl-[25.50px] pr-[25.12px] pt-[14.50px] pb-[17.50px] justify-center items-center inline-flex">
-                    <a href="/filter/next_week-end"
-                       class="w-[116.29px] h-5 text-zinc-500 text-lg font-medium font-['Roboto'] leading-tight">Next
-                        Weekend
-                    </a>
-                </div>
-                <div
-                    class="w-[142.30px] self-stretch pl-[25.50px] pr-[25.16px] pt-[14.50px] pb-[17.50px] justify-center items-center inline-flex">
-                    <a href="/filter/this_month"
-                       class="w-[91.64px] h-5 text-zinc-500 text-lg font-medium font-['Roboto'] leading-tight">
-                        This Month
-                    </a>
-                </div>
-            </div>
+{{--            <div--}}
+{{--                class="absolute border-b border-neutral-200 sm:grid-cols-3">--}}
+{{--                <div--}}
+{{--                    class="w-[72.19px] self-stretch pl-[25.50px] pr-[25.17px] pt-[14.50px] pb-[17.50px] border-b-2 border-neutral-700 justify-center items-center inline-flex">--}}
+{{--                    <a href="/"--}}
+{{--                       class="w-[21.52px] h-5 text-neutral-700 text-lg font-medium font-['Roboto'] leading-tight">All--}}
+{{--                    </a>--}}
+{{--                </div>--}}
+{{--                <div--}}
+{{--                    class="w-[132.23px] self-stretch pl-[25.50px] pr-[24.80px] pt-[14.50px] pb-[17.50px] justify-center items-center inline-flex">--}}
+{{--                    <a href="/filter/{{ \Carbon\Carbon::tomorrow()->format('Y-m-d') }}"--}}
+{{--                       class="w-[81.93px] h-5 text-zinc-500 text-lg font-medium font-['Roboto'] leading-tight">--}}
+{{--                        Tomorrow--}}
+{{--                    </a>--}}
+{{--                </div>--}}
+{{--                <div--}}
+{{--                    class="w-[134.58px] self-stretch pl-[25.50px] pr-[25.17px] pt-[14.50px] pb-[17.50px] justify-center items-center inline-flex">--}}
+{{--                    <a href="/filter/this_week"--}}
+{{--                       class="w-[83.91px] h-5 text-zinc-500 text-lg font-medium font-['Roboto'] leading-tight">--}}
+{{--                        This Week--}}
+{{--                    </a>--}}
+{{--                </div>--}}
+{{--                <div--}}
+{{--                    class="w-[164.23px] self-stretch pl-[25.50px] pr-[25.12px] pt-[14.50px] pb-[17.50px] justify-center items-center inline-flex">--}}
+{{--                    <a href="/filter/this_week-end"--}}
+{{--                       class="w-[113.61px] h-5 text-zinc-500 text-lg font-medium font-['Roboto'] leading-tight">This--}}
+{{--                        Weekend--}}
+{{--                    </a>--}}
+{{--                </div>--}}
+{{--                <div--}}
+{{--                    class="w-[137.25px] self-stretch pl-[25.50px] pr-[25.17px] pt-[14.50px] pb-[17.50px] justify-center items-center inline-flex">--}}
+{{--                    <a href="/filter/next_week"--}}
+{{--                       class="w-[86.58px] h-5 text-zinc-500 text-lg font-medium font-['Roboto'] leading-tight">Next--}}
+{{--                        Week--}}
+{{--                    </a>--}}
+{{--                </div>--}}
+{{--                <div--}}
+{{--                    class="w-[166.91px] self-stretch pl-[25.50px] pr-[25.12px] pt-[14.50px] pb-[17.50px] justify-center items-center inline-flex">--}}
+{{--                    <a href="/filter/next_week-end"--}}
+{{--                       class="w-[116.29px] h-5 text-zinc-500 text-lg font-medium font-['Roboto'] leading-tight">Next--}}
+{{--                        Weekend--}}
+{{--                    </a>--}}
+{{--                </div>--}}
+{{--                <div--}}
+{{--                    class="w-[142.30px] self-stretch pl-[25.50px] pr-[25.16px] pt-[14.50px] pb-[17.50px] justify-center items-center inline-flex">--}}
+{{--                    <a href="/filter/this_month"--}}
+{{--                       class="w-[91.64px] h-5 text-zinc-500 text-lg font-medium font-['Roboto'] leading-tight">--}}
+{{--                        This Month--}}
+{{--                    </a>--}}
+{{--                </div>--}}
+{{--            </div>--}}
             <div class="mt-8 grid grid-cols-1 gap-8 md:mt-16 md:grid-cols-2 xl:grid-cols-3">
                 @if (count($events) > 0)
                     @foreach($events as $event)
@@ -565,7 +565,7 @@
             </div>
             <div class=" grid grid-cols-1 gap-8 md:mt-4 md:grid-cols-2 xl:grid-cols-3">
                 @foreach($pastEvents as $event)
-                    <div
+                    <a href="/description/{{$event->id}}"
                         class="card_box relative flex flex-col rounded-xl overflow-hidden aspect-square border dark:border-zinc-600">
                         <div class="out">
                             Solde Out!
@@ -614,7 +614,7 @@
                                 {{--                          --}}
                             </div>
                         </div>
-                    </div>
+                    </a>
                 @endforeach
             </div>
             <div class="flex-col justify-between items-center mt-4 p-4">
