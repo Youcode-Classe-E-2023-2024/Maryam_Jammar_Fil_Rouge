@@ -36,13 +36,13 @@
         content: "" !important;
     }
 
-    .mySwiper .swiper-slide.swiper-slide-thumb-active>.swiper-slide\:w-16 {
+    .mySwiper .swiper-slide.swiper-slide-thumb-active > .swiper-slide\:w-16 {
         --tw-scale-x: 1;
         --tw-scale-y: 1;
         transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
     }
 
-    .mySwiper .swiper-slide.swiper-slide-thumb-active>.swiper-slide\:border-indigo-600 {
+    .mySwiper .swiper-slide.swiper-slide-thumb-active > .swiper-slide\:border-indigo-600 {
         --tw-border-opacity: 1;
         border-color: rgb(79 70 229 / var(--tw-border-opacity));
     }
@@ -52,7 +52,7 @@
         padding-bottom: 64px !important;
     }
 
-    .teamswiper .swiper-horizontal>.swiper-scrollbar,
+    .teamswiper .swiper-horizontal > .swiper-scrollbar,
     .teamswiper .swiper-scrollbar.swiper-scrollbar-horizontal {
         max-width: 140px !important;
         height: 3px !important;
@@ -66,7 +66,7 @@
         padding-top: 16px !important;
     }
 
-    .teamswiper .swiper-slide.swiper-slide-active>.slide\:border-indigo-600 {
+    .teamswiper .swiper-slide.swiper-slide-active > .slide\:border-indigo-600 {
         --tw-border-opacity: 1;
         border-color: rgb(79 70 229 / var(--tw-border-opacity));
     }
@@ -113,12 +113,15 @@
 </style>
 
 <body class="font-inter">
-@include('nav')
+{{--<div class="flex justify-center items-center">--}}
+    @include('nav')
+{{--</div>--}}
 <section class="py-14 lg:py-16 relative">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative ">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-9">
             <div class="img-box">
-                <img src="https://management-africa.co.ke/wp-content/uploads/2024/03/team-development-1200x800-1.png" alt="About Us tailwind page"
+                <img src="https://management-africa.co.ke/wp-content/uploads/2024/03/team-development-1200x800-1.png"
+                     alt="About Us tailwind page"
                      class="max-lg:mx-auto">
             </div>
             <div class="lg:pl-[100px] flex items-center">
@@ -146,7 +149,8 @@
 
             <div class="lg:pr-24 flex items-center">
                 <div class="data w-full">
-                    <img src="https://www.artofevents.nl/wp-content/uploads/2018/02/Logo_nieuwrpayoff_h_2016.png" alt="About Us tailwind page"
+                    <img src="https://www.artofevents.nl/wp-content/uploads/2018/02/Logo_nieuwrpayoff_h_2016.png"
+                         alt="About Us tailwind page"
                          class="block lg:hidden mb-9 mx-auto">
                     <h2 class="font-manrope font-bold text-4xl lg:text-5xl text-black mb-9 max-lg:text-center">We
                         are Creative Since 2005</h2>
@@ -161,7 +165,8 @@
                 </div>
             </div>
             <div class="img-box ">
-                <img src="https://www.artofevents.nl/wp-content/uploads/2018/02/Logo_nieuwrpayoff_h_2016.png" alt="About Us tailwind page"
+                <img src="https://www.artofevents.nl/wp-content/uploads/2018/02/Logo_nieuwrpayoff_h_2016.png"
+                     alt="About Us tailwind page"
                      class="hidden lg:block ">
             </div>
         </div>
@@ -215,24 +220,27 @@
     </div>
 </section>
 
-<section class=" py-14 lg:py-16 bg-gray-50">
-    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative">
+<section class="py-14 lg:py-16 bg-gray-50">
+    <div class="mx-auto max-w-full px-4 sm:px-6 lg:px-8 relative">
         <div class="mb-16 rounded-full">
             <h2 class="text-4xl font-manrope font-bold text-gray-900 text-center">What our happy user says!</h2>
         </div>
 
         <div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff" class="swiper mySwiper2">
-            <div class="swiper-wrapper  mx-auto">
+            <div class="swiper-wrapper p-4">
                 <div class="swiper-slide">
-                    <div class="relative mb-20">
+                    <div class="absolute mb-20">
                         <!--Slider Wrapper-->
                         <div class="max-w-max mx-auto lg:max-w-4xl">
                             <p class="text-lg text-gray-500 leading-8 mb-8 text-center">
-                                I have been using pagedone for several months now, and I must say that it has made my life a lot
+                                I have been using pagedone for several months now, and I must say that it has made my
+                                life a lot
                                 easier. The
-                                platform's intuitive interface and ease of use have allowed me to manage my finances more effectively
+                                platform's intuitive interface and ease of use have allowed me to manage my finances
+                                more effectively
                                 and
-                                make informed investment decisions. I particularly like the product's auto-tracking feature, which has
+                                make informed investment decisions. I particularly like the product's auto-tracking
+                                feature, which has
                                 saved
                                 me a lot of time and effort.
                             </p>
@@ -240,15 +248,18 @@
                     </div>
                 </div>
                 <div class="swiper-slide">
-                    <div class="relative mb-20">
+                    <div class="absolute mb-20">
                         <!--Slider Wrapper-->
                         <div class="max-w-max mx-auto lg:max-w-4xl">
                             <p class="text-lg text-gray-500 leading-8 mb-8 text-center">
-                                I have been using pagedone for several months now, and I must say that it has made my life a lot
+                                I have been using pagedone for several months now, and I must say that it has made my
+                                life a lot
                                 easier. The
-                                platform's intuitive interface and ease of use have allowed me to manage my finances more effectively
+                                platform's intuitive interface and ease of use have allowed me to manage my finances
+                                more effectively
                                 and
-                                make informed investment decisions. I particularly like the product's auto-tracking feature, which has
+                                make informed investment decisions. I particularly like the product's auto-tracking
+                                feature, which has
                                 saved
                                 me a lot of time and effort.
                             </p>
@@ -256,15 +267,18 @@
                     </div>
                 </div>
                 <div class="swiper-slide">
-                    <div class="relative mb-20">
+                    <div class="absolute mb-20">
                         <!--Slider Wrapper-->
                         <div class="max-w-max mx-auto lg:max-w-4xl">
                             <p class="text-lg text-gray-500 leading-8 mb-8 text-center">
-                                I have been using pagedone for several months now, and I must say that it has made my life a lot
+                                I have been using pagedone for several months now, and I must say that it has made my
+                                life a lot
                                 easier. The
-                                platform's intuitive interface and ease of use have allowed me to manage my finances more effectively
+                                platform's intuitive interface and ease of use have allowed me to manage my finances
+                                more effectively
                                 and
-                                make informed investment decisions. I particularly like the product's auto-tracking feature, which has
+                                make informed investment decisions. I particularly like the product's auto-tracking
+                                feature, which has
                                 saved
                                 me a lot of time and effort.
                             </p>
