@@ -1,11 +1,14 @@
+<script src="https://cdn.tailwindcss.com"></script>
+{{--<script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>--}}
+{{--<link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet"/>--}}
+
 <nav x-data="{ isOpen: false }"
-     class="container h-16 bg-black fixed top-0 z-10 p-6 lg:flex lg:items-center lg:justify-around">
+     class="container text-center w-full h-16 bg-black fixed top-0 z-10 p-6 lg:flex lg:items-center lg:justify-around">
     <div class="flex items-center justify-between">
         <div>
-            <a class="text-2xl font-bold text-white hover:text-gray-700 dark:text-white dark:hover:text-gray-300 lg:text-3xl"
+            <a class="text-2xl font-bold text-white hover:text-gray-300 dark:text-white dark:hover:text-gray-300 lg:text-3xl"
                href="/">Tchikita</a>
         </div>
-
         <!-- Mobile menu button -->
         <div class="flex lg:hidden">
             <button x-cloak @click="isOpen = !isOpen" type="button"
@@ -59,3 +62,5 @@
         </div>
     </div>
 </nav>
+
+{{--<script src="//unpkg.com/alpinejs" defer></script>--}}
