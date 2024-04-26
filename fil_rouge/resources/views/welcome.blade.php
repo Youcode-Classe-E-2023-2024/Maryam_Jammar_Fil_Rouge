@@ -35,7 +35,7 @@
         <div class="h-3/5 flex justify-center items-center flex-col mx-auto inset-0 bg-cover bg-center">
 
             <nav x-data="{ isOpen: false }"
-                 class="container w-full h-16 bg-black bg-opacity-15 fixed top-0 z-10 p-6 lg:flex lg:items-center lg:justify-around">
+                 class="container text-center w-full h-16 bg-black bg-opacity-15 fixed top-0 z-10 p-6 lg:flex lg:items-center lg:justify-around">
                 <div class="flex items-center justify-between">
                     <div>
                         <a class="text-2xl font-bold text-white hover:text-gray-300 dark:text-white dark:hover:text-gray-300 lg:text-3xl"
