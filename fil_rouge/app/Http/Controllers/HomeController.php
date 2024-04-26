@@ -45,7 +45,6 @@ class HomeController extends Controller
         }
         return view('welcome', compact('events', 'categories', 'allCategories', 'pastEvents', 'flags', 'flagsData'));
     }
-    
     public function filterByCategory($categoryName)
     {
         $categories = Category::limit(5)->get();
