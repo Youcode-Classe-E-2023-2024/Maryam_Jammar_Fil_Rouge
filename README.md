@@ -1,3 +1,5 @@
+![image](https://github.com/Youcode-Classe-E-2023-2024/Maryam_Jammar_Fil_Rouge/assets/132862036/f5bc8318-dc83-4447-9d4b-df5c47f59c3d)
+
 # Projet de Gestion de Réservation de Tickets
 
 ## Description du Projet
@@ -8,14 +10,9 @@ Le projet de gestion de réservation de tickets est une application web permetta
 
 - Gestion d'événements avec détails complets, images et catégories.
 - Réservation en ligne avec filtres de recherche avancés.
-- Carte interactive pour la sélection de sièges.
-- Gestion des utilisateurs avec historique des réservations.
-- Notifications automatiques et rappels avant les événements.
-- Système d'évaluation et de commentaires.
-- Intégration des réseaux sociaux pour le partage d'événements.
+- Gestion des utilisateurs avec inscription, connexion.
+- Intégration avec les réseaux sociaux pour se connecter avec des comptes sociaux.
 - Tableau de bord pour les organisateurs avec statistiques.
-- Personnalisation de l'apparence du site et codes promotionnels.
-- Support client avec chat en direct et section FAQ.
 
 ## Installation
 
@@ -48,8 +45,8 @@ Le projet de gestion de réservation de tickets est une application web permetta
 
 - Front-end : HTML5, CSS3, JavaScript
 - Back-end : Laravel, PHP, PDO.
-- Base de Données : PhpMyAdmin, XAMPP
-- Autres : PowerAMC
+- Base de Données : PgSQL
+- Autres : Lucidchart, Canva, Figma.
 
 ## Contributeurs
 
